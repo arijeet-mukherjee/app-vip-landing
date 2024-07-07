@@ -1,0 +1,109 @@
+@keyframes grow {
+    0% {
+        height: 0;
+        visibility: visible;
+    }
+    100% {
+        height: calc((100vw / 1920) * 150);
+        visibility: visible;
+    }
+}
+
+@keyframes sideFlip {
+    0% {
+        transform: rotateY(0deg);
+         visibility: visible;
+    }
+    50% {
+        transform: rotateY(45deg);
+        visibility: visible;
+    }
+    100% {
+        transform: rotateY(0deg);
+        visibility: visible;
+    }
+}
+
+.shield-parent {
+    position: absolute;
+    height: calc((100vw / 1920) * 680);
+    width: max-content;
+    z-index: 9999;
+}
+
+.shield {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    height: 100%;
+    position: absolute;
+}
+
+.shield-top {
+    width: 100%;
+    height: calc((100vw / 1920) *150);
+}
+
+.shield-bottom {
+    width: 100%;
+    height: calc((100vw / 1920) * 150);
+}
+
+.shield-top .shield-line {
+    position: absolute;
+    width: calc((100vw / 1920) *  1);
+    left: 50%;
+    top: 0;
+    height: calc((100vw / 1920) * 150);
+    background: linear-gradient(90deg, #6862ea 78%, #f2f2f2 20%);
+    opacity: 0.8;
+    animation: grow 2s ease-in-out forwards;
+}
+
+.shield-bottom .shield-line {
+    position: absolute;
+    visibility: hidden;
+    width: calc((100vw / 1920) *  1);
+    left: 50%;
+    top: 51.85%;
+    height: calc((100vw / 1920) * 150);
+    background: linear-gradient(to bottom, rgba(104, 98, 234, 1) 0%, rgba(213, 211, 208, 0.5) 50%, rgba(242, 242, 242, 0) 100%);
+    opacity: 0.8;
+    animation: grow 2s ease-in-out forwards;
+    animation-delay: 3s;
+}
+
+/* Middle is a circle occupying entire available are */
+.shield-middle {
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0.25) 36.01%, rgba(115, 115, 115, 0.25) 94.75%);
+    border-radius: 50%;
+    width: calc((100vw / 1920) * 200);
+    height: calc((100vw / 1920) * 200);
+    z-index: 9999;
+    box-sizing: border-box;
+    position: relative;
+    border: 1px solid #6862ea;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.shield-logo {
+    opacity: 0.8 !important;
+    visibility: hidden;
+    animation: sideFlip 1s ease-in-out forwards;
+    animation-delay: 2s;
+    width: calc((100vw / 1920) * 100);
+    height: calc((100vw / 1920) * 100);
+}
+
+@media (max-width: 1100px) { 
+    .shield-parent {
+        display: grid;
+    }
+}
+
+@media (max-width: 1200px) { 
+    .shield-parent {
+        display: none;
+    }
+}

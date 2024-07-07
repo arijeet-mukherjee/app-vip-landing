@@ -1,0 +1,143 @@
+@import url("../../../../src/global.module.css");
+
+.card {
+    font-family: roboto;
+    padding: calc((100vw / 1920)* 30);
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: calc((100vw / 1920)* 6);
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+.cardImage {
+    width: calc((100vw / 1920) * 62);
+    height: calc((100vw / 1920) * 62);
+}
+
+.heading {
+    font-size: calc((100vw / 1920)*18);
+}
+
+.content {
+    font-size: calc((100vw / 1920)*16);
+    line-height: calc((100vw / 1920)*22);
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.button-text {
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    font-size: calc((100vw/1920)*14);
+    line-height: 24px;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    align-items: center;
+    color: var(--text-icon-color);
+    flex-shrink: 0;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.buttonImage {
+    width: calc((100vw / 1920) * 24);
+    height: calc((100vw / 1920) * 24);
+}
+
+.button-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    width: max-content;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: calc((100vw / 1920)* 6);
+}
+
+.card-button {
+    width: calc((100vw/1920)*100);
+    height: calc((100vw/1920)*30);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 4px 12px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+@media screen and (max-width : 1100px) {
+    .card {
+        padding: calc((100vw / 393)* 15);
+        gap: calc((100vw / 393)* 8);
+        display: grid;
+        grid-template-rows: auto auto calc((100vw / 393)* 167) calc((100vw / 393)* 35);
+    }
+
+    .cardImgContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        height: auto;
+        width: auto;
+    }
+
+    .cardImage {
+        width: calc((100vw / 393)* 149);
+        height: calc((100vw / 393)* 149);
+        margin-left: calc((100vw / 393)* -10);
+    }
+
+    .heading {
+        font-size: calc((100vw / 393)*21);
+    }
+
+    .content {
+        font-size: calc((100vw / 393)*14);
+        line-height: calc((100vw / 393)*16);
+        max-width: inherit;
+    }
+
+    .card-button {
+        height: calc((100vw / 393)* 28);
+        width: calc((100vw / 393)* 115);
+        gap: calc((100vw / 393)*4);
+        padding: 5px 7px 5px 14px;
+    }
+
+    .button-text {
+        font-size: calc((100vw / 393)*12);
+    }
+
+    .buttonImage {
+        width: calc((100vw / 393) * 20);
+        height: calc((100vw / 393) * 20);
+    }
+
+    a {
+        gap: calc((100vw / 393)*4);
+    }
+}

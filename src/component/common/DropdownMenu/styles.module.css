@@ -1,0 +1,47 @@
+@import url("../../../global.module.css");
+
+.dropdown {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    width: auto;
+    z-index: 100;
+    gap: 0.1rem;
+
+}
+
+.tile {
+    background-color: #938EF0;
+    padding-left: calc((100vw / 1920)*19);
+    padding-right: calc((100vw / 1920)*19);
+    padding-bottom: calc((100vw / 1920)*5);
+    padding-top: calc((100vw / 1920)*5);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.ddItem {   
+    color: var(--background-color-dark);
+    font-weight: 200;
+}
+
+.tile:hover {
+    background-color: var(--text-button-background-color-secondary);
+    > .ddItem{
+        color: white;
+    }
+    
+}
+
+
+
+@media (max-width: 1100px) {
+   .tile {
+        padding-left: calc((100vw / 393)*19);
+        padding-right: calc((100vw / 393)*19);
+        padding-bottom: calc((100vw / 393)*5);
+        padding-top: calc((100vw / 393)*5);
+    }
+  }

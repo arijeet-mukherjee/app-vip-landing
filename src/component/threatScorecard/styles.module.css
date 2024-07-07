@@ -1,0 +1,485 @@
+@import url("../../global.module.css");
+
+div {
+    letter-spacing: 0.5px;
+}
+
+.scorecard-section {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 100%;
+    gap: calc((100vw / 1920) * 12);
+}
+
+.vunerability-section {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: calc((100vw / 1920) * 8);
+}
+
+.threat-section {
+    display: grid;
+    grid-template-rows: 3fr auto;
+    gap: calc((100vw / 1920) * 8);
+}
+
+.threatcalculator-section {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: calc((100vw / 1920) *8);
+    background: #08031B;
+    border-radius: calc((100vw / 1920) * 37.25);
+}
+
+.threatcalculator-text {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    gap: calc((100vw / 1920) * 2);
+    margin-top: calc((100vw / 1920) * 30.05);
+    margin-left: calc((100vw / 1920) * 49.01);
+}
+
+.threatcalculator-title {
+    font-family: "DM Sans";
+    font-size: calc((100vw / 1920) *20);
+    font-weight: 800;
+    line-height: calc((100vw / 1920) *30.59);
+    letter-spacing: -0.2901960790157318px;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.riskstatus {
+    font-family: "DM Sans";
+    font-size: calc((100vw / 1920) * 16);
+    font-weight: 500;
+    line-height: calc((100vw / 1920) *24);
+    text-align: left;
+    color: #87888C;
+}
+
+.threatscore {
+    font-family: "DM Sans";
+    font-size: calc((100vw / 1920) * 40);
+    font-weight: 500;
+    line-height: calc((100vw / 1920) *40);
+    text-align: left;
+    color: #938EF0;
+}
+
+.totalthreat {
+    font-family: "DM Sans";
+    font-size: calc((100vw / 1920) *16);
+    font-weight: 500;
+    line-height: calc((100vw / 1920) *24);
+    text-align: left;
+    color: #87888C;
+}
+
+.progressbar {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.getcouponrefresh-section {
+    display: grid;
+    grid-template-columns: 2fr auto;
+    gap: calc((100vw / 1920) * 10);
+}
+
+.button-text {
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    font-size: calc((100vw / 1920) *16);
+    line-height: calc((100vw / 1920) *24);
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    align-items: center;
+    color: var(--text-icon-color);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.button-icon {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.getcoupon-button {
+    cursor: pointer;
+    background-color: var(--text-button-background-color-primary);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: calc((100vw/1920) * 10) calc((100vw / 1920) * 34);
+    border-radius: calc((100vw/1920) * 70);
+}
+
+.refresh-button {
+    background-color: #08031B;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: calc((100vw/1920) * 10) calc((100vw / 1920) * 34);
+    justify-content: center;
+    align-items: center;
+    border-radius: calc((100vw/1920) * 70);
+    cursor: pointer;
+}
+
+
+.vunerability-percentage {
+    display: grid;
+    grid-template-rows: auto auto;
+    /* height: calc((100vw/1920) * 286); */
+    background: #08031B;
+    border-radius: calc((100vw/1920) * 37.25);
+    padding-top: calc((100vw/1920) * 30.05);
+    padding-left: calc((100vw/1920) * 23);
+    padding-bottom: calc((100vw/1920) * 30.05);
+
+}
+
+.vunerability-header {
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.vunerability-title {
+    font-family: "DM Sans";
+    font-size: calc((100vw / 1920) * 20.04);
+    font-weight: 800;
+    line-height: calc((100vw / 1920) * 30.59);
+    letter-spacing: -0.2901960790157318px;
+    justify-content: left;
+    color: #FFFFFF;
+}
+
+.vunerability-heading {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 3.5fr 1.5fr;
+    font-family: "DM Sans";
+    font-size: calc((100vw / 1920) *18);
+    font-weight: 500;
+    line-height: calc((100vw / 1920) * 24);
+    justify-content: left;
+}
+
+.vunerability-report {
+    display: grid;
+    gap: calc((100vw / 1920) * 20);
+}
+
+
+.discount-coupon-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: calc((100vw / 1920) * 10);
+}
+
+.discount-section {
+    padding: calc((100vw / 1920) *15) calc((100vw / 1920) *20);
+    border-radius: calc((100vw / 1920) *15);
+    background: #08031B;
+    display: grid;
+    grid-template-rows: auto auto;
+    align-content: center;
+    justify-items: center;
+}
+
+.discount-percent {
+    font-family: "DM Sans";
+    font-size: calc((100vw / 1920) *70);
+    font-weight: 500;
+    line-height: calc((100vw / 1920) * 81);
+    color: #938EF0;
+}
+
+.discount-text {
+    font-family: "DM Sans";
+    font-size: calc((100vw / 1920) *18);
+    font-weight: 400;
+    line-height: calc((100vw / 1920) * 28);
+    color: #FFFFFF;
+}
+
+.couponcode-message-section {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: calc((100vw / 1920) * 10);
+
+}
+
+.couponcode-section {
+    display: grid;
+    padding: calc((100vw / 1920) * 21) calc((100vw / 1920) * 41);
+    border-radius: calc((100vw / 1920) * 14);
+    background: #402EA1;
+    align-content: center;
+    justify-items: center;
+}
+
+.couponcode {
+    font-family: "DM Sans";
+    font-size: calc((100vw / 1920) * 18);
+    font-weight: 400;
+    line-height: calc((100vw / 1920) * 28);
+    color: #FFFFFF;
+    text-align: center;
+    justify-content: center;
+}
+
+.message-section {
+    border-radius: calc((100vw / 1920) * 12);
+    background: #08031B;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.message-profilephoto {
+    display: grid;
+    border-radius: 50%;
+    justify-content: center;
+    align-content: center;
+}
+
+.makeImageCircular {
+    border-radius: 50%;
+    border: 1px solid #402EA1;
+    width: calc((100vw / 1920)* 34);
+    height: calc((100vw / 1920)* 34);
+}
+
+.message-name {
+    display: grid;
+    grid-template-rows: auto auto;
+    align-content: center;
+    text-align: left;
+}
+
+.message-username {
+    font-family: "DM Sans";
+    font-size: calc((100vw / 1920) * 12.91);
+    font-weight: 500;
+    line-height: calc((100vw / 1920) * 19.37);
+    text-align: left;
+    justify-items: center;
+    color: #938EF0;
+}
+
+.message-forcustomer {
+    font-family: "DM Sans";
+    font-size: calc((100vw / 1920) *10);
+    font-weight: 400;
+    line-height: calc((100vw / 1920) *15);
+    text-align: left;
+    align-content: center;
+    justify-items: center;
+    color: #FFFFFF;
+}
+
+.arrowImg{
+    width: calc((100vw / 1920)* 30);
+    height: calc((100vw / 1920)* 20);
+}
+
+.refreshImg{
+    width: calc((100vw / 1920)* 20);
+    height: calc((100vw / 1920)* 20);
+}
+
+@media (max-width: 1200px) {
+
+    .scorecard-section {
+        grid-template-rows: auto auto;
+        grid-template-columns: auto;
+        width: 100%;
+        height: max-content;
+        gap: calc((100vw / 393)* 12);
+    }
+
+    .vunerability-percentage {
+        padding: calc((100vw / 393)* 10);
+        padding-bottom: calc((100vw / 393)* 15);
+        border-radius: calc((100vw / 393)* 14);
+    }
+
+    .threatcalculator-section {
+        grid-column: 1;
+        padding: calc((100vw / 393)* 10);
+        border-radius: calc((100vw / 393)* 14);
+        gap: calc((100vw / 393)* 8);
+    }
+
+    .discount-coupon-section {
+        grid-row: 3;
+        gap: calc((100vw / 343) * 5);
+    }
+
+    .threatcalculator-text{
+        margin: 0px;
+    }
+    
+    .threatcalculator-title {
+        font-family: "DM Sans";
+        font-size: calc((100vw / 393)* 14);
+        font-weight: 700;
+        line-height: calc((100vw / 393)*16.8);
+        text-align: left;
+    }
+
+    .riskstatus {
+        font-family: "DM Sans";
+        font-size: calc((100vw / 393)*10);
+        font-weight: 400;
+        line-height: calc((100vw / 393)* 12)
+    }
+
+    .threatscore {
+        font-family: "DM Sans";
+        font-size: calc((100vw / 393)* 25);
+        font-weight: 700;
+        line-height: calc((100vw / 393)* 30);
+    }
+
+    .totalthreat {
+        font-family: "DM Sans";
+        font-size: calc((100vw / 393)* 10);
+        font-weight: 400;
+        line-height: calc((100vw / 393)*12);
+    }
+
+    .button-text {
+        font-size: calc((100vw / 393)* 14);
+        font-weight: 400;
+    }
+
+    .vunerability-title {
+        font-family: "DM Sans";
+        font-size: calc((100vw / 393)* 14);
+        font-weight: 700;
+        line-height: calc((100vw / 393)*16);
+    }
+
+    .vunerability-heading {
+        font-family: "DM Sans";
+        font-size: calc((100vw / 393)* 12);
+        font-weight: 500;
+        line-height: calc((100vw / 393)* 24);
+    }
+
+    .vunerability-report {
+        gap: calc((100vw / 343) * 10);
+    }
+
+    .discount-section {
+        border-radius: calc((100vw / 393)* 15);
+    }
+
+    .discount-percent {
+        font-family: "DM Sans";
+        font-size: calc((100vw / 393)* 25);
+        font-weight: 700;
+        line-height: calc((100vw / 393)* 30);
+    }
+
+    .discount-text {
+        font-family: "DM Sans";
+        font-size: calc((100vw / 393)* 10);
+        font-weight: 400;
+        line-height: calc((100vw / 393)*12);
+    }
+
+    .message-section {
+        border-radius: calc((100vw / 393)* 12);
+    }
+
+    .message-username {
+        font-family: "DM Sans";
+        letter-spacing: 1px;
+        font-size: calc((100vw / 393)* 12);
+        font-weight: 400;
+        line-height: calc((100vw / 393)* 14);
+    }
+
+    .message-forcustomer {
+        font-family: "DM Sans";
+        font-size: calc((100vw / 393)* 7);
+        font-weight: 400;
+        line-height: calc((100vw / 393)* 8);
+    }
+
+    .message-profilephoto {
+        padding: calc((100vw / 393)* 5);
+    }
+
+    .couponcode-section {
+        border-radius: calc((100vw / 393)*9);
+    }
+
+    .couponcode {
+        font-family: "DM Sans";
+        font-size: calc((100vw / 393)* 10);
+        font-weight: 400;
+        line-height: calc((100vw / 393)* 12);
+    }
+
+    .couponcode-message-section {
+        gap: calc((100vw / 393) * 5);
+    }
+
+    .arrowImg{
+        width: calc((100vw / 393)* 20);
+        height: calc((100vw / 393)* 20);
+    }
+
+    .refreshImg{
+        width: calc((100vw / 393)* 18);
+        height: calc((100vw / 393)* 18);
+    }
+
+    .refresh-button {
+        padding: calc((100vw / 393) * 5) calc((100vw / 393) * 6);
+        width: calc((100vw / 393) * 49);
+        height: calc((100vw / 393) * 20); 
+    }
+
+    .getcoupon-button {
+        padding: calc((100vw / 393) * 5) calc((100vw / 393) * 7) calc((100vw / 393) * 5) calc((100vw / 393) * 14);
+    }
+
+    .makeImageCircular {
+        width: calc((100vw / 393)* 27);
+        height: calc((100vw / 393)* 27);
+    
+    }
+
+    .vunerability-section {
+        gap: calc((100vw / 343) * 8);
+    }
+
+    .threat-section {
+        gap: calc((100vw / 343) * 8);
+    }
+
+    .threatcalculator-text {
+        gap: calc((100vw / 343) * 2);
+    }
+
+    .getcouponrefresh-section {
+        gap: calc((100vw / 343) * 5);
+    }
+    
+    
+}

@@ -1,0 +1,26 @@
+  .progress-container {
+      display: flex;
+      align-items: center;
+
+  }
+
+  .progress {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      border-radius: 3px solid #2B2B36;
+      background-color: #2B2B36;
+  }
+
+  .progress-small {
+      height: 3px;
+  }
+
+  .progress-bar {
+     border-radius: 3px solid #938ef0;
+      background: #938ef0;
+      height: 100%;
+      position: absolute;
+      width: 42px;
+      height: 3px;
+  }

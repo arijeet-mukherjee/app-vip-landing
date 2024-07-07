@@ -1,0 +1,117 @@
+@import url("../global.module.css");
+
+.container {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.carousel-container-1 {
+    background-color: var(--background-color-dark);
+    background-position: center;
+}
+
+.carousel-container-2 {
+    background: var(--input-field-secondary-color);
+    background-position: center;
+}
+
+.cardBoxFirst {
+    padding: calc((100vw / 1920)* 160) calc((100vw / 1920)* 160) 0px calc((100vw / 1920)* 160);
+    margin-top: -20%;
+}
+
+.cardBoxRemain {
+    padding: 0 calc((100vw / 1920)* 160);
+    display: block;
+    gap: calc((100vw / 1920)* 60);
+}
+
+.cardCarousalRemain {
+    padding: 0 calc((100vw / 1920)* 160);
+    display: block;
+    gap: calc((100vw / 1920)* 60);
+}
+
+.whiteBackground {
+    background: var(--text-icon-color);
+}
+
+.quizCard {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    padding-top: calc((100vw / 1920)* 117);
+    padding-right: calc((100vw / 1920)* 320);
+    padding-bottom: calc((100vw / 1920)* 117);
+    padding-left: calc((100vw / 1920)* 320);
+    margin-bottom: calc((100vw / 1920)* 60);
+    background: var(--background-color-dark);
+}
+
+.quizName {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: calc((100vw/1920)*40);
+    line-height: calc((100vw/1920)*90);
+    color: #FFFFFF;
+    text-align: center;
+}
+
+@media(max-width: 1200px) {
+    .carousel-container-1 {
+        position: relative;
+        background: linear-gradient(to bottom, #0A041F 30%, transparent 70%);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100vw;
+        padding: calc((100vw / 393) * 1);
+        margin-bottom: 25px;
+    }
+
+    .cardBoxFirst {
+        padding: 0px;
+        margin-top: -5%;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+
+    .quizName {
+        font-weight: 700;
+        font-size: calc((100vw/343)* 21);
+        line-height: calc((100vw/343)*25);
+        word-wrap: break-word;
+        margin-bottom: calc((100vw/343)*20);
+        text-align: left;
+    }
+
+    .cardBoxRemain {
+        padding: 0px;
+        margin: 5px;
+    }
+
+    .cardCarousalRemain {
+        padding: 0px;       
+    }
+    
+
+    /* .carousel-container-1::before {
+        position: absolute;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../public/worldmap.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        top: 0;
+        left: 0;
+        height: 40%;
+    } */
+
+    .carousel-container-2 {
+        width: 100vw;
+        /* padding: calc((100vw / 393) * 1); */
+    }
+
+    .quizCard {
+        gap: 0 !important;
+        padding: 20px;
+    }
+}

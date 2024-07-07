@@ -1,0 +1,167 @@
+@import url("../../global.module.css");
+
+.homeQuality{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: roboto;
+    gap: 30px;
+    padding: calc((100vw/1920)*60) 0;
+}
+
+h1{
+    margin: 0;
+}
+
+.intro{
+    width: calc((100vw / 1920)* 574);
+    display: flex;  
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+}
+
+.introHeading{
+    font-size: calc((100vw / 1920)*40);
+}
+
+.introContent{
+    font-size: calc((100vw / 1920)*18);
+    line-height: calc((100vw / 1920)*28);
+}
+
+.cardContainer{
+    width: calc((100vw / 1920)* 799);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    aspect-ratio: 1 / 1;
+    box-sizing: border-box;
+}
+
+.subCardContainer{
+    gap: calc((100vw / 1920)* 25);
+    width: calc((100vw / 1920)* 605);
+    height: calc((100vw / 1920)* 675);
+    justify-content: center;
+    z-index: 9999;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.cards{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.button-text {
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    font-size: calc((100vw / 1920)* 16);
+    line-height:  calc((100vw / 1920)* 24);
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--text-icon-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.buttonImage{
+    height: calc((100vw/1920)*25);
+    width: calc((100vw/1920)*25);
+}
+
+a {
+    text-decoration: none;
+    width: max-content;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: calc((100vw/1920)*6);
+}
+
+.home-button {
+    align-items: center;
+    display: flex;
+    background-color: var(--text-button-background-color-primary);
+    border: 1px solid transparent;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: calc((100vw / 1920)* 25);
+    width: calc((100vw / 1920)* 204);
+    padding: calc((100vw / 1920)* 10) calc((100vw / 1920)* 34);
+    justify-content: center;
+    overflow: visible;
+    transition: background-color 1s linear, border 1s;
+    cursor: pointer;
+}
+
+.home-button:hover{
+    background-color: #ffff;
+    border: 1px solid black;
+}
+.home-button:hover a span {
+    color: black !important;
+}
+.home-button:hover .buttonImage {
+    filter: invert(1);
+}
+
+@media screen and (max-width : 1100px) {
+    .homeQuality{
+        flex-direction: column;
+        padding: calc((100vw/393)*30) 0;
+    }
+    .background{
+        display: none;
+    }
+    .intro{
+        width: calc((100vw / 393)* 360);
+        gap: 15px;
+    }
+    .introHeading{
+        font-size: calc((100vw / 393)*21);
+    }
+    .introContent{
+        font-size: calc((100vw / 393)*14);
+        line-height: calc((100vw / 393)*16);
+    }
+    .cardContainer{
+        width: calc((100vw / 393)* 361);
+    }
+    .subCardContainer{
+        gap: calc((100vw / 393)* 15);
+        width: calc((100vw / 393)* 361);
+        height: calc((100vw / 393)* 1773);
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+    .cards{
+        gap: 15px;
+    }
+    .home-button{
+        height: calc((100vw / 393)* 28);
+        width: calc((100vw / 393)* 152);
+        padding: calc((100vw/393)*5) calc((100vw/393)*14);
+    }
+    .button-text{
+        font-size: calc((100vw / 393)* 14);
+        line-height: calc((100vw / 393)* 16);
+    }
+    .buttonImage{
+        height: calc((100vw/393)*25);
+        width: calc((100vw/393)*25);
+    }
+    a{
+        gap: calc((100vw / 393)*4);
+    }
+}

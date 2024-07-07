@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web&display=swap');
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --background-color-dark: #0A041F;
+  --common-border-radius: 0.25rem;
+  --common-padding: 1rem;
+  --common-transition: background-color 0.3s ease;
+  --common-gap: 1rem;
+  --common-font-size: 1.5rem;
+  --common-margin: 0.5rem;
+  --primary-color: #007bff;
+  --primary-background-dark-color: #08031b;
+  --primary-background-light-color: #5f44ff;
+  --text-icon-color: #ffffff;
+  --text-primary-color: #938ef0;
+  --text-secondary-color: #3e3e3f;
+  --text-tertiary-color: #343434;
+  --text-button-background-color-primary: #402ea1;
+  --text-button-background-color-secondary: #6862ea;
+  --text-button-background-color-tertiary: #55e5a0;
+  --text-tertiary-color: #384251;
+  --text-strock-color: #5e58d0;
+  --input-field-primary-color: #e6e0e9;
+  --input-field-secondary-color: #efefef;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --link-color: #007bff;
+  --link-hover-color: #0056b3;
+  --link-decoration: none;
+  --link-hover-decoration: underline;
+  --font-family: Arial, sans-serif;
+  --font-size: 16px;
+  --hero-section-left-padding: calc((100vw / 1920) * 320);
+  --hero-section-right-padding: calc((100vw / 1920) * 330);
+  --hero-section-top-padding: calc((100vw / 1920) *  60);
+  --cards-left-padding: calc((100vw / 1920) * 216.195);
+  --cards-right-padding: calc((100vw / 1920) * 216.195);
+  --padding-cardbox-left: calc((100vw / 1920) * 160);
+  --line-height: 1.5;
+  --border-radius: 4px;
+  --padding: calc((100vw / 1920) * 10);
+  --transition-duration: 0.3s;
+  --gap: 20px;
+  --margin: 10px;
+  --framer-font-family: "DM Sans";
+  --framer-font-size: 62px;
+  --framer-font-weight: 700;
+  --framer-text-color: rgba(255, 255, 255, 1);
+}
+
+body {
+  color: var(--text-tertiary-color);
+  background: var(--input-field-secondary-color);
+  display: grid;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
+}

@@ -1,7 +1,6 @@
 
 import axios from 'axios';
 const OAuth = require('oauth').OAuth2;
-import useMediaQuery from '@mui/material/useMediaQuery';
 
 export function capitalizeString(str: string): string {
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -9,6 +8,43 @@ export function capitalizeString(str: string): string {
 
 export function addNumbers(a: number, b: number): number {
     return a + b;
+}
+
+export function getCurrentYear() {
+    const date = new Date();
+    const year = date.getFullYear();
+    return year;
+}
+
+export function goToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+export async function goTo(ref: any) {
+    if (isMobile()) {
+        if (ref.current) {
+            ref.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    } else {
+        setTimeout(() => {
+            if (ref.current) {
+                ref.current.scrollIntoView({ behavior: 'smooth' });
+            }
+        }, 300);
+    }
+}
+
+export function emailVerified(email: string): boolean {
+    const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!emailRegex.test(email)) {
+        return false;
+    }
+    else {
+        return true;
+    }
 }
 
 export function makeWebServiceCall(url: string, method: string, data: any): Promise<any> {
@@ -51,48 +87,46 @@ export function authorizeWithOAuth(provider: string, clientId: string): Promise<
     });
 }
 
-export function isMobileDevice(): boolean {
-    return useMediaQuery('(max-width: 767px)');
-}
-
-export function isTabletDevice(): boolean {
-    return useMediaQuery('(min-width: 768px) and (max-width: 1023px)');
-}
-
-export function isDesktopDevice(): boolean {
-    return useMediaQuery('(min-width: 1024px)');
-}
-
-export function debouncer(value: any, delay: number): any {
+export function debouncer(func: (...args: any[]) => any, delay: number): (...args: any[]) => void {
     let timeoutId: ReturnType<typeof setTimeout>;
-    return function (this: any, ...args: any) {
+    return function (this: any, ...args: any[]) {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(() => {
-            value.apply(this, args);
+            func.apply(this, args);
         }, delay);
     };
 }
 
-export function throttler(fn: any, delay: number): any {
+export function throttler(fn: (...args: any[]) => any, delay: number): (...args: any[]) => void {
     let inThrottle: boolean,
         lastFn: ReturnType<typeof setTimeout>,
         lastDelay: number;
 
     return function (this: any) {
-        const context = this,
-            args = arguments;
+        const context = this;
+        const args = arguments;
         if (!inThrottle) {
-            fn.apply(context, args);
+            fn.apply(context, [args]);
             lastDelay = Date.now();
             inThrottle = true;
         } else {
             clearTimeout(lastFn);
-            lastFn = setTimeout(() => {
+            lastFn = setTimeout(function () {
                 if (Date.now() - lastDelay >= delay) {
-                    fn.apply(context, args);
+                    fn.apply(context, [args]);
                     lastDelay = Date.now();
                 }
             }, Math.max(0, delay - (Date.now() - lastDelay)));
         }
     };
 };
+
+
+export const isMobile = () => {
+    return typeof window !== 'undefined' && window.matchMedia("(max-width: 1100px)").matches;
+}
+
+export const priceAfterDiscount = (originalPrice: number, discountPercentage: number): number => {
+    const discountAmount = (originalPrice * discountPercentage) / 100;
+    return Math.round(originalPrice - discountAmount);
+}

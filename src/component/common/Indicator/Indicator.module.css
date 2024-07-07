@@ -1,0 +1,38 @@
+@import url("../../../global.module.css");
+
+.dot-button {
+    background-color: var(--text-button-background-color-secondary);
+    border: 1px;
+    border-radius: 50%;
+    transition: 200ms;
+    height: calc((100vw / 1920) * 18);
+    width: calc((100vw / 1920) * 18);
+}
+
+.dot-button-active {
+    background-color: var(--text-icon-color);
+    width: calc((100vw / 1920) * 36);
+    height: calc((100vw / 1920) * 18);
+    border: 1px;
+    border-radius: calc((100vw / 1920) * 300);
+    aspect-ratio: 2.6666666666666665 / 1;
+    transition: 250ms smooth;
+}
+
+@media (max-width: 1100px) {
+    .dot-button svg {
+        width: calc((100vw / 393) * 6);
+        height: calc((100vw / 393) * 6);
+    }
+
+    .dot-button-active {
+        width: calc((100vw / 393) * 48) !important;
+        border: 1px;
+        border-radius: calc((100vw / 393) * 300);
+    }
+
+    .dot-button {
+        height: auto;
+        width: calc((100vw / 393) * 18);
+    }
+}
