@@ -1,6 +1,7 @@
 
 import axios from 'axios';
 const OAuth = require('oauth').OAuth2;
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 export function capitalizeString(str: string): string {
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -22,12 +23,12 @@ export function makeWebServiceCall(url: string, method: string, data: any): Prom
             url: url,
             data: data
         })
-        .then(response => {
-            resolve(response.data);
-        })
-        .catch(error => {
-            reject(error);
-        });
+            .then(response => {
+                resolve(response.data);
+            })
+            .catch(error => {
+                reject(error);
+            });
     });
 }
 
@@ -49,3 +50,49 @@ export function authorizeWithOAuth(provider: string, clientId: string): Promise<
         });
     });
 }
+
+export function isMobileDevice(): boolean {
+    return useMediaQuery('(max-width: 767px)');
+}
+
+export function isTabletDevice(): boolean {
+    return useMediaQuery('(min-width: 768px) and (max-width: 1023px)');
+}
+
+export function isDesktopDevice(): boolean {
+    return useMediaQuery('(min-width: 1024px)');
+}
+
+export function debouncer(value: any, delay: number): any {
+    let timeoutId: ReturnType<typeof setTimeout>;
+    return function (this: any, ...args: any) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+            value.apply(this, args);
+        }, delay);
+    };
+}
+
+export function throttler(fn: any, delay: number): any {
+    let inThrottle: boolean,
+        lastFn: ReturnType<typeof setTimeout>,
+        lastDelay: number;
+
+    return function (this: any) {
+        const context = this,
+            args = arguments;
+        if (!inThrottle) {
+            fn.apply(context, args);
+            lastDelay = Date.now();
+            inThrottle = true;
+        } else {
+            clearTimeout(lastFn);
+            lastFn = setTimeout(() => {
+                if (Date.now() - lastDelay >= delay) {
+                    fn.apply(context, args);
+                    lastDelay = Date.now();
+                }
+            }, Math.max(0, delay - (Date.now() - lastDelay)));
+        }
+    };
+};
