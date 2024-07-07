@@ -1,33 +1,116 @@
-@import '../../global.css';
+@import '../../global.module.css';
 
 .header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
     align-items: center;
-    padding: 1rem;
-    background-color: #f8f9fa;
-    color: black;
+    font-family: var(--framer-font-family);
+    font-weight: 400;
+
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    /* styling on logo goes here */
+    width: calc((100vw / 1920) * 176);
+    height: calc((100vw / 1920) * 48);
 }
 
-.menu {
+.navbar {
+    display: grid;
+    font-weight: 400;
+    font-size: calc((100vw / 1920)*18);
+    line-height: 28px;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navItem {
+    color: var(--text-icon-color);
     display: flex;
-    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    cursor: pointer;
 }
 
-.menu-item {
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    background-color: #e2e8f0;
-    color: #4a5568;
-    transition: background-color 0.3s ease;
-    margin: var(--common-margin);
+.arrowDown {
+    width: 0;
+    height: 0;
+    border-left: calc((100vw/1920)*5) solid transparent;
+    border-right: calc((100vw/1920)*5) solid transparent;
+    border-top: calc((100vw/1920)*8) solid var(--text-icon-color);
+    transition: transform 900ms ease;
+
 }
 
-.menu-item:hover {
-    background-color: #cbd5e0;
+
+.burgerMenuLogo {
+    display: none;
+}
+
+.mobileLang {
+    display: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1400px) {
+    .header {
+        grid-template-columns: 1fr 3fr;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .header {
+        display: grid;
+        grid-template-columns: 3fr 1fr auto;
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        justify-content: space-between;
+        align-items: center;
+        font-size: calc((100vw/393)*14);
+
+    }
+
+    .logo {
+        width: calc((100vw / 393)* 85);
+        height: calc((100vw / 393)* 23);
+        align-self: center;
+    }
+
+    .headerInModal {
+        grid-template-columns: 3fr 1fr;
+        justify-content: space-between;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .burgerMenuLogo {
+        display: flex;
+        color: white;
+        align-items: center;
+        justify-self: flex-end;
+    }
+
+    .burgerSize {
+        height: calc((100vw / 393)* 30);
+        width: calc((100vw / 393)* 30);
+    }
+
+    .mobileLang {
+        display: block;
+        justify-self: center;
+    }
+
+    .arrowDown {
+        border-left: calc((100vw/393)*4) solid transparent;
+        border-right: calc((100vw/393)*4) solid transparent;
+        border-top: calc((100vw/393)*6) solid var(--text-icon-color);
+
+    }
+
 }

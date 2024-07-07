@@ -1,0 +1,124 @@
+@import url("../../../global.module.css");
+
+.getCoupon{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    box-sizing: border-box;
+    font-family: 'roboto', sans-serif;
+    align-items: center;
+    padding-left: calc((100vw / 1920)* 70);
+    padding-right: calc((100vw / 1920)* 70);
+    padding-top: calc((100vw / 1920)* 40);
+    padding-bottom: calc((100vw / 1920)* 40);
+}
+
+.inputContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: calc((100vw/1920)*20);
+}
+
+.inputBox{
+    background-color: #E6E0E9;
+    display: flex;
+    align-items: center;
+    gap: calc((100vw/1920)*15);
+    justify-content: space-between;
+    padding: calc((100vw / 1920)* 4) calc((100vw / 1920)* 19);
+    border-radius: calc((100vw / 1920)* 18);
+    border: 1px solid var(--text-button-background-color-primary);
+    width: min-content;
+}
+
+.subInputBox{
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    justify-content: space-around;
+}
+
+.label{
+    font-size: calc((100vw / 1920)*14);
+    color: #49454F;
+}
+
+.input{
+    outline: none;
+    border: none;
+    background-color: #E6E0E9;
+    font-size: calc((100vw / 1920)*20);
+    color: black;
+}
+
+.close{
+    height: calc((100vw/1920)*20);
+    width: calc((100vw/1920)*20);
+}
+
+.subInputBox:focus-within label{
+    color: #5f44ff;
+}
+
+.close{
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.coupon-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--text-button-background-color-primary);
+    color: white;
+    border: none;
+    padding: calc((100vw / 1920)* 10) calc((100vw / 1920)* 15);
+    border-radius: calc((100vw / 1920)* 19);
+    cursor: pointer;
+    font-size: calc((100vw / 1920)*18);
+    grid-column: 4/5;
+}
+
+@media screen and (max-width : 1100px) {
+    .getCoupon{
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr;
+        row-gap: calc((100vw / 393)* 15);
+        justify-items: flex-start;
+        padding: calc((100vw / 393)* 20);
+    }
+
+    .inputContainer{
+        grid-area: 1/1;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        gap: calc((100vw/393)*15);
+    }
+
+    .inputBox{
+        padding: calc((100vw / 393)*5) calc((100vw / 393)*10);
+        border-radius:  calc((100vw / 393)*12);
+        gap: calc((100vw/393)*10);
+    }
+
+    .label{
+        font-size: calc((100vw / 393)*10);
+    }
+
+    .input{
+        font-size: calc((100vw / 393)*14);
+    }
+
+    .close{
+        height: calc((100vw/393)*15);
+        width: calc((100vw/393)*15);
+    }
+    
+    .coupon-button{
+        grid-area: 2/1;
+        font-size: calc((100vw / 393)*12);
+        padding: calc((100vw / 393)* 10) calc((100vw / 393)* 15);
+        border-radius: calc((100vw / 393)* 13);
+        align-self: flex-start;
+    }
+}

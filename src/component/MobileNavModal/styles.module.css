@@ -1,0 +1,70 @@
+@import url('../../global.module.css');
+
+.mobileNavModal {
+    background-color: var(--primary-background-dark-color);
+    width: 100vw;
+    box-sizing: border-box;
+    color: var(--text-icon-color);
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Roboto';
+    padding: 0px;
+    margin: 0px;
+    position: fixed;
+    z-index: 10000;
+    overflow: hidden;
+    transition-property: height;
+    transition-duration: 500ms;
+    overflow: hidden;
+
+}
+
+.headerContainer {
+    margin: 20px;
+}
+
+.navBar {
+    display: grid;
+    grid-template-rows: auto;
+    margin: auto;
+    margin-top: calc((100vw /393)*30);
+    margin-bottom: calc((100vw /393)*30);
+    width: fit-content;
+    gap: calc((100vw /393)*12);
+
+
+}
+
+.navItem {
+    color: white;
+    text-decoration: none;
+    padding: calc((100vw / 393)*5);
+    padding-bottom: calc((100vw / 393)*10);
+    font-size: calc((100vw / 393)* 14);
+    border-bottom: 1px solid transparent;
+    transition: all 300ms ease-in-out;
+    align-self: center;
+    justify-self: center;
+
+}
+
+.navItem:hover {
+    border-bottom: 1px solid var(--text-primary-color);
+}
+
+.btnContainer {
+    margin: auto;
+    width: fit-content;
+    z-index: 500;
+}
+
+
+
+.navModalBackground {
+    position: absolute;
+    transform: translateY(50px);
+    bottom: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 30vh;
+}

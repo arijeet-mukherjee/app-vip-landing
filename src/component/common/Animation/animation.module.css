@@ -1,0 +1,111 @@
+@import url("../../../global.module.css");
+
+.animation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: auto;
+    width: inherit;
+    padding: calc((100vw / 1920)* 40) 0;
+}
+
+.couponTick{
+    width: calc((100vw / 1920)*75);
+    height: calc((100vw / 1920)*75);
+    position: absolute;
+    z-index: 9999;
+    opacity: 1;
+    animation: coupon 1s ease-in-out 1 forwards;
+}
+
+.couponSent {
+    width: calc((100vw / 1920)*150);
+    height: calc((100vw / 1920)*75);
+    animation: hideForOneSecond 1.5s ease-in-out 1 forwards;
+}
+
+@keyframes hideForOneSecond {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+
+@keyframes coupon {
+     0%{
+        width: calc((100vw / 1920)*75);
+        height: calc((100vw / 1920)*75);
+        visibility: visible;
+        opacity: 1;
+    }
+    90%{
+        width: calc((100vw / 1920)*150);
+        height: calc((100vw / 1920)*150);
+        visibility: visible;
+        opacity: 1;
+     } 
+     95%{
+        width: calc((100vw / 1920)*75);
+        height: calc((100vw / 1920)*75);
+        opacity: 0.5;
+        visibility: visible;
+     }
+     100%{
+        width: 0px;
+        height: 0px;
+        opacity: 0;
+        visibility: hidden;
+    }  
+}
+
+@media (max-width: 1200px) {
+    .animation{
+        padding: calc((100vw / 393) * 40) 0;
+    }
+    .couponTick{
+        width: calc((100vw / 393)*50);
+        height: calc((100vw / 393)*50);
+    }
+
+
+    .couponSent {
+        width: calc((100vw / 393)*80);
+        height: calc((100vw / 393)*40);
+    }
+
+
+    @keyframes coupon {
+        0%{
+           width: calc((100vw / 393)*50);
+           height: calc((100vw / 393)*50);
+           visibility: visible;
+           opacity: 1;
+       }
+       90%{
+           width: calc((100vw / 393)*80);
+           height: calc((100vw / 393)*80);
+           visibility: visible;
+           opacity: 1;
+        } 
+        95%{
+           width: calc((100vw / 393)*50);
+           height: calc((100vw / 393)*50);
+           opacity: 0.5;
+           visibility: visible;
+        }
+        100%{
+           width: 0px;
+           height: 0px;
+           opacity: 0;
+           visibility: hidden;
+       }  
+   }
+}

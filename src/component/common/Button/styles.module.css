@@ -1,0 +1,50 @@
+@import url("../../../global.module.css");
+
+.button {
+    background-color: var(--text-primary-color);
+    border: none;
+    color: var(--primary-background-dark-color);
+    cursor: pointer;
+    padding-left: calc((100vw / 1920)*23);
+    padding-right: calc((100vw / 1920)*23);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: calc((100vw / 1920)*44);
+    font-weight: 400;
+    font-size: calc((100vw / 1920)*18);
+    font-family: var(--framer-font-family);
+    word-wrap: break-word;
+    transition: all 500ms ease-in-out;
+}
+
+.button img{
+    width: calc((100vw / 1920) * 18);
+    height: calc((100vw / 1920) * 18);
+    transition: all 500ms ease-in-out;
+}
+.button:hover {
+    background-color: var(  --text-button-background-color-primary);
+    color: white; 
+    
+    > img{
+        filter: invert(1);
+    }
+
+
+}
+
+@media only screen and (max-width: 1100px) {
+    .button {
+        padding-left: calc((100vw / 393)* 23);
+        padding-right: calc((100vw / 393)* 23);
+        height: calc((100vw / 393)*30);
+        font-size: calc((100vw / 393)* 12);
+    }
+    .button img{
+        width: calc((100vw / 393) * 12);
+        height: calc((100vw / 393) * 12);
+    }
+}
+

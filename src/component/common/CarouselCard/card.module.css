@@ -1,0 +1,156 @@
+@import url("../../../global.module.css");
+
+@keyframes movement {
+    0% {
+        transform: translateX(20%);
+        /* transition-duration: 1000ms; */
+        opacity: 0;
+        animation-direction: alternate;
+        animation-delay: 0ms;
+    }
+
+    50% {
+        transform: translateX(10%);
+        /* transition-duration: 1000ms; */
+        opacity: 0;
+        animation-direction: alternate;
+        animation-delay: 0ms;
+    }
+
+    100% {
+        transition-duration: 1000ms;
+        transform: translateX(0);
+        opacity: 1;
+        animation-direction: normal;
+        animation-delay: 0ms;
+    }
+}
+
+.carousel-card {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    box-sizing: border-box;
+    height: calc((100vw / 1920) * 600);
+    /* transition-duration: 1000ms; */
+}
+
+.animation {
+    animation: movement 1500ms linear forwards;
+}
+
+.carousel-card-image {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(108.31deg, #FFFFFF 34.81%, #C7D5E0 78.11%);
+}
+
+.card-image-outer {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: calc((100vw / 1920) * 274.67);
+    height: calc((100vw / 1920) * 256.08);
+}
+
+.card-image-inner {
+    width: calc((100vw / 1920) * 167);
+    height: calc((100vw / 1920) * 178.67);
+}
+
+.carousel-card-content {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    background-color: var(--text-icon-color);
+    grid-template-columns: 1fr;
+    justify-content: space-between;
+    padding: calc((100vw / 1920) * 25);
+    color: var(--text-tertiary-color);
+}
+
+.carousel-card-title {
+    font-family: 'Roboto';
+    margin: 0;
+    font-style: normal;
+    font-size: calc((100vw / 1920) * 20);
+    font-weight: 800;
+    color: var(--text-secondary-color);
+    letter-spacing: -0.490196px;
+}
+
+.carousel-card-description {
+    font-family: 'Roboto';
+    margin: 0;
+    font-style: normal;
+    font-size: calc((100vw / 1920) * 18);
+    font-weight: 400;
+    color: var(--text-tertiary-color);
+    word-break: break-word;
+}
+
+.carousel-card-button {
+    background-color: var(--text-button-background-color-primary);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: min-content;
+    width: fit-content;
+    padding: calc((100vw / 1920) * 10) calc((100vw / 1920) * 34);
+    justify-content: center;
+    overflow: visible;
+    gap: 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: calc((100vw / 1920) * 16);
+    line-height: calc((100vw / 1920) * 24);
+    font-weight: 500;
+    color: var(--text-icon-color);
+    cursor: pointer;
+}
+
+@media(max-width: 1100px) {
+    .carousel-card {
+        width: calc((100vw / 393) * 361);
+        height: min-content;
+        aspect-ratio: 3/4;
+    }
+
+    .card-image-outer {
+        width: calc((100vw / 393) * 240);
+        height: calc((100vw / 393) * 191.13);
+        background-size: inherit;
+    }
+
+    .card-image-inner {
+        width: calc((100vw / 393) * 128.99);
+        height: calc((100vw / 393) * 128.99);
+    }
+
+    .carousel-card-content {
+        display: grid;
+        padding: calc((100vw / 393) * 20);
+        grid-template-rows: repeat(3, auto);
+    }
+
+    .carousel-card-title {
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: calc((100vw / 393) * 21);
+        word-break: break-word;
+    }
+
+    .carousel-card-description {
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: calc((100vw / 393) * 14);
+        word-break: break-word;
+    }
+
+    .carousel-card-button {
+        padding: calc((100vw / 393) * 15) calc((100vw / 393) * 7);
+        font-size: calc((100vw / 393) * 16);
+        width: calc((100vw / 393) * 115);
+    }
+}
