@@ -365,7 +365,7 @@
                 "title": "Helpdesk",
                 "description": "Need assistance navigating the complexities of cybersecurity? Our helpdesk is here to lend a helping hand. Reserve a 30-minute call with our security experts and get answers to all your burning security questions.",
                 "url": "More",
-                "toggleButton": true,
+                "toggleButton": false,
                 "buttonText": "Subscribe"
             },
             {
@@ -381,7 +381,7 @@
                 "title": "Online Training",
                 "description": "Led by industry experts, our courses cover a wide range of security-related subjects, providing you with the knowledge and skills needed to stay safe online. Access our online trainings anytime, anywhere, and learn at your own pace.",
                 "url": "More",
-                "toggleButton": true,
+                "toggleButton": false,
                 "buttonText": "Subscribe"
             },
             {
@@ -396,7 +396,7 @@
     },
     "carouselUpcomingSubscription": {
         "title": "That’s not all folks!",
-        "description": "We are still building hard to get you ever more secure, we can’t tell you everything yet, we can tell you however: during your subscription you get access to all newly added services for free and even get an early sneak peek if you like!",
+        "description": "",
         "toggleScrollButtonPosition": true,
         "hideIndicator": true,
         "isBackgroundDark": false,
@@ -414,7 +414,7 @@
                 "title": "DMCA/GDPR Requests",
                 "description": "Take control of your private data with our streamlined DMCA and GDPR request management system. Whether you need to file a takedown request or respond to one, we've got you covered. Safeguard your personal information now!",
                 "url": "More",
-                "toggleButton": true,
+                "toggleButton": false,
                 "buttonText": "Subscribe"
             },
             {
@@ -430,7 +430,7 @@
                 "title": "Privacy Shop",
                 "description": "Explore our exclusive Privacy Shop and find the perfect gadgets and gifts to safeguard your digital privacy. From NFC protectors to webcam covers, USB data blockers, and more, we offer a curated selection of high-quality products made for your security.",
                 "url": "More",
-                "toggleButton": true,
+                "toggleButton": false,
                 "buttonText": "Subscribe"
             },
             {
@@ -438,7 +438,7 @@
                 "title": "Subscribe for Updates",
                 "description": "Don't miss out on the latest developments in privacy and security – subscribe to our updates today! By subscribing, you'll gain access to exclusive content, product announcements, and valuable insights delivered straight to your inbox.",
                 "url": "More",
-                "toggleButton": true,
+                "toggleButton": false,
                 "buttonText": "Subscribe"
             }
         ]

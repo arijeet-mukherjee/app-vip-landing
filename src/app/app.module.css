@@ -6,12 +6,12 @@
 }
 
 .carousel-container-1 {
-    background-color: var(--background-color-dark);
+    background-color: #000000;
     background-position: center;
 }
 
 .carousel-container-2 {
-    background: var(--input-field-secondary-color);
+    background: #000000;
     background-position: center;
 }
 
@@ -91,9 +91,9 @@
     }
 
     .cardCarousalRemain {
-        padding: 0px;       
+        padding: 0px;
     }
-    
+
 
     /* .carousel-container-1::before {
         position: absolute;

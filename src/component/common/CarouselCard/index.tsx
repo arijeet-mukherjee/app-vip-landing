@@ -40,10 +40,10 @@ const CarouselCard: React.FC<CardProps> = (props: CardProps) => {
     return (
         <div className={styles["carousel-card"] + " " + styles[`${animate ? "animation" : ""}`]} key={key}>
             <div className={styles["carousel-card-image"]}>
-                <div className={styles["card-image-outer"]} style={{ backgroundImage: starPath, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat" }}>
-                    <div>
-                        <Image src={image} alt={title} height={imageHeight} width={imageWidth} className={styles["card-image-inner"]} />
-                    </div>
+                {/* <div className={styles["card-image-outer"]} style={{ backgroundImage: starPath, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat" }}>
+                </div> */}
+                <div>
+                    <Image src={image} alt={title} height={imageHeight} width={imageWidth} className={styles["card-image-inner"]} />
                 </div>
             </div>
             <div className={styles["carousel-card-content"]}>

@@ -38,11 +38,13 @@ const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
 
     const touchStartX = useRef(0);
     const cards: number = cardProps.length;
-    const slides: number = Math.ceil(cards / 3);
+    const slides: number = cards;
 
     const scrollDesktop = () => {
-        if (cards - currentIndex < 3) {
-            setCardPropsState([...cardProps.slice(currentIndex, currentIndex + (cards - currentIndex))]);
+        if (cards - currentIndex === 2) {
+            setCardPropsState([...cardProps.slice(currentIndex, currentIndex + (cards - currentIndex)), ...cardProps.slice(0, (cards - currentIndex - 1))]);
+        } else if (cards - currentIndex === 1) {
+            setCardPropsState([...cardProps.slice(currentIndex, currentIndex + (cards - currentIndex)), ...cardProps.slice(0, (cards - currentIndex + 1))]);
         } else {
             setCardPropsState(cardProps.slice(currentIndex, currentIndex + 3));
         }
@@ -75,37 +77,39 @@ const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
         setCurrentIndex((prevIndex) => (prevIndex === cards - 1 ? 0 : prevIndex + 3));
     };
 
-    const trackerMapDesktop = () => {
-        const buttonTracker: Map<number, number> = new Map();
-
-        buttonTracker.set(0, 0);
-        for (let i = 1; i < slides; i++) {
-            buttonTracker.set(i, i + 2);
-        }
-        if (cards % 3 != 0) {
-            buttonTracker.set(slides - 1, Math.floor(cards / 3) * 3);
-        }
-        setIndicator(Array.from(buttonTracker.values()));
-    }
-
-    const trackerMapMobile = () => {
+    const trackerMap = () => {
         const buttonTracker: Map<number, number> = new Map();
         for (let i = 0; i < cards; i++) {
             buttonTracker.set(i, i);
         }
+        // buttonTracker.set(0, 0);
+        // for (let i = 1; i < slides; i++) {
+        //     buttonTracker.set(i, i + 2);
+        // }
+        // if (cards % 3 != 0) {
+        //     buttonTracker.set(slides - 1, Math.floor(cards / 3) * 3);
+        // }
         setIndicator(Array.from(buttonTracker.values()));
     }
+
+    // const trackerMapMobile = () => {
+    //     const buttonTracker: Map<number, number> = new Map();
+    //     for (let i = 0; i < cards; i++) {
+    //         buttonTracker.set(i, i);
+    //     }
+    //     setIndicator(Array.from(buttonTracker.values()));
+    // }
 
     const dotClick = (index: number) => {
         setCurrentIndex(index);
     }
 
     React.useEffect(() => {
-        if (isMobile()) {
-            trackerMapMobile();
-        } else {
-            trackerMapDesktop();
-        }
+        // if (isMobile()) {
+        //     trackerMapMobile();
+        // } else {
+        // }
+        trackerMap();
     }, [])
 
     React.useEffect(() => {
@@ -122,9 +126,16 @@ const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
             if (isMobile()) {
                 setCurrentIndex((prevIndex) => (prevIndex === cards - 1 ? 0 : prevIndex + 1));
             } else {
-                setCurrentIndex((prevIndex) => (((cards - prevIndex - 1) < 3) ? 0 : prevIndex + 3));
+                setCurrentIndex((prevIndex) => (prevIndex === cards - 1 ? 0 : prevIndex + 1));
+                //     {
+                //     // if ((cards - prevIndex - 1) < 3) {
+                //     //     return cards - prevIndex - 1
+                //     // } else {
+                //     return prevIndex + 1
+                //     // }
+                // });
             }
-        }, 11000);
+        }, 5000);
 
         return () => {
             clearInterval(timer);

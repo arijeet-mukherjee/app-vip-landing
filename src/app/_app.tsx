@@ -88,11 +88,11 @@ export default function Home() {
     }
   }, []);
 
-  const [carouselStyle, setCarouselStyle] = useState<any>({ backgroundImage: "url(/worldmap.svg)", backgroundSize: "contain", backgroundRepeat: "no-repeat" });
+  const [carouselStyle, setCarouselStyle] = useState<any>({ backgroundSize: "contain", backgroundRepeat: "no-repeat" });
 
   React.useEffect(() => {
     if (isMobile()) {
-      setCarouselStyle({ backgroundImage: "url(/worldmap.svg)", background: "linear-gradient(to bottom, #0A041F 30%, transparent 30%)" });
+      setCarouselStyle({ background: "linear-gradient(to bottom, #0A041F 30%, transparent 30%)" });
     }
   }, [])
   return (
