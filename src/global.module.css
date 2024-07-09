@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Istok+Web&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -40,8 +41,8 @@
   --link-hover-decoration: underline;
   --font-family: Arial, sans-serif;
   --font-size: 16px;
-  --hero-section-left-padding: calc((100vw / 1920) * 320);
-  --hero-section-right-padding: calc((100vw / 1920) * 330);
+  --hero-section-left-padding: calc((100vw / 1920) * 216);
+  --hero-section-right-padding: calc((100vw / 1920) * 216);
   --hero-section-top-padding: calc((100vw / 1920) *  60);
   --cards-left-padding: calc((100vw / 1920) * 216.195);
   --cards-right-padding: calc((100vw / 1920) * 216.195);

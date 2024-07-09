@@ -1,18 +1,26 @@
 @import url("../../global.module.css");
 
-@keyframes typewriter {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
 .hero {
     display: grid;
     height: max-content;
-    grid-template-rows: auto 1fr 1fr;
-    background-color: var(--primary-background-dark-color);
+    grid-template-rows: auto 1fr;
+    background-color: black;
     padding-left: var(--hero-section-left-padding);
     padding-right: var(--hero-section-right-padding);
     padding-top: var(--hero-section-top-padding);
+    padding-bottom: var(--hero-section-top-padding);
+    position: relative;
+    z-index: 5;
+}
+
+.colorSport{
+    position: absolute;
+    height: calc((100vw / 1920)* 500);
+    width: calc((100vw / 1920)* 600);
+    border-radius: 50%;
+    opacity: 50%;
+    filter: blur(160px);
+    z-index: -1;
 }
 
 .header {
@@ -20,51 +28,83 @@
     margin-bottom: calc((100vw / 1920) * 130);
 }
 
-.heroBlock {
+.horizontalLine{
+    height: 1px;
+    background: radial-gradient(#F2D785, transparent);
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 100%;
+}
+
+.heroBlock{
     display: grid;
-    grid-auto-rows: auto auto auto auto;
-    gap: calc((100vw / 1920) * 12);
+    grid-template-columns: 1fr 1fr;
+    gap: calc((100vw / 1920) * 50);
+    align-items: center;
 }
 
 .heroContent {
     display: grid;
-    gap: calc((100vw / 1920) * 12);
+    grid-auto-rows: auto auto auto auto;
+    gap: calc((100vw / 1920) * 50);
+    font-family: 'Inter';
 }
 
-@media (max-width: 1200px) {
-
-    .hero {
-        grid-template-rows: 1fr;
-        height: auto;
-        padding: 20px;
-    }
-
-    .emptyArea {
-        height: 50px;
-    }
+.heroText{
+    display: grid;
+    gap: calc((100vw / 1920) * 20);
 }
 
-@media (min-width: 1200px) {
-
-    /* Your CSS code for larger than laptop or desktop screen goes here */
-    .framer-text {
-        font-size: calc((100vw / 1920) * 62);
-    }
-
-    .secondary-text {
-        font-size: calc((100vw / 1920) * 62);
-    }
+.heroText p{
+    line-height: calc((100vw/1920)*29.5);
 }
 
+.bullet-transform{
+    font-size: calc((100vw / 1920) * 24);
+}
+
+.tick{
+    height: calc((100vw / 1920) * 33);
+    width: calc((100vw / 1920) * 33);
+}
+
+.vipSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.vipCard{
+    position: absolute;
+    height: calc((100vw / 1920)* 374);
+    width: calc((100vw / 1920)* 647);
+    background: #0000007d;
+    border-radius: calc((100vw / 1920)* 45);
+    backdrop-filter: blur(5px);
+    transition: all 1000ms ease-in-out;
+}
+
+.vipCard:hover{
+    transform: rotateY(180deg);
+}
+
+.vipShield{
+    height: calc((100vw / 1920)* 715);
+    width: calc((100vw / 1920)* 565);
+}
 
 .framer-text {
-    font-family: "DM Sans", sans-serif;
+    font-family: 'Inter';
     font-weight: 700;
     color: var(--framer-text-color, #000);
-    font-size: calc((100vw / 1920) * 62);
+    font-size: calc((100vw / 1920) * 64);
     text-transform: var(--framer-text-transform, none);
     text-decoration: var(--framer-text-decoration, none);
     text-align: var(--framer-text-alignment, start);
+    background: linear-gradient(25.9deg, #858C8D 14.42%, #D7DADA 27.24%, #BCC3C2 47.13%, #96A0A1 53.17%, #878F91 76.3%, #A6ABAC 84.69%, #82898A 93.53%);
+    background-clip: text;
+    color: transparent;
 }
 
 .secondary-text {
@@ -75,58 +115,13 @@
     line-height: calc((100vw / 1920) * 72);
 }
 
-.about-text {
-    display: inline-block;
-    color: var(--text-primary-color);
-    font-size: calc((100vw / 1920) * 40);
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    line-height: calc((100vw / 1920) * 2.5rem);
-}
-
-.online-text {
-    color: var(--framer-text-color, #000);
-    font-size: calc((100vw / 1920) * 40);
-    font-family: "Roboto", sans-serif;
-    line-height: calc((100vw / 1920) * 2.5rem);
-    font-weight: 400;
-    font-style: normal;
-    display: inline-block;
-    width: max-content;
-    border-right: 2px solid;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    white-space: nowrap; /* Keeps the content on a single line */
-    animation: typewriter 2.5s steps(44) 1s 1 normal both, blinkTextCursor 800ms steps(44) infinite normal;
-}
-
 .hear-back-text {
-    color: var(--framer-text-color, #000);
+    color: #F4C9A4;
     font-family: "Roboto", sans-serif;
-    font-size: calc((100vw / 1920) * 18);
+    font-size: calc((100vw / 1920) * 24);
     font-weight: 400;
     font-style: normal;
-    line-height: calc((100vw / 1920) * 1.5rem);
-}
-
-.button-text {
-    font-family: "DM Sans", sans-serif;
-    font-style: normal;
-    font-size: calc((100vw / 1920) * 16);
-    line-height: 24px;
-    text-align: center;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    color: var(--primary-background-dark-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.button-icon {
-    justify-content: center;
-    align-items: center;
+    line-height: calc((100vw / 1920) * 1.5);
 }
 
 /* All a tag inside hero class none text-decoration */
@@ -140,31 +135,48 @@
     gap: calc((100vw / 1920) * 10);
 }
 
-.hero-button {
-    align-items: center;
-    display: flex;
-    background-color: var(--text-primary-color);
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 10px;
-    height: calc((100vw/1920)*30);
-    width: min-content;
-    padding: calc((100vw / 1920) * 10) calc((100vw / 1920) * 34);
-    justify-content: center;
-    overflow: visible;
-    cursor: pointer;
-}
+.fade {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .fadeExit {
+    opacity: 0.2;
+    transition: opacity 0.5s ease-in-out;
+  }
 
 .arrowImg{
     width: calc((100vw / 1920)* 21);
     height: calc((100vw / 1920)* 10);
 }
 
-.about-spacing {
+.bullet-transform {
+    display: flex;
+    align-items: center;
+    color: white;
     gap: calc((100vw / 1920)* 12);
 }
 
 @media (max-width: 1200px) {
+    .hero {
+        grid-template-rows: auto;
+        height: auto;
+        padding: 20px;
+    }
+
+    .heroBlock{
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr;
+        gap: calc((100vw / 393) * 12);
+    }
+
+    .framer-text {
+        font-size: calc((100vw / 1920) * 62);
+    }
+    
+    .secondary-text {
+        font-size: calc((100vw / 1920) * 62);
+    }
 
     .heroBlock {
         gap: calc((100vw / 393) * 12);
@@ -182,12 +194,6 @@
         line-height: calc((100vw/393)* 25.2);
     }
 
-    .about-text {
-        font-size: calc((100vw/393) * 17);
-        font-weight: 400;
-        line-height: calc((100vw/393)* 20.4);
-    }
-
     .online-text {
         font-size: calc((100vw/393) * 17);
         font-weight: 400;
@@ -200,34 +206,4 @@
         font-weight: 400;
         line-height: calc((100vw/393) * 12);
     }
-
-    .hero-button{
-        width: calc((100vw / 393)* 125);
-        height: calc((100vw / 393)* 28);
-        padding: calc((100vw / 393)* 5) calc((100vw / 393)* 14);
-    }
-
-    .button{
-        gap: calc((100vw/393)*4);
-    }
-
-    .button-text{
-        font-size: calc((100vw/393)*14);
-        font-weight: 400;
-    }
-
-    .arrowImg{
-        width: calc((100vw / 393)* 11);
-        height: calc((100vw / 393)* 8);
-    }
-
-    .about-spacing {
-        gap: calc((100vw / 393)* 5);
-    }
-}
-
-/* The typewriter cursor effect */
-@keyframes blinkTextCursor {
-    from {border-right-color: transparent;}
-    to {border-right-color: inherit;}
 }

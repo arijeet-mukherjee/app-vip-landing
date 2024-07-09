@@ -1,71 +1,33 @@
 'use client';
 import Image from 'next/image';
 import styles from './styles.module.css';
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { setShieldState } from '@store/shieldSlice';
 import { useAppDispatch } from '@store/store';
 import { useAppSelector } from '@store/store';
 import { isMobile } from "@util/index";
 interface ButtonProps {
-  id?: string;
   label: string;
-  action_svg: string;
-  svg_height?: number;
-  svg_width?: number;
   hc?: Function;
+  background: string;
+  backgroundOnHover: string;
+  textColor: string;
+  textColorOnHover: string;
+  borderColor?: string;
+  borderimagesource?: string;
+  fontSize?:number;
 }
 
-const Button: React.FC<ButtonProps> = ({ label, action_svg, svg_height = 18, svg_width = 18, hc, id }) => {
+const Button: React.FC<ButtonProps> = ({ label, hc, background, backgroundOnHover, textColor, textColorOnHover, borderColor, fontSize }) => {
 
-
-  const elementRef = useRef<HTMLButtonElement>(null);
-  const dispatch = useAppDispatch();
-  const shield = useAppSelector(state => state.shield);
-  useEffect(() => {
-    function handleResize() {
-      let rect = elementRef?.current?.getBoundingClientRect() || { top: 0, height: 0, right: 0, left: 0 , width: 0};
-      if (id === 'contact') {
-        const newShieldState = { ...shield };
-        if (isMobile()) {
-          newShieldState.visible = false;
-          newShieldState.right = typeof window !== 'undefined' ? window.innerWidth * 0.5 : 0;
-        }
-        else {
-          newShieldState.visible = true;
-          newShieldState.top = rect.top + rect.height;
-          if (typeof window !== 'undefined') {
-            newShieldState.right = (window.innerWidth) / 1920 * 160;
-            if(window.innerWidth <= 1728) {
-              newShieldState.right = rect.left - ((window.innerWidth) / 1920 * 32);
-            } else {
-              newShieldState.right = rect.left + ((window.innerWidth) / 1920 * -32);
-            }
-          } else {
-            newShieldState.right = rect.left - 32;
-          }
-        }
-        dispatch(setShieldState(newShieldState));
-      }
-      //read the position of the button from the localStorage with key 'nav_bar_button_coordinates
-    }
-
-    handleResize(); // initial call to get position of the element on mount
-    window.addEventListener("resize", handleResize);
-  }, []);
+  const [hover, setHover] = useState(false);
 
   return (
     <>
-      <button className={styles.button} ref={elementRef} aria-label={`${label} button`} onClick={(e) => {
+      <button className={styles.button} aria-controls={label} onMouseEnter={()=>setHover(true)} onMouseLeave={() => setHover(false)} style={{background: hover ? backgroundOnHover : background, color: hover ? textColorOnHover : textColor, border:`2px solid ${borderColor}`, borderImageSource: borderColor, fontSize:`calc((100vw/1920)*${fontSize})`}} aria-label={`${label} button`} onClick={(e) => {
         if (hc) hc(e);
       }}>
         {label}
-        <Image
-          src={`/${action_svg}`}
-          alt={`${label} icon`}
-          width={svg_width}
-          height={svg_height}
-        // className={styles.}
-        />
       </button>
 
     </>)
