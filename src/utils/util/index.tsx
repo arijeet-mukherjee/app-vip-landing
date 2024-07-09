@@ -47,6 +47,24 @@ export function emailVerified(email: string): boolean {
     }
 }
 
+export function vipNumber(largeNumber : number){
+
+    // Convert the number to a string
+    const numberString = largeNumber.toString();
+    
+    // Group the number into 4-digit segments
+    const groups = [];
+    for (let i = 0; i < numberString.length; i += 4) {
+      groups.push(numberString.slice(i, i + 4));
+    }
+    
+    // Join the groups with a space separator
+    const formattedNumber = groups.join(" ");
+    
+    return formattedNumber;
+    
+    }
+
 export function makeWebServiceCall(url: string, method: string, data: any): Promise<any> {
     // Implement your web service call logic here
     // You can use libraries like axios or fetch to make the actual HTTP request
