@@ -613,5 +613,19 @@
     },
     "translatableText": {
         "discountMsg": "Huge discounts are waiting for you on the other side!"
+    },
+    "digitalBodyGaurdSection":{
+        "badgeText": "JE DIGITALE VEILIGHEID IS VEELBELANGRIJK",
+        "badgeColor": "silver",
+        "Title": "Waarom Digitale Bodyguards?",
+        "descriptionArray": [
+            "Aanvallen op industrie-leiders en mensen in de kijker zijn geworden gebruikelijk, en de aanvallers zijn altijd op zoek naar een nieuw doelwit.",
+            "Ongeveer de gevaarlijkheid van de digitale wereld is nooit zo hoog geweest, is het uitzonderlijk zelden om een team van digitale bodyguards te vinden om je online veiligheid te beveiligen.",
+            "SecDesk VIP is een wereldklasse team van online veiligheidsexperts gespecialiseerd in hun velden, klaar om jouw digitale bodyguards te worden. Sluit je aan bij de gemeenschap van digitale veiligheidselites die beschermd worden door ons VIP-beveiligingsexpertenteam."
+        ]
+    },
+    "protectYourselfNow":{
+        "title": "Klaar om toegang te krijgen tot uw digitale bodyguard?",
+        "buttonLabel": "Bescherm uzelf nu"
     }
 }
