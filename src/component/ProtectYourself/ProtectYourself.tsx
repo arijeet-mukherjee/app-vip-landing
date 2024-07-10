@@ -3,10 +3,7 @@ import styles from './protectYourself.module.css';
 import VisualBreakup from '@component/common/VisualBreakup/VisualBreakup';
 
 
-const defaultData = {
-  title: "Ready to Get Access to Your Digital Bodyguard?",
-  buttonLabel: "Protect Yourself Now",
-}
+
 /**
  * @param {string} title - Title of the section
  * @param {string} buttonLabel - Label for the button **/
@@ -21,8 +18,8 @@ export default function ProtectYourself({
 }) {
   
    // Use default values if props are not provided
-   title = title || defaultData.title;
-   buttonLabel = buttonLabel || defaultData.buttonLabel;
+   title = title || '';
+   buttonLabel = buttonLabel || '';
 
   return (
     <VisualBreakup>
