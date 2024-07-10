@@ -20,6 +20,9 @@ const Footer = dynamic(() => import('@component/Footer'), { ssr: false });
 const TawkChatWidget = dynamic(() => import('@component/common/TawkChat'), { ssr: false });
 const QuizWindow = dynamic(() => import('@component/common/QuizWindow'), { ssr: false });
 import { isMobile, goTo } from "@util/index";
+import VisualBreakup from "@component/common/VisualBreakup/VisualBreakup";
+import DigitalBg from "@component/DigitalBG/digitalBg";
+import ProtectYourself from "@component/ProtectYourself/ProtectYourself";
 
 export default function Home() {
   const globalLanguage = useAppSelector<any>(state => state.globalLanguage);
@@ -107,10 +110,35 @@ export default function Home() {
           modalState={modalOpen}
           headerData={data.header}
           refList={refList}
+          
           front={data.header.front}
           back={data.header.back}
           outerLogo={data.header.outerLogo}
         />
+        <DigitalBg
+          badgeText={data.digitalBodyGaurdSection.badgeText}
+          badgeColor={data.digitalBodyGaurdSection.badgeColor}
+          Title={data.digitalBodyGaurdSection.Title}
+          descriptionArray={data.digitalBodyGaurdSection.descriptionArray}
+        />
+
+        <ProtectYourself
+          title={data.protectYourselfNow.title}
+          buttonLabel={data.protectYourselfNow.buttonLabel}
+          hc={() => { }}
+        />
+        <div ref={refFooter}>
+          {
+            isVisiblefFooter &&
+            <Footer
+              branding={data.footer.branding}
+              logo={data.footer.logo}
+              background={data.footer.background}
+              contents={data.footer.content}
+              socialMedias={data.footer.socialMedia} />
+          }
+        </div>
+        <TawkChatWidget />
       </div>
     </>
   );
