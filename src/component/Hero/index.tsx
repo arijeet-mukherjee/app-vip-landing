@@ -55,19 +55,6 @@ const Hero: React.FC<HeroProps> = React.memo(({ introduction, content, openModal
         typeof window !== 'undefined' && window.Tawk_API?.maximize();
     }
 
-    const [cardFlip, setCardFlip] = useState(false);
-
-
-    function handelMouseEnter(e: React.MouseEvent<HTMLDivElement>): void {
-        setTimeout(() => {
-            setCardFlip(true);
-        }, 500);
-    }
-    function handelMouseLeave(e: React.MouseEvent<HTMLDivElement>): void {
-        setTimeout(() => {
-            setCardFlip(false);
-        }, 500);
-    }
     return (
         <div className={styles["hero"]}>
             <div className={styles.colorSport} style={{ background: '#FFA260', top: 'calc((100vw / 1920)* -50)', right: 'calc((100vw / 1920)* -200)' }}></div>

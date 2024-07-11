@@ -1,113 +1,153 @@
 @import '../../global.module.css';
 
-h1, h2, h3, h4, h5, h5, h6, p{
+h1,
+h2,
+h3,
+h4,
+h5,
+h5,
+h6,
+p {
     margin: 0;
     padding: 0;
 }
 
-.vipCard{
+.vipCard {
     height: calc((100vw / 1920)* 374);
     width: calc((100vw / 1920)* 647);
     border-radius: calc((100vw / 1920)* 45);
-    box-shadow: 1px 0 0 0 #ffff;
+    box-shadow: 0px 100px 80px 0 #08031b;
     position: absolute;
     overflow: hidden;
     display: grid;
-    grid-template-columns: 6fr 1fr;
-    transition: transform 500ms ease;
+    grid-template-columns: 5.3fr 1fr;
+    transition: transform 500ms ease-in-out;
+    font-size: calc((100vw/1920)*22);
+    font-weight: 400;
+    font-family: 'Inter';
 }
 
-.branding{
+.branding {
     display: flex;
     justify-content: space-between;
     width: inherit;
     align-self: start;
 }
 
-.solid{
+.solid {
     background: transparent;
     position: relative;
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: transform 400ms ease;
+    transition: transform 0ms ease;
+    transition-delay: 250ms;
 }
 
-.front{
+.front {
     transform: rotateY(180deg);
 }
 
-.texture{
+.texture {
     height: inherit;
     width: 100%;
     opacity: 0.8;
     position: absolute;
+    z-index: -1;
 }
 
-.front, .back{
+.front,
+.back {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     justify-items: end;
     position: absolute;
+    z-index: 1;
     inset: 0;
     width: 100%;
     height: 100%;
     align-items: center;
     backface-visibility: hidden;
-    padding: calc((100vw/1920)*30);
+    padding: calc((100vw/1920)*30) calc((100vw/1920)*20) calc((100vw/1920)*30) calc((100vw/1920)*40);
     box-sizing: border-box;
     background: linear-gradient(40deg, #858C8D 14.42%, #D7DADA 27.24%, #BCC3C2 47.13%, #96A0A1 53.17%, #878F91 76.3%, #A6ABAC 84.69%, #82898A 93.53%);
 }
 
-.cardNumber{
-    box-shadow: 2px -2px 3px 2px #545454 inset;
-    padding: calc((100vw/1920)*15) calc((100vw/1920)*30);
-    border-radius: calc((100vw/1920)*15);
-    background: linear-gradient(40deg, #858c8d6e 14.42%, #d7dada78 27.24%, #bcc3c278 47.13%);
-    background: transparent;
-    font-family: 'Roboto', sans-serif;
-    align-self: end;
+.innerLogo {
+    height: calc((100vw/1920)*70);
+    width: calc((100vw/1920)*70);
 }
 
-.cardNumber h1{
-    font-size: calc((100vw / 1920) * 20);
+.info {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: calc((100vw/1920)*10);
+}
+
+.label {
+    font-family: 'Orbitron';
+    font-size: calc((100vw/1920)*10);
     font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: calc((100vw/1920)*5);
+    font-size: calc((100vw/1920)*18);
 }
 
-.title, .cardName, .cardNumber h1{
-    background: linear-gradient(10deg, #a6a8a9 14.42%, #ececec 27.24%, #828786 47.13%);
+.cardNumber {
+    border-radius: calc((100vw / 1920)* 12);
+    background-blend-mode: overlay;
+    background: radial-gradient(80.04% 80.04% at 0% -8.66%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(285.92deg, #9EA1A1 68.87%, rgba(132, 139, 138, 0.5) 75.72%, #757A7B 79.48%, #535D5E 91.7%);
+    height: calc((100vw / 1920)* 61);
+    width: calc((100vw / 1920)* 299);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: end;
+    font-size: calc((100vw/1920)*12);
+    box-shadow: 2px -4px 4px 0px #00000040 inset;
+}
+
+.title,
+.cardName,
+.cardNumber h1,
+.label span {
+    background: radial-gradient(80.04% 80.04% at 0% -8.66%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(70.9deg, #9EA1A1 27.24%, #848B8A 47.13%, #535D5E 53.17%, #757A7B 84.69%);
     background-clip: text;
     color: transparent;
 }
 
-.transparent{
+.transparent {
     background: rgb(255 255 255 / 10%);
     backdrop-filter: blur(10px);
     position: relative;
     display: flex;
     justify-content: center;
     transform-style: preserve-3d;
+    border-radius: 0 calc((100vw/1920)*45) calc((100vw/1920)*45) 0;
+    box-shadow: -1px 0px 0px 0px #ffffff inset;
 }
 
-.outerLogo{
+.outerLogo {
     height: calc((100vw/1920)*52.77);
     width: calc((100vw/1920)*52.77);
     position: absolute;
     bottom: calc((100vw/1920)*30);
 }
 
-.transform{
-    transform: scale(-1,1);
+.transform {
+    transform: scale(-1, 1);
 }
 
-.vipCard:hover{
+.vipCard:hover {
     transform: rotateY(180deg);
 
-    .outerLogo{
+    .outerLogo {
         transform: rotateY(180deg);
     }
 
-    >.solid{
+    >.solid {
         transform: rotateY(180deg);
     }
 }

@@ -16,15 +16,16 @@ interface ButtonProps {
   borderColor?: string;
   borderimagesource?: string;
   fontSize?:number;
+  padding?: number;
 }
 
-const Button: React.FC<ButtonProps> = ({ label, hc, background, backgroundOnHover, textColor, textColorOnHover, borderColor, fontSize }) => {
+const Button: React.FC<ButtonProps> = ({ label, hc, background, backgroundOnHover, textColor, textColorOnHover, borderColor, fontSize, padding }) => {
 
   const [hover, setHover] = useState(false);
 
   return (
     <>
-      <button className={styles.button} aria-controls={label} onMouseEnter={()=>setHover(true)} onMouseLeave={() => setHover(false)} style={{background: hover ? backgroundOnHover : background, color: hover ? textColorOnHover : textColor, border:`2px solid ${borderColor}`, borderImageSource: borderColor, fontSize:`calc((100vw/1920)*${fontSize})`}} aria-label={`${label} button`} onClick={(e) => {
+      <button className={styles.button} aria-controls={label} onMouseEnter={()=>setHover(true)} onMouseLeave={() => setHover(false)} style={{background: hover ? backgroundOnHover : background, color: hover ? textColorOnHover : textColor, border:`2px solid ${borderColor}`, borderImageSource: borderColor, fontSize:`calc((100vw/1920)*${fontSize})`, padding:`calc((100vw/1920)*10) calc((100vw/1920)*${padding})`}} aria-label={`${label} button`} onClick={(e) => {
         if (hc) hc(e);
       }}>
         {label}

@@ -19,7 +19,7 @@
     width: calc((100vw / 1920)* 600);
     border-radius: 50%;
     opacity: 50%;
-    filter: blur(160px);
+    filter: blur(calc((100vw/1920)*250));
     z-index: -1;
 }
 
@@ -29,17 +29,17 @@
 }
 
 .horizontalLine{
-    height: 1px;
+    height: calc((100vw/1920)*1);
     background: radial-gradient(#F2D785, transparent);
     width: 100%;
-    margin-top: 15px;
+    margin-top: calc((100vw/1920)*30);
     border-radius: 100%;
 }
 
 .heroBlock{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: calc((100vw / 1920) * 50);
+    gap: calc((100vw / 1920) * 80);
     align-items: center;
 }
 
@@ -60,7 +60,12 @@
 }
 
 .bullet-transform{
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: calc((100vw / 1920)* 12);
     font-size: calc((100vw / 1920) * 24);
+    margin-bottom: calc((100vw / 1920)*25);
 }
 
 .tick{
@@ -73,6 +78,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    left: calc((100vw/1920)*29);
 }
 
 .vipCard{
@@ -148,13 +154,6 @@
 .arrowImg{
     width: calc((100vw / 1920)* 21);
     height: calc((100vw / 1920)* 10);
-}
-
-.bullet-transform {
-    display: flex;
-    align-items: center;
-    color: white;
-    gap: calc((100vw / 1920)* 12);
 }
 
 @media (max-width: 1200px) {

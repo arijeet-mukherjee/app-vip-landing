@@ -65,6 +65,17 @@ export function vipNumber(largeNumber : number){
     
     }
 
+export function getLetter(str: string){
+    const array = [];
+    for(let i=0; i<str.length; i++){
+        let letter = str.charAt(i);
+        array.push(letter);
+    }
+    
+    return array;
+
+}
+
 export function makeWebServiceCall(url: string, method: string, data: any): Promise<any> {
     // Implement your web service call logic here
     // You can use libraries like axios or fetch to make the actual HTTP request
