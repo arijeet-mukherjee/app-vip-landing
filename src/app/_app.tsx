@@ -138,6 +138,7 @@ export default function Home() {
               socialMedias={data.footer.socialMedia} />
           }
         </div>
+        <TawkChatWidget />
       </div>
     </>
   );
