@@ -7,9 +7,8 @@
                 "href": "/"
             },
             "button": {
-                "label": "Contact",
-                "action_svg": "phone.svg",
-                "id"  : "contact"
+                "label": "Explore",
+                "id"  : "Explore"
             },
             "navbarItems": [
                 {
@@ -23,17 +22,17 @@
                     "dditem": []
                 },
                 {
-                    "label": "Offering",
+                    "label": "Process",
                     "url": "/",
                     "dditem": []
                 },
                 {
-                    "label": "More",
+                    "label": "Benefits",
                     "url": "/",
                     "dditem": []
                 },
                 {
-                    "label": "Quiz",
+                    "label": "Services",
                     "url": "/",
                     "dditem": []
                 },
@@ -53,11 +52,26 @@
                 }
             ]
         },
-        "introduction" : ["Internet can be a dangerous place,", "Do you sometimes worry"],
-        "content" : [["About the online scams?", "About the legitimacy of the sites?", "About the terms and agreements?", "About the online data leaks?", "About the hacking risks?", "About the virus attacks?", "About the believing everything online?"], "We hear these worries a lot from our clients, parents, teenagers, and friends outside IT industry, we could go on and on. Security is difficult and people from all layers of security struggle with these questions."],
+        "introduction" : ["Become Part of the", "Digitally Protected Elite"],
+        "content" : [["Premium 24/7 Security Monitoring", "Immidiate Incident Response and Much More", "Personalized Security Strategies"], "Your exclusive access card to a digital bodyguard, protecting your data from online threats"],
         "secdeskLogo": "",
         "rightArrowIcon": "",
-        "button-name": "Get in Touch"
+        "button-name": "Apply for the Early Access",
+        "front":{
+            "label": "SECDESK",
+            "title":"SECDESK VIP",
+            "cardName": "Exclusive Access Card",
+            "cardNumber": 9875462315246801,
+            "innerLogo": "/minishield.svg"
+        },
+        "back":{
+            "label": "SECDESK",
+            "title":"",
+            "cardName": "",
+            "cardNumber": null,
+            "innerLogo": ""
+        },
+        "outerLogo": "/minilogo.svg"
     },
     "introduction": {
         "title": "Introduction",
@@ -138,8 +152,8 @@
             "logoUrl": "/logo.svg"
         },
         "background": {
-            "backgroundName": "netherland",
-            "backgroundUrl": "/netherland.svg"
+            "backgroundName": "",
+            "backgroundUrl": ""
         },
         "branding": "© Secdesk, Netherlands",
         "content": [
@@ -613,5 +627,20 @@
     },
     "translatableText": {
         "discountMsg": "Huge discounts are waiting for you on the other side!"
-    }
+    },
+    "digitalBodyGaurdSection":{
+        "badgeText": "YOUR DIGITAL SECURITY MATTERS A LOT",
+        "badgeColor": "silver", 
+        "Title": "Why Digital Bodyguards?",
+        "descriptionArray": [
+            "The attacks against the industry leaders and people in the spotlight have become common, and the attackers are always on the lookout for a new target.",
+            "Despite the dangers of the digital world at an all time high, it is exceptionally rare to find a team of digital bodyguards to safeguard your online security. ",
+            "SecDesk VIP is a world class team of online security experts specialized in their fields, ready to become your digital bodyguards. Join the community of digitally secured elites protected by our VIP security expert team."
+        ]
+    },
+    "protectYourselfNow": {
+        "title": "Ready to Get Access to Your Digital Bodyguard?",
+        "buttonLabel": "Protect Yourself Now"
+      }
+    
 }

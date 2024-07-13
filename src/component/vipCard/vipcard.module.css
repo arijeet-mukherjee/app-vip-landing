@@ -1,0 +1,113 @@
+@import '../../global.module.css';
+
+h1, h2, h3, h4, h5, h5, h6, p{
+    margin: 0;
+    padding: 0;
+}
+
+.vipCard{
+    height: calc((100vw / 1920)* 374);
+    width: calc((100vw / 1920)* 647);
+    border-radius: calc((100vw / 1920)* 45);
+    box-shadow: 1px 0 0 0 #ffff;
+    position: absolute;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    transition: transform 500ms ease;
+}
+
+.branding{
+    display: flex;
+    justify-content: space-between;
+    width: inherit;
+    align-self: start;
+}
+
+.solid{
+    background: transparent;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 400ms ease;
+}
+
+.front{
+    transform: rotateY(180deg);
+}
+
+.texture{
+    height: inherit;
+    width: 100%;
+    opacity: 0.8;
+    position: absolute;
+}
+
+.front, .back{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: end;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    backface-visibility: hidden;
+    padding: calc((100vw/1920)*30);
+    box-sizing: border-box;
+    background: linear-gradient(40deg, #858C8D 14.42%, #D7DADA 27.24%, #BCC3C2 47.13%, #96A0A1 53.17%, #878F91 76.3%, #A6ABAC 84.69%, #82898A 93.53%);
+}
+
+.cardNumber{
+    box-shadow: 2px -2px 3px 2px #545454 inset;
+    padding: calc((100vw/1920)*15) calc((100vw/1920)*30);
+    border-radius: calc((100vw/1920)*15);
+    background: linear-gradient(40deg, #858c8d6e 14.42%, #d7dada78 27.24%, #bcc3c278 47.13%);
+    background: transparent;
+    font-family: 'Roboto', sans-serif;
+    align-self: end;
+}
+
+.cardNumber h1{
+    font-size: calc((100vw / 1920) * 20);
+    font-weight: 600;
+}
+
+.title, .cardName, .cardNumber h1{
+    background: linear-gradient(10deg, #a6a8a9 14.42%, #ececec 27.24%, #828786 47.13%);
+    background-clip: text;
+    color: transparent;
+}
+
+.transparent{
+    background: rgb(255 255 255 / 10%);
+    backdrop-filter: blur(10px);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+
+.outerLogo{
+    height: calc((100vw/1920)*52.77);
+    width: calc((100vw/1920)*52.77);
+    position: absolute;
+    bottom: calc((100vw/1920)*30);
+}
+
+.transform{
+    transform: scale(-1,1);
+}
+
+.vipCard:hover{
+    transform: rotateY(180deg);
+
+    .outerLogo{
+        transform: rotateY(180deg);
+    }
+
+    >.solid{
+        transform: rotateY(180deg);
+    }
+}

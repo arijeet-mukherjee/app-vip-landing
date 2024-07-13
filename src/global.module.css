@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Istok+Web&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -40,8 +41,8 @@
   --link-hover-decoration: underline;
   --font-family: Arial, sans-serif;
   --font-size: 16px;
-  --hero-section-left-padding: calc((100vw / 1920) * 320);
-  --hero-section-right-padding: calc((100vw / 1920) * 330);
+  --hero-section-left-padding: calc((100vw / 1920) * 216);
+  --hero-section-right-padding: calc((100vw / 1920) * 216);
   --hero-section-top-padding: calc((100vw / 1920) *  60);
   --cards-left-padding: calc((100vw / 1920) * 216.195);
   --cards-right-padding: calc((100vw / 1920) * 216.195);
@@ -56,6 +57,10 @@
   --framer-font-size: 62px;
   --framer-font-weight: 700;
   --framer-text-color: rgba(255, 255, 255, 1);
+  --vip-page-black-bg:#000000;
+  --vip-page-metalic-gradient-silver:linear-gradient(70.9deg, #4D5455 14.42%, #9EA1A1 27.24%, #848B8A 47.13%, #535D5E 53.17%, #4B5355 76.3%, #757A7B 84.69%, #4D5455 93.53%);
+  --vip-page-metalic-gradient-gold:linear-gradient(160.85deg, #ebc676 -4.08%, #9D8555 17.03%, #f7d48e 53.21%, #58400F 95.13%);
+  --vip-page-metalic-gradient-gold-line: linear-gradient(90deg, #060C0B 10.02%, #F2C84B 40.07%, #F2D785 50.09%, #D9A036 60.11%, #060C0B 90.16%);
 }
 
 body {

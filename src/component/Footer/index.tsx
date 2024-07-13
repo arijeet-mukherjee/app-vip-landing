@@ -46,12 +46,7 @@ const Footer: React.FC<FooterProps> = React.memo(({ contents, socialMedias, bran
 
   return (
     <div className={styles.container}>
-      <Image src={background?.backgroundUrl ? background.backgroundUrl : "/netherland.svg"}
-        alt={background?.backgroundName ? background.backgroundName : "netherland"}
-        className={styles.netherland}
-        width={250}
-        height={225}
-      />
+
       
         <Image
           className={styles.logo}
@@ -68,7 +63,7 @@ const Footer: React.FC<FooterProps> = React.memo(({ contents, socialMedias, bran
           src="/topBtn.svg"
           alt="top button"
           width={20}
-          height={10} />Back to top</div>
+          height={10}/><p>Back to top</p></div>
 
       <hr className={styles.horizontalLine} aria-label='horizontal line' />
 

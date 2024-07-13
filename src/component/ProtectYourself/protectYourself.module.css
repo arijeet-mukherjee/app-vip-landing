@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    gap: calc((100vw/1920)*20);
+    text-align: center;
+    font-family: 'inter';
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: calc((100vw/1920)*60);
+}
+
+.customButton {
+    width: fit-content;
+    height: fit-content;
+    padding: calc((100vw/1920)*20) calc((100vw/1920)*30);
+    gap: calc((100vw/1920)*10);
+    opacity: 0px;
+    background: #000000;
+    color: white;
+    font-size: calc((100vw/1920)*20);
+    position: relative;
+    border: calc((100vw/1920)*2) solid transparent;
+    border-image-source: linear-gradient(203.61deg, #060C0B -8.96%, #F2C84B 30.94%, #F2D785 44.23%, #D9A036 57.53%, #060C0B 97.43%);
+    border-image-slice: 1;
+    transition: all 500ms ease-in-out;
+}
+.customButton:hover{
+    background: #F4C9A4;
+    color: black;
+}
+
+@media screen and (max-width: 1100px) {
+    .container{
+        gap: calc((100vw/393)*20);
+    }
+    .title{
+        font-size: calc((100vw/393)*30);
+    }
+    .customButton{
+        font-size: calc((100vw/393)*10);
+        padding: calc((100vw/393)*10) calc((100vw/393)*15);
+        gap: calc((100vw/393)*10);
+        border: calc((100vw/393)*2) solid transparent;
+        border-image-source: linear-gradient(203.61deg, #060C0B -8.96%, #F2C84B 30.94%, #F2D785 44.23%, #D9A036 57.53%, #060C0B 97.43%);
+        border-image-slice: 1;
+    }
+}

@@ -2,11 +2,10 @@
 
 .header {
     display: grid;
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: auto auto;
     align-items: center;
     font-family: var(--framer-font-family);
     font-weight: 400;
-
 }
 
 .logo {
@@ -18,11 +17,13 @@
 .navbar {
     display: grid;
     font-weight: 400;
-    font-size: calc((100vw / 1920)*18);
+    font-size: calc((100vw / 1920)*20);
     line-height: 28px;
     grid-auto-flow: column;
     align-items: center;
     justify-content: space-between;
+    width: calc((100vw / 1920)* 925);
+    justify-self: end;
 }
 
 .navItem {
