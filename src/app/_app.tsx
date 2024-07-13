@@ -122,14 +122,14 @@ export default function Home() {
           Title={data.digitalBodyGaurdSection.Title}
           descriptionArray={data.digitalBodyGaurdSection.descriptionArray}
         />
+        
+        <TechnologyMeetsOldSchoolSophistication heading={data.technologyMeetsOldSchoolSophistication.heading} limpidBoxes={data.technologyMeetsOldSchoolSophistication.limpidBoxes}/>        
 
         <ProtectYourself
           title={data.protectYourselfNow.title}
           buttonLabel={data.protectYourselfNow.buttonLabel}
           hc={() => { }}
         />
-        
-        <TechnologyMeetsOldSchoolSophistication heading={data.technologyMeetsOldSchoolSophistication.heading} limpidBoxes={data.technologyMeetsOldSchoolSophistication.limpidBoxes}/>
 
         <div ref={refFooter}>
           {
