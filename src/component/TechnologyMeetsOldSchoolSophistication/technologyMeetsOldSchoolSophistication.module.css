@@ -1,0 +1,31 @@
+@import url("../../global.module.css");
+
+.technologyMeetsOldSchoolSophistication{
+    background-color: black;
+    width: fit-content;
+}
+
+.heading{
+    background: linear-gradient(73.9deg, #4D5455 12.95%, #9EA1A1 35.76%, #848B8A 57.34%, #535D5E 70.24%, #4B5355 75.77%, #757A7B 83.15%, #4D5455 87.23%), radial-gradient(80.04% 80.04% at 0% -8.66%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    background-clip: text;
+    color: transparent;    
+    font-size: calc((100vw/1920)*64);
+    font-weight: 500;
+    font-family: 'Inter';
+    padding: calc((100vw/1920)*80) 0;
+}
+
+.limpidBoxes{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: calc((100vw/1920)*37);
+    align-items: center;
+    justify-items: center;
+    width: fit-content;
+}
+
+@media screen and (max-width: 1100px){
+    .limpidBoxes{
+        grid-template-columns: auto;
+    }
+}

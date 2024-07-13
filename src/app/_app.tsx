@@ -23,6 +23,7 @@ import { isMobile, goTo } from "@util/index";
 import VisualBreakup from "@component/common/VisualBreakup/VisualBreakup";
 import DigitalBg from "@component/DigitalBG/digitalBg";
 import ProtectYourself from "@component/ProtectYourself/ProtectYourself";
+import TechnologyMeetsOldSchoolSophistication from "@component/TechnologyMeetsOldSchoolSophistication";
 
 export default function Home() {
   const globalLanguage = useAppSelector<any>(state => state.globalLanguage);
@@ -127,6 +128,9 @@ export default function Home() {
           buttonLabel={data.protectYourselfNow.buttonLabel}
           hc={() => { }}
         />
+        
+        <TechnologyMeetsOldSchoolSophistication heading={data.technologyMeetsOldSchoolSophistication.heading} limpidBoxes={data.technologyMeetsOldSchoolSophistication.limpidBoxes}/>
+
         <div ref={refFooter}>
           {
             isVisiblefFooter &&
