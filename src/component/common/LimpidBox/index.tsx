@@ -7,10 +7,10 @@ interface LimpidBoxProps {
     image: string;
     text: string;
     textColor: string;
-    dHeight: string;
-    dWidth: string;
-    mHeight: string;
-    mWidth: string;
+    dHeight: string;    //height according to desktop
+    dWidth: string;    //width according to desktop
+    mHeight: string;    //height according to mobile
+    mWidth: string;    //width according to mobile
 }
 
 const LimpidBox : React.FC<LimpidBoxProps> = ({ image, text, textColor, dHeight, dWidth, mHeight, mWidth }) => {
