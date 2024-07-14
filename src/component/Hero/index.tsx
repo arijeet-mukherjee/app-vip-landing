@@ -5,10 +5,11 @@ import styles from "./hero.module.css";
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { isMobile } from '@util/index';
-import Button from '@component/common/Button';
-import Vipcard from '@component/vipCard';
-
+const SpotLight = dynamic(()=>import('@component/common/spotLight'));
+const Button = dynamic(()=> import('@component/common/Button'));
+const VipCard = dynamic(()=> import('@component/vipCard'));
 const Header = dynamic(() => import('@component/Header'));
+
 interface HeroProps {
     // Your props goes here
     introduction: Array<string>;
@@ -17,9 +18,9 @@ interface HeroProps {
     modalState: boolean;
     headerData: any;
     refList: any;
-    front: any;
-    back: any;
-    outerLogo: string;
+    front: any;           //Front side content of vip card
+    back: any;           //Back side content of vip card
+    outerLogo: string;  //Transparent side Logo of vip card
 };
 
 const Hero: React.FC<HeroProps> = React.memo(({ introduction, content, openModal, modalState, headerData, refList, front, back, outerLogo }) => {
@@ -57,8 +58,8 @@ const Hero: React.FC<HeroProps> = React.memo(({ introduction, content, openModal
 
     return (
         <div className={styles["hero"]}>
-            <div className={styles.colorSport} style={{ background: '#FFA260', top: 'calc((100vw / 1920)* -50)', right: 'calc((100vw / 1920)* -200)' }}></div>
-            <div className={styles.colorSport} style={{ background: 'white', bottom: 'calc((100vw / 1920)* -50)', left: 'calc((100vw / 1920)* -400)' }}></div>
+            <SpotLight color='#FFA260' top={-100} right={-200}/>
+            <SpotLight bottom={-50} left={-400}/>
             {/* Your component content goes here */}
             <div className={styles["header"]}>
                 <Header openModal={openModal} modalState={modalState} headerData={headerData} refList={refList} />
@@ -101,11 +102,11 @@ const Hero: React.FC<HeroProps> = React.memo(({ introduction, content, openModal
 
                     </div>
                     {/** import button from common */}
-                    <Button label={headerData["button-name"]} hc={handelClick} background='transparent' backgroundOnHover='#F4C9A4' textColor='white' textColorOnHover='black' borderColor='#F4C9A4' />
+                    <Button label={headerData["button-name"]} hc={handelClick} background='transparent' backgroundOnHover='#F4C9A4' textColor='white' textColorOnHover='black' borderColor='#F4C9A4' fontSize={24}/>
                 </div>
                 <div className={styles.vipSection}>
                     <Image src='vipshield.svg' alt='vip shield' height={100} width={100} className={styles.vipShield} />
-                    <Vipcard front={front} back={back} outerLogo={outerLogo}/>
+                    <VipCard front={front} back={back} outerLogo={outerLogo}/>
                 </div>
             </div>
         </div>

@@ -47,7 +47,7 @@
     display: grid;
     grid-auto-rows: auto auto auto auto;
     gap: calc((100vw / 1920) * 50);
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
 }
 
 .heroText{
@@ -101,7 +101,7 @@
 }
 
 .framer-text {
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     color: var(--framer-text-color, #000);
     font-size: calc((100vw / 1920) * 64);
