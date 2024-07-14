@@ -58,14 +58,14 @@
         "rightArrowIcon": "",
         "button-name": "Apply for the Early Access",
         "front":{
-            "label": "SECDESK",
+            "label": "SecDesk",
             "title":"SECDESK VIP",
             "cardName": "Exclusive Access Card",
             "cardNumber": 9875462315246801,
             "innerLogo": "/minishield.svg"
         },
         "back":{
-            "label": "SECDESK",
+            "label": "SecDesk",
             "title":"",
             "cardName": "",
             "cardNumber": null,

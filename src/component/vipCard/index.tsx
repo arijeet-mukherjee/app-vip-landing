@@ -1,7 +1,7 @@
-import React from 'react'
-import styles from './vipcard.module.css'
+import React, { useRef } from 'react';
+import styles from './vipcard.module.css';
 import Image from 'next/image';
-import {vipNumber} from '@util/index'
+import {vipNumber, getLetter} from '@util/index';
 interface VipCard {
     // Your props goes here
     front: {
@@ -27,27 +27,39 @@ const Vipcard: React.FC<VipCard> = React.memo(({ front, back, outerLogo }) => {
         <div className={styles.vipCard}>
             <div className={styles.solid}>
                 <div className={styles.front}>
-                    <Image src='/cardtexture.svg' alt='back' fill={true} className={styles.texture} />
+                    <Image src='/cardtexture.svg' alt='card texture' fill={true} className={styles.texture} />
                     <div className={`${styles.branding} ${styles.transform}`}>
                         {
                             front.innerLogo &&
                             <Image src={front.innerLogo} alt='logo' height={50} width={50} className={styles.innerLogo} />
                         }
-                        <p aria-label={front.label} className={styles.label}>{front.label}</p>
+                        <p aria-label={front.label} className={styles.label}>{
+                            getLetter(front.label).map((value, index) =>{
+                                return <span key={index}>{value}</span>
+                            })
+                        }</p>
                     </div>
 
+                    {(front.cardName || front.title) &&
                     <div className={styles.info}>
+                        {
+                            front.title &&
                         <h2 aria-label={front.title} className={`${styles.title} ${styles.transform}`}>{front.title}</h2>
+                        }
+                        {
+                            front.cardName &&
                         <h3 aria-label={front.cardName} className={`${styles.cardName} ${styles.transform}`}>{front.cardName}</h3>
+                        }
                     </div>
-
+                        }
                     {
                         front.cardNumber &&
                     <div className={`${styles.cardNumber} ${styles.transform}`}>
-                        <h1>{vipNumber(front.cardNumber)}</h1>
+                        <h1 aria-label={`${front.cardNumber}`}>{vipNumber(front.cardNumber)}</h1>
                     </div>
                     }
                 </div>
+
                 <div className={styles.back}>
                     <Image src='/cardtexture.svg' alt='back' fill={true} className={styles.texture} />
                     <div className={styles.branding}>
@@ -55,17 +67,32 @@ const Vipcard: React.FC<VipCard> = React.memo(({ front, back, outerLogo }) => {
                             back.innerLogo &&
                             <Image src={back.innerLogo} alt='logo' height={50} width={50} className={styles.innerLogo} />
                         }
-                        <p className={styles.label}>{back.label}</p>
+                        {
+                            back.label &&
+                            <p className={styles.label} aria-label={back.label}>{
+                                getLetter(back.label).map((value, index) =>{
+                                    return <span key={index}>{value}</span>
+                                })
+                            }</p>
+                        }
                     </div>
+                    {(back.cardName || back.title) &&
                     <div className={styles.info}>
-                        <h2 aria-label={back.title} className={styles.title}>{back.title}</h2>
-                        <h3 aria-label={back.cardName} className={styles.cardName}>{back.cardName}</h3>
+                        {
+                            back.title &&
+                        <h2 aria-label={back.title} className={`${styles.title} ${styles.transform}`}>{back.title}</h2>
+                        }
+                        {
+                            back.cardName &&
+                        <h3 aria-label={back.cardName} className={`${styles.cardName} ${styles.transform}`}>{back.cardName}</h3>
+                        }
                     </div>
+                        }
 
                     {
                         back.cardNumber &&
                     <div className={styles.cardNumber}>
-                        <h1>{vipNumber(back.cardNumber)}</h1>
+                        <h1 aria-label={`${back.cardNumber}`}>{vipNumber(back.cardNumber)}</h1>
                     </div>
                     }
                 </div>
