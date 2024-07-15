@@ -23,6 +23,8 @@ import { isMobile, goTo } from "@util/index";
 import VisualBreakup from "@component/common/VisualBreakup/VisualBreakup";
 import DigitalBg from "@component/DigitalBG/digitalBg";
 import ProtectYourself from "@component/ProtectYourself/ProtectYourself";
+const TechnologyMeetsOldSchoolSophistication = dynamic(()=> import('@component/TechnologyMeetsOldSchoolSophistication'), { ssr: false });
+const SpotLight = dynamic(()=> import('@component/common/spotLight'));
 
 export default function Home() {
   const globalLanguage = useAppSelector<any>(state => state.globalLanguage);
@@ -120,6 +122,11 @@ export default function Home() {
           Title={data.digitalBodyGaurdSection.Title}
           descriptionArray={data.digitalBodyGaurdSection.descriptionArray}
         />
+        
+        <div className={styles.wrapper}>
+        <SpotLight color="rgb(255 162 96 / 60%)" bottom={-200} right={-400} width={1000} height={1500}/>
+        <TechnologyMeetsOldSchoolSophistication heading={data.technologyMeetsOldSchoolSophistication.heading} limpidBoxes={data.technologyMeetsOldSchoolSophistication.limpidBoxes}/>        
+        </div>
 
         <div className={styles["carousel-container-1"] + " " + styles["cardCarousalRemain"]} style={carouselStyle} ref={refCarouselCurrentSubscription}>
           {
@@ -137,6 +144,7 @@ export default function Home() {
           buttonLabel={data.protectYourselfNow.buttonLabel}
           hc={() => { }}
         />
+
         <div ref={refFooter}>
           {
             isVisiblefFooter &&

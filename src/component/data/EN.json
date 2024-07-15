@@ -58,20 +58,31 @@
         "rightArrowIcon": "",
         "button-name": "Apply for the Early Access",
         "front":{
-            "label": "SECDESK",
+            "label": "SecDesk",
             "title":"SECDESK VIP",
             "cardName": "Exclusive Access Card",
             "cardNumber": 9875462315246801,
             "innerLogo": "/minishield.svg"
         },
         "back":{
-            "label": "SECDESK",
+            "label": "SecDesk",
             "title":"",
             "cardName": "",
             "cardNumber": null,
             "innerLogo": ""
         },
         "outerLogo": "/minilogo.svg"
+    },
+    "technologyMeetsOldSchoolSophistication":{
+        "heading" : "Technology Meets Old School Sophistication",
+        "limpidBoxes": [
+           { "image" : "./shieldcall.svg", "text" : "Reclaim Your Peace of Mind, knowing that the SecDesk VIP team of security experts has your back 24/7.", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"calc((100vw / 393)*500)", "mHeight":"calc((100vw / 393)*150)"},
+           { "image" : "./contact.svg", "text" : "Contact us anytime and the SecDesk VIP team will quickly eliminate your security troubles, ensuring that your assets are safe and secure. ", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"calc((100vw / 393)*500)", "mHeight":"calc((100vw / 393)*150)"},
+           { "image" : "./steps.svg", "text" : "If we need your input, our team will contact you with comprehensive step by step instructions. ", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"calc((100vw / 393)*500)", "mHeight":"calc((100vw / 393)*150)"},
+           { "image" : "./filternotification.svg", "text" : "Security concerns can be overwhelming to deal with, we filter out the unnecessary notifications, presenting only the critical ones to you. ", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"calc((100vw / 393)*500)", "mHeight":"calc((100vw / 393)*150)"},
+           { "image" : "./agreement.svg", "text" : "Our 100% discrete policy ensures that your information is safe with us bound by a one-sided Non-Disclosure Agreement.", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"calc((100vw / 393)*500)", "mHeight":"calc((100vw / 393)*150)"},
+           { "image" : "./shieldfingerprint.svg", "text" : "We are Fast, Adaptable and Proactive which means that whenever you have a security concern, we are just fingertips away from addressing it.", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"calc((100vw / 393)*500)", "mHeight":"calc((100vw / 393)*150)"}
+        ]
     },
     "introduction": {
         "title": "Introduction",
