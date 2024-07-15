@@ -33,6 +33,11 @@ const MobileNavModal: FC<MobileNavModalProps> = ({ list, closeModal, modalState,
     const handleLanguage = (lang: string) => {
         dispatch(setGlobalLanguage({ globalLanguage: lang }))
     }
+
+    function handelClick(e : MouseEvent) {
+        e.preventDefault();
+    }
+
     return (
         <div className={styles.mobileNavModal} style={modalState ? {
             height: '100vh'
@@ -53,7 +58,7 @@ const MobileNavModal: FC<MobileNavModalProps> = ({ list, closeModal, modalState,
                 )}
             </div>
             <div className={styles.btnContainer}>
-                <Button label={navbarData.button.label} action_svg={navbarData.button.action_svg} />
+            <Button label={headerData.navigation_bar.button.label} hc={handelClick} background='transparent' backgroundOnHover='#F4C9A4' textColor='white' textColorOnHover='black' borderColor='#F4C9A4' fontSize={20}/>
             </div>
             <div className={styles.navModalBackground}>
                 <Image src='/navModalBackground.svg'
