@@ -23,7 +23,8 @@ import { isMobile, goTo } from "@util/index";
 import VisualBreakup from "@component/common/VisualBreakup/VisualBreakup";
 import DigitalBg from "@component/DigitalBG/digitalBg";
 import ProtectYourself from "@component/ProtectYourself/ProtectYourself";
-import TechnologyMeetsOldSchoolSophistication from "@component/TechnologyMeetsOldSchoolSophistication";
+const TechnologyMeetsOldSchoolSophistication = dynamic(()=> import('@component/TechnologyMeetsOldSchoolSophistication'), { ssr: false });
+const SpotLight = dynamic(()=> import('@component/common/spotLight'));
 
 export default function Home() {
   const globalLanguage = useAppSelector<any>(state => state.globalLanguage);
@@ -123,7 +124,10 @@ export default function Home() {
           descriptionArray={data.digitalBodyGaurdSection.descriptionArray}
         />
         
+        <div className={styles.wrapper}>
+        <SpotLight color="rgb(255 162 96 / 60%)" bottom={-200} right={-400} width={1000} height={1500}/>
         <TechnologyMeetsOldSchoolSophistication heading={data.technologyMeetsOldSchoolSophistication.heading} limpidBoxes={data.technologyMeetsOldSchoolSophistication.limpidBoxes}/>        
+        </div>
 
         <ProtectYourself
           title={data.protectYourselfNow.title}

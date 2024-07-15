@@ -19,6 +19,7 @@
 
 .limpidBox p {
     font-size: calc((100vw/1920)*24);
+    line-height: calc((100vw/1920)*29);
     font-family: 'Inter', sans-serif;
 }
 

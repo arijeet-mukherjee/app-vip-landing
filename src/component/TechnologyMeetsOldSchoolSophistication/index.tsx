@@ -1,5 +1,6 @@
-import LimpidBox from '@component/common/LimpidBox';
+import dynamic from 'next/dynamic';
 import styles from './technologyMeetsOldSchoolSophistication.module.css';
+const LimpidBox = dynamic(()=> import('@component/common/LimpidBox'));
 
 interface TechnologyMeetsOldSchoolSophisticationProps {
     heading: string;
