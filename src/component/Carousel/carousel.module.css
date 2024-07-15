@@ -18,7 +18,7 @@
     grid-template-columns: repeat(2, auto);
     justify-content: space-between;
     gap: calc((100vw / 1920) * 12);
-    margin: 0 0 calc((100vw / 1920) * 10) 0;
+    margin: 0 0 calc((100vw / 1920) * 70) 0;
 }
 
 .carousel-subheader {

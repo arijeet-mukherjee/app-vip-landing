@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic';
 import { isMobile } from '@util/index';
 const CarouselCard = dynamic(() => import('@component/common/CarouselCard'));
 import Indicator from '@component/common/Indicator';
+import MetalBadge from '@component/common/MetalBadge/MetalBadge';
 
 interface CardProps {
     image: string,
@@ -127,13 +128,6 @@ const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
                 setCurrentIndex((prevIndex) => (prevIndex === cards - 1 ? 0 : prevIndex + 1));
             } else {
                 setCurrentIndex((prevIndex) => (prevIndex === cards - 1 ? 0 : prevIndex + 1));
-                //     {
-                //     // if ((cards - prevIndex - 1) < 3) {
-                //     //     return cards - prevIndex - 1
-                //     // } else {
-                //     return prevIndex + 1
-                //     // }
-                // });
             }
         }, 5000);
 
@@ -147,7 +141,8 @@ const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
         <div className={styles["carousel-wrapper"]}>
             <div className={styles["carousel-header"]} style={{ "color": `${isBackgroundDark ? "#FFFFFF" : "#3E3E3F"}` }}>
                 <div className={styles["carousel-subheader"]}>
-                    <h2 className={styles["carousel-title"]}>{title}</h2>
+                    {title !== '' ? (<MetalBadge label={title} colorVariant="silver" />) : (<></>)}
+                    {/* <h2 className={styles["carousel-title"]}>{title}</h2> */}
                     {description && (
                         <p className={styles["carousel-description"]}>
                             {description}

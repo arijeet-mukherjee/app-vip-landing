@@ -13,7 +13,7 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 800;
-    font-size: 20px;
+    font-size: calc((100vw / 1920) * 20);
     line-height: 31px;
     letter-spacing: -0.490196px;
     color: #9D9A9A;
@@ -29,7 +29,7 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 800;
-    font-size: 20px;
+    font-size: calc((100vw / 1920) * 20);
     line-height: 31px;
     letter-spacing: -0.490196px;
     color: #000000;

@@ -110,7 +110,6 @@ export default function Home() {
           modalState={modalOpen}
           headerData={data.header}
           refList={refList}
-          
           front={data.header.front}
           back={data.header.back}
           outerLogo={data.header.outerLogo}
@@ -121,6 +120,17 @@ export default function Home() {
           Title={data.digitalBodyGaurdSection.Title}
           descriptionArray={data.digitalBodyGaurdSection.descriptionArray}
         />
+
+        <div className={styles["carousel-container-1"] + " " + styles["cardCarousalRemain"]} style={carouselStyle} ref={refCarouselCurrentSubscription}>
+          {
+            isVisibleCarouselCurrentSubscription && <Carousel {...data.carouselCurrentSubscription} redirectComponent={redirectComponent} />
+          }
+        </div>
+        <div className={styles["carousel-container-2"] + " " + styles["cardCarousalRemain"]} ref={refCarouselUpcomingSubscription}>
+          {
+            isVisibleCarouselUpcomingSubscription && <Carousel {...data.carouselUpcomingSubscription} redirectComponent={redirectComponent} />
+          }
+        </div>
 
         <ProtectYourself
           title={data.protectYourselfNow.title}

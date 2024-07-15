@@ -44,18 +44,48 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    border-top: 4px solid #767a7b;
-    border-left: 4px solid #767a7b;
-    border-right: 4px solid #767a7b;
+    border-radius: 5px 5px 0 0;
+    height: 100%;
+    /* z-index: 999; */
+    /* border: 4px solid;
+    border-image-source: radial-gradient(80.04% 80.04% at 0% -8.66%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    border-bottom: none; */
+    position: relative;
+    background: black !important;
+    /* background: radial-gradient(80.04% 80.04% at 0% -8.66%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%) linear-gradient(70.9deg, #858C8D 14.42%, #D7DADA 27.24%, #BCC3C2 47.13%, #96A0A1 53.17%, #878F91 76.3%, #A6ABAC 84.69%, #82898A 93.53%); */
+    /* -webkit-text-fill-color: transparent;
+    background-blend-mode: overlay, normal; */
+    /* 
+    filter: drop-shadow(0px 0px 12.5px rgba(0, 0, 0, 0.1)); */
+    /* padding: 4px 4px 0 4px; */
 }
 
-.card-image-outer {
+.carousel-card-image::before {
+    position: absolute;
+    content: "";
+    top: -2px;
+    left: -1px;
+    right: -1px;
+    bottom: 0;
+    /* width: calc(100% + 10px);
+    height: calc(100% + 10px); */
+    /* background: linear-gradient(203.61deg, #060C0B -8.96%, #F2C84B 30.94%, #F2D785 44.23%, #D9A036 57.53%, #060C0B 97.43%); */
+    margin: -1px;
+    margin-bottom: 0;
+    border-radius: 5px 5px 0 0;
+    z-index: -1;
+    background: radial-gradient(80.04% 80.04% at 0% -8.66%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(70.9deg, #858C8D 14.42%, #D7DADA 27.24%, #BCC3C2 47.13%, #96A0A1 53.17%, #878F91 76.3%, #A6ABAC 84.69%, #82898A 93.53%);
+
+}
+
+/* .card-image-outer {
     display: grid;
     justify-content: center;
     align-items: center;
-    width: calc((100vw / 1920) * 274.67);
-    height: calc((100vw / 1920) * 256.08);
-}
+    background-color: black;
+    height: 100%;
+    width: calc((100vw / 1920) * 422);
+} */
 
 .card-image-inner {
     width: calc((100vw / 1920) * 167);
@@ -82,8 +112,8 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 800;
-    font-size: 24px;
-    line-height: 31px;
+    font-size: calc((100vw / 1920) * 24);
+    line-height: calc((100vw / 1920) * 31);
     background: linear-gradient(139.85deg, #FFF2D6 -4.08%, #9D8555 17.03%, #D8C08F 53.21%, #58400F 95.13%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -96,8 +126,8 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: calc((100vw / 1920) * 18);
+    line-height: calc((100vw / 1920) * 22);
     color: var(--text-tertiary-color);
     word-break: break-word;
     color: #FFFFFF;
