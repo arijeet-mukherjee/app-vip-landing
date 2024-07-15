@@ -5,6 +5,16 @@
     overflow-x: hidden;
 }
 
+.wrapper{
+    position: relative;
+    z-index: 5;
+    padding-left: var(--hero-section-left-padding);
+    padding-right: var(--hero-section-right-padding);
+    padding-top: var(--hero-section-top-padding);
+    padding-bottom: var(--hero-section-top-padding);
+    background-color: black;
+}
+
 .carousel-container-1 {
     background-color: var(--background-color-dark);
     background-position: center;
