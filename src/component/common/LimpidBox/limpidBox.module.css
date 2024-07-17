@@ -24,7 +24,16 @@
 }
 
 @media screen and (max-width:1100px) {
+    .limpidBox {
+        padding-right: calc((100vw/393)*30);
+    }
     .limpidBox p {
         font-size: calc((100vw/393)*12);
+        line-height: calc((100vw/393)*12);
+    }
+
+    .image {
+        height: calc((100vw/393)*100);
+        width: calc((100vw/393)*100);
     }
 }
