@@ -1,7 +1,7 @@
 @import url('../../global.module.css');
 
 .mobileNavModal {
-    background-color: var(--primary-background-dark-color);
+    background-color: black;
     width: 100vw;
     box-sizing: border-box;
     color: var(--text-icon-color);

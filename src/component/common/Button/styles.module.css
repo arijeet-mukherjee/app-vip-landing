@@ -6,11 +6,20 @@
     font-weight: 400;
     font-family: 'Inter', sans-serif;
     word-wrap: break-word;
-    transition: all 500ms ease-in-out;
-    border-image-slice: 1;
+    transition: all 500ms ease;
 }
 
-@media only screen and (max-width: 1100px) {
-    
+.buttonGradient {
+    position: relative;
 }
 
+.buttonGradient::before {
+    content: '';
+    background: linear-gradient(203.61deg, #060C0B -8.96%, #F2C84B 30.94%, #F2D785 44.23%, #D9A036 57.53%, #060C0B 97.43%);
+    position: absolute;
+    inset: 0;
+    margin: calc((100vw/1920)*-5);
+    z-index: -1;
+}
+
+@media only screen and (max-width: 1100px) {}

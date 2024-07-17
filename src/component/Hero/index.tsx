@@ -102,7 +102,7 @@ const Hero: React.FC<HeroProps> = React.memo(({ introduction, content, openModal
 
                     </div>
                     {/** import button from common */}
-                    <Button label={headerData["button-name"]} hc={handelClick} background='transparent' backgroundOnHover='#F4C9A4' textColor='white' textColorOnHover='black' borderColor='#F4C9A4' fontSize={24}/>
+                    <Button label={headerData["button-name"]} />
                 </div>
                 <div className={styles.vipSection}>
                     <Image src='vipshield.svg' alt='vip shield' height={100} width={100} className={styles.vipShield} />
