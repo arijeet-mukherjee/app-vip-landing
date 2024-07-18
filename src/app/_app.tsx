@@ -23,8 +23,9 @@ import { isMobile, goTo } from "@util/index";
 import VisualBreakup from "@component/common/VisualBreakup/VisualBreakup";
 import DigitalBg from "@component/DigitalBG/digitalBg";
 import ProtectYourself from "@component/ProtectYourself/ProtectYourself";
-const TechnologyMeetsOldSchoolSophistication = dynamic(()=> import('@component/TechnologyMeetsOldSchoolSophistication'), { ssr: false });
-const SpotLight = dynamic(()=> import('@component/common/spotLight'));
+const TechnologyMeetsOldSchoolSophistication = dynamic(() => import('@component/TechnologyMeetsOldSchoolSophistication'), { ssr: false });
+const SpotLight = dynamic(() => import('@component/common/spotLight'));
+import OurProcessesSection from "@component/ourProcessesSection/OurProgress";
 
 export default function Home() {
   const globalLanguage = useAppSelector<any>(state => state.globalLanguage);
@@ -112,7 +113,7 @@ export default function Home() {
           modalState={modalOpen}
           headerData={data.header}
           refList={refList}
-          
+
           front={data.header.front}
           back={data.header.back}
           outerLogo={data.header.outerLogo}
@@ -123,10 +124,10 @@ export default function Home() {
           Title={data.digitalBodyGaurdSection.Title}
           descriptionArray={data.digitalBodyGaurdSection.descriptionArray}
         />
-        
+
         <div className={styles.wrapper}>
-        <SpotLight color="rgb(255 162 96 / 60%)" bottom={-200} right={-400} width={1000} height={1500}/>
-        <TechnologyMeetsOldSchoolSophistication heading={data.technologyMeetsOldSchoolSophistication.heading} limpidBoxes={data.technologyMeetsOldSchoolSophistication.limpidBoxes}/>        
+          <SpotLight color="rgb(255 162 96 / 60%)" bottom={-200} right={-400} width={1000} height={1500} />
+          <TechnologyMeetsOldSchoolSophistication heading={data.technologyMeetsOldSchoolSophistication.heading} limpidBoxes={data.technologyMeetsOldSchoolSophistication.limpidBoxes} />
         </div>
 
         <ProtectYourself
@@ -134,6 +135,18 @@ export default function Home() {
           buttonLabel={data.protectYourselfNow.buttonLabel}
           hc={() => { }}
         />
+
+        <div className={styles.wrapper}>
+          <SpotLight color="rgb(255 255 255 / 60%)" bottom={100} left={-200} width={700} height={700} />
+          <OurProcessesSection
+            sectionHeading={data.ourProcessesSection.sectionHeading}
+            gapBetweenItems={data.ourProcessesSection.gapBetweenItems}
+            textContainerHeight={data.ourProcessesSection.textContainerHeight}
+            textContainerWidth={data.ourProcessesSection.textContainerWidth}
+            itemArray={data.ourProcessesSection.itemArray}
+          />
+        </div>
+
 
         <div ref={refFooter}>
           {

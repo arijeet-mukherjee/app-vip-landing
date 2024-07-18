@@ -652,6 +652,40 @@
     "protectYourselfNow": {
         "title": "Ready to Get Access to Your Digital Bodyguard?",
         "buttonLabel": "Protect Yourself Now"
-      }
-    
+      },
+    "ourProcessesSection":{
+            "sectionHeading": "Our Processes",
+            "gapBetweenItems": 54,
+            "textContainerHeight": 138,
+            "textContainerWidth": 1249,
+            "itemArray": [
+              {
+                "image": "/ourProcessLogo1.svg",
+                "text": "NDA: We sign a one-sided NDA, guaranteeing the complete non disclosure of your information. Every interaction, from intake to services, is safe with us and covered by the NDA."
+              },
+              {
+                "image": "/ourProcessLogo2.svg",
+                "text": "INTAKE:  We conduct an intake session with you/ your team or your representative to discuss your wants, needs, concerns and situation."
+              },
+              {
+                "image": "/ourProcessLogo3.svg",
+                "text": "PROPOSAL: Based on our intake session, we create a personalized proposal tailored to your needs. It is clear, complete, and transparent with no hidden costs down the line. "
+              },
+              {
+                "image": "/ourProcessLogo4.svg",
+                "text": "IMPLEMENTATION: Once you accept our proposal, you select a time for implementing the VIP security services and we will execute with precision."
+              },
+              {
+                "image": "/ourProcessLogo5.svg",
+                "text": "MONITORING: Our expert security team monitors every potential alerts from our implemented services, notifying you and mitigating any critical security risks. "
+              }
+            ],
+            "limpidBoxes": [
+                { "image" : "./ourProcessLogo1.svg", "text": "NDA: We sign a one-sided NDA, guaranteeing the complete non disclosure of your information. Every interaction, from intake to services, is safe with us and covered by the NDA.", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"auto", "mHeight":"calc((100vw / 393)*150)"},
+                { "image" : "./ourProcessLogo2.svg", "text" : "INTAKE:  We conduct an intake session with you/ your team or your representative to discuss your wants, needs, concerns and situation. ", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"auto", "mHeight":"calc((100vw / 393)*150)"},
+                { "image" : "./ourProcessLogo3.svg", "text" : "PROPOSAL: Based on our intake session, we create a personalized proposal tailored to your needs. It is clear, complete, and transparent with no hidden costs down the line. ", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"auto", "mHeight":"calc((100vw / 393)*150)"},
+                { "image" : "./ourProcessLogo4.svg", "text" : "IMPLEMENTATION: Once you accept our proposal, you select a time for implementing the VIP security services and we will execute with precision.", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"auto", "mHeight":"calc((100vw / 393)*150)"},
+                { "image" : "./ourProcessLogo5.svg", "text" : "MONITORING: Our expert security team monitors every potential alerts from our implemented services, notifying you and mitigating any critical security risks. ", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"auto", "mHeight":"calc((100vw / 393)*150)"}
+             ]
+          }
 }
