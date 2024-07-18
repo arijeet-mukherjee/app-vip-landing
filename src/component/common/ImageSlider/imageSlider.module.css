@@ -1,0 +1,51 @@
+.carousel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc((100vw/1920)* 840);
+}
+
+.carousel::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: calc((100vw/1920)* -5);
+    background: linear-gradient(203.61deg, #060C0B -8.96%, #F2C84B 30.94%, #F2D785 44.23%, #D9A036 57.53%, #060C0B 97.43%);
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+}
+
+.slideHidden {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+}
+
+.indicators {
+    display: flex;
+    position: absolute;
+    bottom: calc((100vw/1920)* 50);
+    gap: calc((100vw/1920)* 16);
+    width: 80%;
+    justify-content: center;
+}
+
+.indicator {
+    width: calc((100vw/1920)* 100);
+    border: calc((100vw/1920)* 5) 0 0 0;
+    cursor: pointer;
+}
+
+.indicatorActive {
+    background: linear-gradient(90deg, #060C0B -8.96%, #F2C84B 30.94%, #D9A036 57.53%, #060C0B 97.43%);
+}
