@@ -84,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({ openModal, modalState, headerData, refL
                 })
                 }
 
-                <Button label={headerData.navigation_bar.button.label} hc={handelClick} background='transparent' backgroundOnHover='#F4C9A4' textColor='white' textColorOnHover='black' borderColor='#F4C9A4' fontSize={20}/>
+                <Button label={headerData.navigation_bar.button.label} hc={handelClick} fontSize={20}/>
             </div>
             {modalState && <div className={styles.mobileLang}>
                 {headerData.navigation_bar.navbarItems?.map((item: any, index: any) => {

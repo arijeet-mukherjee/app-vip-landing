@@ -26,12 +26,12 @@ const SpotLight: React.FC<spotLightProps> = React.memo(({ height, width, color, 
     useEffect(() => {
         if(isMobile()){
             setProps({
-                height: `calc((100vw / 393)* ${height || 170})`,
-                width: `calc((100vw / 393)* ${width || 170})`,
-                top: `calc((100vw / 393)* ${top && top/3})`,
-                bottom: `calc((100vw / 393)* ${bottom && bottom/3})`,
-                left: `calc((100vw / 393)* ${left && left/3})`,
-                right: `calc((100vw / 393)* ${right && right/3})`
+                height: `calc((100vw / 393)* ${height && height/2.5 || 200})`,
+                width: `calc((100vw / 393)* ${width && width/2.5 || 200})`,
+                top: `calc((100vw / 393)* ${top && top/2})`,
+                bottom: `calc((100vw / 393)* ${bottom && bottom/2})`,
+                left: `calc((100vw / 393)* ${left && left/2})`,
+                right: `calc((100vw / 393)* ${right && right/2})`
             })
         }
     },[]);

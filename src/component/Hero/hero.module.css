@@ -169,22 +169,29 @@
         gap: calc((100vw / 393) * 12);
     }
 
-    .framer-text {
-        font-size: calc((100vw / 1920) * 62);
-    }
-    
-    .secondary-text {
-        font-size: calc((100vw / 1920) * 62);
+    .heroText{
+        gap: calc((100vw / 393) * 10);
     }
 
-    .heroBlock {
-        gap: calc((100vw / 393) * 12);
+    .heroText p{
+        line-height: calc((100vw/393)*15);
     }
 
     .framer-text {
-        font-size: calc((100vw/393)* 20);
+        font-size: calc((100vw/393)* 25);
         font-weight: 700;
         line-height: calc((100vw/393)* 25.2);
+    }
+
+    .tick{
+        height: calc((100vw / 393) * 12);
+        width: calc((100vw / 393) * 12);
+    }
+
+    .bullet-transform{
+        font-size: calc((100vw/393)* 12);
+        gap: calc((100vw / 393) * 6);
+        margin-bottom: calc((100vw / 393) * 8);
     }
 
     .secondary-text {
@@ -197,11 +204,10 @@
         font-size: calc((100vw/393) * 17);
         font-weight: 400;
         line-height: calc((100vw/393)* 20.4);
-
     }
 
     .hear-back-text {
-        font-size: calc((100vw/393) * 10);
+        font-size: calc((100vw/393) * 12);
         font-weight: 400;
         line-height: calc((100vw/393) * 12);
     }
