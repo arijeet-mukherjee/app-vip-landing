@@ -1,0 +1,122 @@
+/* Animations are written here */
+@keyframes sideFlip {
+    0% {
+        transform: rotateY(0deg);
+         visibility: visible;
+    }
+    25%{
+        transform: rotateY(90deg);
+        visibility: visible;
+    }
+    50% {
+        transform: rotateY(180deg);
+        visibility: visible;
+    }
+    75% {
+        transform: rotateY(270deg);
+        visibility: visible;
+    }
+    100% {
+        transform: rotateY(360deg);
+        visibility: visible;
+    }
+}
+.fade-in {
+    -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+            animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+
+
+.ourProgressContainer {
+    display: grid;
+    height: fit-content;
+    width: fit-content;
+    align-items: center;
+}
+
+.checkPointContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: calc((100vw/1920)*20);
+    height: fit-content;
+}
+
+.checkPointDetailContainer {
+    box-sizing: border-box;
+    background: linear-gradient(85.96deg, rgba(255, 255, 255, 0) -20.51%, rgba(255, 255, 255, 0.05) 26.82%, rgba(255, 255, 255, 0) 65.65%), rgba(196, 196, 196, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: calc((100vw/1920)*20) calc((100vw/1920)*80) calc((100vw/1920)*20) calc((100vw/1920)*40);
+    gap: calc((100vw/1920)*10);
+    font-family: Inter;
+    font-size: calc((100vw/1920)*24);
+    font-weight: 400;
+    line-height: calc((100vw/1920)*29);
+    text-align: justify;
+    text-justify: inter-character;
+
+
+}
+.titleContainer{
+font-family: Inter;
+font-size: calc((100vw/1920)*29);
+font-weight: 500;
+color: transparent;
+text-align: left;
+background-blend-mode: overlay;
+background: radial-gradient(80.04% 80.04% at 0% -8.66%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(73.9deg, #4D5455 12.95%, #9EA1A1 35.76%, #848B8A 57.34%, #535D5E 70.24%, #4B5355 75.77%, #757A7B 83.15%, #4D5455 87.23%);
+background-clip: text;
+
+}
+/* CSS for the circular CheckPoint */
+.metalCircleContainer {
+    position: relative;
+    aspect-ratio: 1;
+    display: grid;
+    
+}
+
+.circle {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: calc((100vw/1920)*5) solid transparent;
+    background: linear-gradient(139.85deg, #746e63 -4.08%, #dfb563 17.03%, #caad74 53.21%, #dfb563 95.13%) border-box;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.linkage{
+    height: 54px;
+    width: calc((100vw/1920)*4);
+    background: linear-gradient( #caad74 17.03%, #D8C08F 53.21%) border-box;
+    position: absolute;
+    justify-self: center;
+}
+.imageInCircle {
+    inset: 0;
+    position: absolute;
+
+}
+.opsMobile{
+    display: none;
+}
+
+
+@media screen and (max-width: 1100px) {
+    .ourProgressContainer {
+        display: none;
+    }
+    .opsMobile{
+        display: block;
+    }
+
+}

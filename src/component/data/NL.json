@@ -9,7 +9,7 @@
             "button": {
                 "label": "Contact",
                 "action_svg": "phone.svg",
-                "id"  : "contact"
+                "id": "contact"
             },
             "navbarItems": [
                 {
@@ -53,8 +53,22 @@
                 }
             ]
         },
-        "introduction" : ["Internet can be a dangerous place,", "Do you sometimes worry"],
-        "content" : [["About the online scams?", "About the legitimacy of the sites?", "About the terms and agreements?", "About the online data leaks?", "About the hacking risks?", "About the virus attacks?", "About the believing everything online?"], "We hear these worries a lot from our clients, parents, teenagers, and friends outside IT industry, we could go on and on. Security is difficult and people from all layers of security struggle with these questions."],
+        "introduction": [
+            "Internet can be a dangerous place,",
+            "Do you sometimes worry"
+        ],
+        "content": [
+            [
+                "About the online scams?",
+                "About the legitimacy of the sites?",
+                "About the terms and agreements?",
+                "About the online data leaks?",
+                "About the hacking risks?",
+                "About the virus attacks?",
+                "About the believing everything online?"
+            ],
+            "We hear these worries a lot from our clients, parents, teenagers, and friends outside IT industry, we could go on and on. Security is difficult and people from all layers of security struggle with these questions."
+        ],
         "secdeskLogo": "",
         "rightArrowIcon": "",
         "button-name": "Get in Touch"
@@ -131,7 +145,6 @@
         "paddingImageContent": "",
         "goTo": "More"
     },
-
     "footer": {
         "logo": {
             "logoName": "secDesk logo",
@@ -529,23 +542,22 @@
             }
         }
     ],
-
-    "quizContent" : {
+    "quizContent": {
         "VulnerabilityTitle": "Vulnerability Percentage",
         "Threat": "Threat",
         "Security": "Security Level",
-        "ThreatCalculator" : "Threat Calculator",
+        "ThreatCalculator": "Threat Calculator",
         "YourDeviceIsAtRisk": "Your Device is at risk",
         "Score": "Score",
         "TotalThreat": "Total Threat",
-        "DiscountPercent" : "50%",
+        "DiscountPercent": "50%",
         "DiscountText": "Discounta",
         "Message": "Hi, you did greata. Want us to help you?",
         "couponText": "Coupon Code : SEC****4***",
         "getCouponCodebutton": "Get Coupon Code",
-        "GetCouponInMyInboxButton" : "Get Coupon in My Inbox",
-        "Skip" : "Skip",
-        "Next" : "Next",
+        "GetCouponInMyInboxButton": "Get Coupon in My Inbox",
+        "Skip": "Skip",
+        "Next": "Next",
         "CheckYourScore": "Check Your Score"
     },
     "newsLetter": {
@@ -576,45 +588,48 @@
         ],
         "goTo": "#"
     },
-
     "CallToAction": {
-    "heading": "Secured Internet Browsing With Our Subscription Plan",
-    "description":["Don’t lose your money to online scammers", "Subscribe now to become more secure.", "All newly added services FREE with the annual subscription."],
-    "cardTitle": "Choose a Plan",
+        "heading": "Secured Internet Browsing With Our Subscription Plan",
+        "description": [
+            "Don’t lose your money to online scammers",
+            "Subscribe now to become more secure.",
+            "All newly added services FREE with the annual subscription."
+        ],
+        "cardTitle": "Choose a Plan",
         "plans": [
             {
-              "title": "Annual",
-              "price": 75.99,
-              "discountPercentage": 40,
-              "buttonText": " Buy now",
-              "currency": "USD",
-              "currencySymbol": "$",
-              "bulletPoint": "Get the newly added services with this plan",
-              "ribbonText": "MOST POPULAR",
-              "period": "year",
-              "hookStringOne" : "Security that is Value for Money",
-              "hookStringTwo" : ""
+                "title": "Annual",
+                "price": 75.99,
+                "discountPercentage": 40,
+                "buttonText": " Buy now",
+                "currency": "USD",
+                "currencySymbol": "$",
+                "bulletPoint": "Get the newly added services with this plan",
+                "ribbonText": "MOST POPULAR",
+                "period": "year",
+                "hookStringOne": "Security that is Value for Money",
+                "hookStringTwo": ""
             },
             {
-              "title": "Monthly",
-              "price": 75,
-              "discountPercentage": 0,
-              "buttonText": "Buy now",
-              "currency": "USD",
-              "currencySymbol": "$",
-              "bulletPoint": "Services you need to keep you safe online",
-              "ribbonText": "",
-              "period": "month",
-              "hookStringOne" : "Security that is Value for Money",
-              "hookStringTwo" : "Say Bye to Threats at"
+                "title": "Monthly",
+                "price": 75,
+                "discountPercentage": 0,
+                "buttonText": "Buy now",
+                "currency": "USD",
+                "currencySymbol": "$",
+                "bulletPoint": "Services you need to keep you safe online",
+                "ribbonText": "",
+                "period": "month",
+                "hookStringOne": "Security that is Value for Money",
+                "hookStringTwo": "Say Bye to Threats at"
             }
-          ],
+        ],
         "bulletIcon": "tickBulletPoint.svg"
     },
     "translatableText": {
         "discountMsg": "Huge discounts are waiting for you on the other side!"
     },
-    "digitalBodyGaurdSection":{
+    "digitalBodyGaurdSection": {
         "badgeText": "JE DIGITALE VEILIGHEID IS VEELBELANGRIJK",
         "badgeColor": "silver",
         "Title": "Waarom Digitale Bodyguards?",
@@ -624,8 +639,36 @@
             "SecDesk VIP is een wereldklasse team van online veiligheidsexperts gespecialiseerd in hun velden, klaar om jouw digitale bodyguards te worden. Sluit je aan bij de gemeenschap van digitale veiligheidselites die beschermd worden door ons VIP-beveiligingsexpertenteam."
         ]
     },
-    "protectYourselfNow":{
+    "protectYourselfNow": {
         "title": "Klaar om toegang te krijgen tot uw digitale bodyguard?",
         "buttonLabel": "Bescherm uzelf nu"
+    },
+    "ourProcessesSection": {
+        "sectionHeading": "Our Processes",
+        "gapBetweenItems": 20,
+        "textContainerHeight": 125,
+        "textContainerWidth": 1240,
+        "itemArray": [
+            {
+                "image": "/ourProcessLogo1.svg",
+                "text": "NDA: We sign a one-sided NDA, guaranteeing the complete non disclosure of your information. Every interaction, from intake to services, is safe with us and covered by the NDA."
+            },
+            {
+                "image": "/ourProcessLogo2.svg",
+                "text": "INTAKE:  We conduct an intake session with you/ your team or your representative to discuss your wants, needs, concerns and situation."
+            },
+            {
+                "image": "/ourProcessLogo3.svg",
+                "text": "PROPOSAL: Based on our intake session, we create a personalized proposal tailored to your needs. It is clear, complete, and transparent with no hidden costs down the line. "
+            },
+            {
+                "image": "/ourProcessLogo4.svg",
+                "text": "IMPLEMENTATION: Once you accept our proposal, you select a time for implementing the VIP security services and we will execute with precision."
+            },
+            {
+                "image": "/ourProcessLogo5.svg",
+                "text": "MONITORING: Our expert security team monitors every potential alerts from our implemented services, notifying you and mitigating any critical security risks. "
+            }
+        ]
     }
 }
