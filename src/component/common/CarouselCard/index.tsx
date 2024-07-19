@@ -14,13 +14,10 @@ interface CardProps {
     toggleButton: boolean,
     buttonText: string,
     key: number
-    // currentIndex: number,
-    animate: boolean,
-    redirectComponent: Function
+    redirectComponent: Function,
 }
 const CarouselCard: React.FC<CardProps> = (props: CardProps) => {
-    const { image, title, description, url, toggleButton, buttonText, animate, key, redirectComponent } = props;
-    const [animater, setAnimater] = React.useState("");
+    const { image, title, description, url, toggleButton, buttonText, key, redirectComponent } = props;
     const [starPath, setStarPath] = React.useState("url(/starvector.svg)");
     const [imageHeight, setImageHeight] = React.useState(178.67);
     const [imageWidth, setImageWidth] = React.useState(167);
@@ -32,13 +29,9 @@ const CarouselCard: React.FC<CardProps> = (props: CardProps) => {
             setImageHeight(128.99);
         }
     }, []);
-    // console.log(currentIndex, "card");
-    React.useEffect(() => {
-        setAnimater(animate ? "animation" : "");
-    }, []);
 
     return (
-        <div className={styles["carousel-card"] + " " + styles[`${animate ? "animation" : ""}`]} key={key}>
+        <div className={styles["carousel-card"]} key={key}>
             <div style={{ "padding": "0 4px 0 4px" }}>
                 <div className={styles["carousel-card-image"]}>
                     <div className={styles["card-image-outer"]}>
@@ -59,4 +52,6 @@ const CarouselCard: React.FC<CardProps> = (props: CardProps) => {
     )
 }
 
+// styles[`${animate && prevIndex !== index ? "animation" : ""}`] + " " + styles[`${animate ? "" : ""}`] + " " + styles[`${prevIndex === index ? "animation-out" : ""}`]
+// " " + styles[`${animate ? "animation" : prevIndex === index ? "animation-out" : "card-inactive"}`]}
 export default CarouselCard

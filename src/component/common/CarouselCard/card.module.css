@@ -1,30 +1,5 @@
 @import url("../../../global.module.css");
 
-@keyframes movement {
-    0% {
-        transform: translateX(20%);
-        /* transition-duration: 1000ms; */
-        opacity: 0;
-        animation-direction: alternate;
-        animation-delay: 0ms;
-    }
-
-    50% {
-        transform: translateX(10%);
-        /* transition-duration: 1000ms; */
-        opacity: 0;
-        animation-direction: alternate;
-        animation-delay: 0ms;
-    }
-
-    100% {
-        transition-duration: 1000ms;
-        transform: translateX(0);
-        opacity: 1;
-        animation-direction: normal;
-        animation-delay: 0ms;
-    }
-}
 
 .carousel-card {
     display: grid;
@@ -33,10 +8,6 @@
     height: calc((100vw / 1920) * 528);
     width: calc((100vw / 1920) * 422);
     /* transition-duration: 1000ms; */
-}
-
-.animation {
-    animation: movement 1500ms linear forwards;
 }
 
 .carousel-card-image {

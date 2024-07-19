@@ -5,7 +5,7 @@
     overflow-x: hidden;
 }
 
-.wrapper{
+.wrapper {
     position: relative;
     z-index: 5;
     padding-left: var(--hero-section-left-padding);
@@ -15,13 +15,18 @@
     background-color: black;
 }
 
+.carousel-wrapper {
+    position: relative;
+    z-index: 5;
+    background-color: black;
+
+}
+
 .carousel-container-1 {
-    background-color: #000000;
     background-position: center;
 }
 
 .carousel-container-2 {
-    background: #000000;
     background-position: center;
 }
 
