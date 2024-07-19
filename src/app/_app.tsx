@@ -25,6 +25,9 @@ import DigitalBg from "@component/DigitalBG/digitalBg";
 import ProtectYourself from "@component/ProtectYourself/ProtectYourself";
 const TechnologyMeetsOldSchoolSophistication = dynamic(() => import('@component/TechnologyMeetsOldSchoolSophistication'), { ssr: false });
 const SpotLight = dynamic(() => import('@component/common/spotLight'));
+import OurProcessesSection from "@component/ourProcessesSection/OurProgress";
+import SecureYourLegacy from "@component/SecureYourLegacy";
+
 
 export default function Home() {
   const globalLanguage = useAppSelector<any>(state => state.globalLanguage);
@@ -112,6 +115,7 @@ export default function Home() {
           modalState={modalOpen}
           headerData={data.header}
           refList={refList}
+
           front={data.header.front}
           back={data.header.back}
           outerLogo={data.header.outerLogo}
@@ -123,7 +127,56 @@ export default function Home() {
           descriptionArray={data.digitalBodyGaurdSection.descriptionArray}
         />
 
+
         <div className={styles.wrapper}>
+          <SpotLight color="rgb(255 162 96 / 60%)" bottom={-200} right={-400} width={1000} height={1500} />
+          <div className={styles.whatItIsFor}>
+            <div className={styles.whatItIsForHeading}>{data.imageSlider.whatItIsForHeading}</div>
+            <div className={styles.whatItIsForText}>{data.imageSlider.whatItIsForText}</div>
+          </div>
+          <SecureYourLegacy
+            bulletPointImg={data.imageSlider.bulletPointImg}
+            imageSliderText={data.imageSlider.imageSliderText}
+            bulletPoints={data.imageSlider.bulletPoints}
+            buttonLabel={data.imageSlider.buttonlabel} />
+          <TechnologyMeetsOldSchoolSophistication heading={data.technologyMeetsOldSchoolSophistication.heading} limpidBoxes={data.technologyMeetsOldSchoolSophistication.limpidBoxes} />
+        </div>
+
+        <div className={styles.wrapper}>
+          <SpotLight color="rgb(255 255 255 / 60%)" bottom={-100} left={-200} width={700} height={700} />
+          <OurProcessesSection
+            sectionHeading={data.ourProcessesSection.sectionHeading}
+            gapBetweenItems={data.ourProcessesSection.gapBetweenItems}
+            textContainerHeight={data.ourProcessesSection.textContainerHeight}
+            textContainerWidth={data.ourProcessesSection.textContainerWidth}
+            itemArray={data.ourProcessesSection.itemArray}
+          />
+        </div>
+
+        <div className={styles.founderWrapper}>
+          <SpotLight color="rgb(242 215 133 / 80%)" bottom={400} right={-200} width={630} height={630} />
+          <div className={styles.founderText}>{data.OurfounderText}</div>
+          <CardBox
+            title={data.founder1.title}
+            description={data.founder1.description}
+            background={data.founder1.background}
+            image={data.founder1.image}
+            iconPosition="left"
+            badgeText={data.founder1.badgeText}
+            badgeColor={data.founder1.badgeColor}
+            credentials={data.founder1.credentials}
+          />
+
+          <CardBox
+            title={data.founder2.title}
+            description={data.founder2.description}
+            background={data.founder2.background}
+            image={data.founder2.image}
+            iconPosition="left"
+            badgeText={data.founder1.badgeText}
+            badgeColor={data.founder1.badgeColor}
+            credentials={data.founder1.credentials}
+          />
           <SpotLight color="rgb(255 162 96 / 60%)" bottom={-200} right={-400} width={1000} height={1500} />
           <TechnologyMeetsOldSchoolSophistication heading={data.technologyMeetsOldSchoolSophistication.heading} limpidBoxes={data.technologyMeetsOldSchoolSophistication.limpidBoxes} />
         </div>
@@ -147,6 +200,7 @@ export default function Home() {
           buttonLabel={data.protectYourselfNow.buttonLabel}
           hc={() => { }}
         />
+
 
         <div ref={refFooter}>
           {

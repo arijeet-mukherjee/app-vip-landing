@@ -72,6 +72,69 @@
     text-align: center;
 }
 
+.founderWrapper {
+    position: relative;
+    z-index: 5;
+    padding-left: var(--hero-section-left-padding);
+    padding-right: var(--hero-section-right-padding);
+    padding-top: var(--hero-section-top-padding);
+    padding-bottom: var(--hero-section-top-padding) - calc((100vw/1920)*90);
+    background-color: black;
+}
+
+.founderText {
+    display: grid;
+    margin-bottom: calc((100vw/1920)* 45);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: calc((100vw/1920)* 64);
+    line-height: calc((100vw/1920)* 77);
+    /* RADIAL2 */
+    background: radial-gradient(80.04% 80.04% at 0% -8.66%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+        , linear-gradient(73.9deg, #4D5455 12.95%, #9EA1A1 35.76%, #848B8A 57.34%, #535D5E 70.24%, #4B5355 75.77%, #757A7B 83.15%, #4D5455 87.23%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-blend-mode: overlay, normal;
+}
+
+.whatItIsFor {
+    display: grid;
+    grid-template-rows: auto auto;
+    width: calc((100vw/1920)* 1156);
+    padding-top: calc((100vw/1920)*  90);
+    padding-bottom: calc((100vw/1920)*  90);;
+    gap: calc((100vw/1920)* 20);
+}
+
+.whatItIsForHeading {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: calc((100vw/1920)* 64);
+    line-height: calc((100vw/1920)* 77);
+
+    background: radial-gradient(80.04% 80.04% at 0% -8.66%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)
+         , radial-gradient(199.52% 215.58% at -14.86% 157.14%, #4D5455 6.77%, #9EA1A1 35.4%, #848B8A 62.48%, #535D5E 78.68%, #4B5355 85.61%, #757A7B 94.87%, #4D5455 100%)
+    ;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-blend-mode: overlay, normal;
+}
+
+.whatItIsForText {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc((100vw/1920)*  32);
+    line-height: calc((100vw/1920)*  39);
+    color: #F4C9A4;
+    
+}
+
 @media(max-width: 1200px) {
     .carousel-container-1 {
         position: relative;
@@ -82,7 +145,6 @@
         padding: calc((100vw / 393) * 1);
         margin-bottom: 25px;
     }
-
     .cardBoxFirst {
         padding: 0px;
         margin-top: -5%;
