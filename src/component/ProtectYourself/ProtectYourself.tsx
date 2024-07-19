@@ -1,9 +1,6 @@
 import React from 'react';
 import styles from './protectYourself.module.css';
 import VisualBreakup from '@component/common/VisualBreakup/VisualBreakup';
-
-
-
 /**
  * @param {string} title - Title of the section
  * @param {string} buttonLabel - Label for the button **/
