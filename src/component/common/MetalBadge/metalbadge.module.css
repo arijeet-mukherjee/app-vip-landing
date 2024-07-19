@@ -6,6 +6,7 @@
     font-size: calc((100vw/1920)*20);
     box-shadow: 0px -1px 1.9px 0px #00000066;
     font-weight: 500;
+    width: max-content;
 
 }
 .containerGold {
@@ -15,6 +16,7 @@
     border-radius: calc((100vw/1920)*5);
     font-size: calc((100vw/1920)*20);
     box-shadow: 0px -1px 1.9px 0px #00000066;
+    width: max-content;
 }
 
 @media screen and (max-width: 1100px) {
