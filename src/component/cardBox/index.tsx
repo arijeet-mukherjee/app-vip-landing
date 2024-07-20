@@ -5,6 +5,7 @@ import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { useState, ReactNode } from 'react';
 import { isMobile, emailVerified, makeWebServiceCall } from '@util/index';
+import MetalBadge from '@component/common/MetalBadge/MetalBadge';
 
 interface CardBoxProps {
     background?: {
@@ -26,7 +27,7 @@ interface CardBoxProps {
     iconPosition: string,
     buttonText?: string,
     buttonIcon?: string,
-    paddingLeftContent: string,
+    paddingLeftContent?: string,
     paddingImageContent?: string
     inputBox?: string,
     bulletPointImg?: string,
@@ -38,7 +39,10 @@ interface CardBoxProps {
     goTo?: string,
     fullGradient?: boolean,
     child?: ReactNode,
-    redirectComponent?: any
+    redirectComponent?: any,
+    badgeText : string,
+    badgeColor : string,
+    credentials: string
 };
 
 const CardBox: React.FC<CardBoxProps> = (props: CardBoxProps) => {
@@ -101,7 +105,7 @@ const CardBox: React.FC<CardBoxProps> = (props: CardBoxProps) => {
             setBackgroundSize({ height: props.background?.mHeight, width: props.background?.mWidth });
 
             if (props.fullGradient) {
-                setCardGradient({ background: "linear-gradient(108.31deg, #FFFFFF 34.81%, #C7D5E0 78.11%)" });
+                
             }
 
             if (props.gridArea) {
@@ -110,22 +114,24 @@ const CardBox: React.FC<CardBoxProps> = (props: CardBoxProps) => {
             }
             else {
                 setCardContentStyle({ gridRow: 2, gridColumn: 1 });
-                setCardImageStyle({ gridRow: 1, gridColumn: 1, background: "linear-gradient(108.31deg, #FFFFFF 34.81%, #C7D5E0 78.11%)" });
+                setCardImageStyle({ gridRow: 1, gridColumn: 1 });
             }
         } else {
             setCardContentStyle({ gridColumn: props.iconPosition == "right" ? 1 : 2, gridRow: 1, paddingLeft: props.paddingLeftContent ? props.paddingLeftContent : 0 });
             setCardImageStyle({ gridColumn: props.iconPosition == "right" ? 2 : 1, gridRow: 1, paddingLeft: props.paddingImageContent ? props.paddingImageContent : 0 });
-            setCardGradient({ background: props.iconPosition == "left" ? "linear-gradient(270.59deg, #FFFFFF 35.89%, #C7D5E0 79.41%)" : "linear-gradient(108.31deg, #FFFFFF 34.81%, #C7D5E0 78.11%)", gridRow: 1 });
+            setCardGradient({ gridRow: 1 });
         }
     }, []);
 
-    const { image, background, title, description, iconPosition, buttonText, inputBox, bulletPointImg, bulletPoints, child } = props;
+    const { image, background, title, description, iconPosition, buttonText, inputBox, bulletPointImg, bulletPoints, child, badgeText, badgeColor, credentials } = props;
     return (
 
         <div className={styles["cardbox-card"]} style={cardGradient} >
             <div className={styles["cardbox-content"]} style={cardContentStyle} >
+                <MetalBadge label={badgeText} colorVariant={badgeColor}/> 
                 <h2 className={styles["cardbox-title"]}>{title}</h2>
-
+                <h2 className={styles["cardbox-credentials"]}>{credentials}</h2>
+                
                 {bulletPoints?.length
                     ?
                     <div className={styles.bulletPointContainer}>
@@ -170,7 +176,7 @@ const CardBox: React.FC<CardBoxProps> = (props: CardBoxProps) => {
             {(image || child) &&
                 <div className={styles["cardbox-image"]} style={cardImageStyle}>
                     <div className={styles["card-image-outer"]} style={{ width: backgroundSize.width, height: backgroundSize.height, backgroundImage: starPath, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat" }}>
-                        {image && <Image src={image?.path} alt={image?.title} style={{ width: imageSize.width, height: imageSize.height }} width={200} height={200} />}               </div>
+                        {image && <Image src={image?.path} alt={image?.title} style={{ width: imageSize.width, height: imageSize.height }} width={575} height={575} />}               </div>
                     {child && child}
                 </div>
             }

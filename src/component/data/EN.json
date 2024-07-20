@@ -84,79 +84,7 @@
            { "image" : "./shieldfingerprint.svg", "text" : "We are Fast, Adaptable and Proactive which means that whenever you have a security concern, we are just fingertips away from addressing it.", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"auto", "mHeight":"calc((100vw / 393)*100)"}
         ]
     },
-    "introduction": {
-        "title": "Introduction",
-        "description": "Welcome to SecDesk@Home - your shield against cybercriminals in an increasingly digitized world. As technology advances, so do the threats, and SecDesk couldn't stand idly by any longer. We've witnessed too many hard-earned dollars fall into the hands of cybercriminals, and enough is enough. It's time for a solution designed to protect individuals like you who are active online.",
-        "image": {
-            "path": "/introductiondoubletick.svg",
-            "title": "introduction",
-            "dHeight": "calc((100vw / 1920)*200)",
-            "dWidth": "calc((100vw / 1920)*200)",
-            "mHeight": "calc((100vw / 393)*129)",
-            "mWidth": "calc((100vw / 393)*129)"
-        },
-        "background": {
-            "dHeight": "calc((100vw / 1920)*307.29)",
-            "dWidth": "calc((100vw / 1920)*329.61)",
-            "mHeight": "calc((100vw / 393)*191.93)",
-            "mWidth": "calc((100vw / 393)*240)"
-        },
-        "image_position": "right",
-        "button_name": "Subscribe",
-        "button_icon": "/arrowrightwhite.svg",
-        "paddingLeftContent": "calc((100vw / 1920) * 0)",
-        "paddingImageContent": "",
-        "goTo": "More"
-    },
-    "yourShield": {
-        "title": "Your Shield",
-        "description": "SecDesk@Home is more than just a security subscription; it's your personalized defense mechanism crafted by the security specialists at SecDesk. Our mission is clear: to create a more secure world, and SecDesk@Home extends that mission directly to you, the consumer market. With our comprehensive security measures in place, you can navigate the digital landscape with confidence, knowing that your personal information and hard-earned assets are safeguarded against cyber threats.",
-        "image": {
-            "path": "/yourshield.svg",
-            "title": "introduction",
-            "dHeight": "calc((100vw / 1920)*200)",
-            "dWidth": "calc((100vw / 1920)*200)",
-            "mHeight": "calc((100vw / 393)*129)",
-            "mWidth": "calc((100vw / 393)*129)"
-        },
-        "background": {
-            "dHeight": "calc((100vw / 1920)*307.29)",
-            "dWidth": "calc((100vw / 1920)*329.61)",
-            "mHeight": "calc((100vw / 393)*191.93)",
-            "mWidth": "calc((100vw / 393)*240)"
-        },
-        "image_position": "left",
-        "button_name": "Subscribe",
-        "button_icon": "/arrowrightwhite.svg",
-        "paddingLeftContent": "",
-        "paddingImageContent": "calc((100vw / 1920) * 0)",
-        "goTo": "More"
-    },
-    "jointheMovement": {
-        "title": "Join the Movement",
-        "description": "Take control of your online security today by joining the SecDesk@Home community. Together, we can build a safer digital environment for everyone. Don't let cybercriminals dictate your online experience any longer. With SecDesk@Home, you have the power to protect yourself and contribute to a more secure world. Join us in our mission and secure your peace of mind with SecDesk@Home.",
-        "image": {
-            "path": "/jointhemovement.svg",
-            "title": "introduction",
-            "dHeight": "calc((100vw / 1920)*200)",
-            "dWidth": "calc((100vw / 1920)*200)",
-            "mHeight": "calc((100vw / 393)*129)",
-            "mWidth": "calc((100vw / 393)*129)"
-        },
-        "background": {
-            "dHeight": "calc((100vw / 1920)*307.29)",
-            "dWidth": "calc((100vw / 1920)*329.61)",
-            "mHeight": "calc((100vw / 393)*191.93)",
-            "mWidth": "calc((100vw / 393)*240)"
-        },
-        "image_position": "right",
-        "button_name": "Subscribe",
-        "button_icon": "/arrowrightwhite.svg",
-        "paddingLeftContent": "calc((100vw / 1920) * 0)",
-        "paddingImageContent": "",
-        "goTo": "More"
-    },
-
+   
     "footer": {
         "logo": {
             "logoName": "secDesk logo",
@@ -228,148 +156,7 @@
             }
         ]
     },
-    "qualityCard": {
-        "heading": [
-            "We are there for you ",
-            "when you can’t turn ",
-            "to others"
-        ],
-        "content": "Online security threats may come unannounced and this is exactly where our services can really prove to be helpful to you. Don’t rely on George because we know he is not coming to save you in the middle of the night. Let him sleep and put Secdesk to action.",
-        "background": {
-            "name": "Choose Secdesk",
-            "path": "/qualitybackground.svg"
-        },
-        "button": {
-            "name": "Choose Secdesk",
-            "url": "Offering"
-        },
-        "childCardProp": {
-            "left": [
-                {
-                    "heading": "Trustworthy",
-                    "content": "All our employees are under very strict Non-Disclosure Agreements",
-                    "image": {
-                        "pathDesktop": "/trustworthy.svg",
-                        "pathMobile": "/trustworthy2.svg",
-                        "name": "trustworthy"
-                    },
-                    "bg": {
-                        "backgroundColorDesktop": "var(--light-color)",
-                        "backgroundColorMobile": "var(--text-button-background-color-primary)",
-                        "backgroundImg": "/qualitybackground-part4.svg",
-                        "backgroundPosition": "left top"
-                    },
-                    "textColor": {
-                        "desktop": "var(--dark-color)",
-                        "mobile": "var(--light-color)"
-                    },
-                    "button": {
-                        "backgroundColorDesktop": "var(--light-color)",
-                        "textColorDesktop": "var(--text-button-background-color-primary)",
-                        "backgroundColorMobile": "var(--light-color)",
-                        "textColorMobile": "var(--text-button-background-color-primary)",
-                        "desktopText": "",
-                        "mobileText": "",
-                        "mobileImg": "/arrowrightprimary.svg",
-                        "desktopImg": "",
-                        "url": "/"
-                    }
-                },
-                {
-                    "heading": "Accessible",
-                    "content": "Quick and discrete answers to your troubles",
-                    "image": {
-                        "pathDesktop": "/accessible.svg",
-                        "pathMobile": "/accessible2.svg",
-                        "name": "accessible"
-                    },
-                    "bg": {
-                        "backgroundColorDesktop": "var(--light-color)",
-                        "backgroundColorMobile": "var(--light-color)",
-                        "backgroundImg": "/qualitybackground-part2.svg",
-                        "backgroundPosition": "right top"
-                    },
-                    "textColor": {
-                        "desktop": "var(--dark-color)",
-                        "mobile": "var(--dark-color)"
-                    },
-                    "button": {
-                        "backgroundColorDesktop": "var(--light-color)",
-                        "textColorDesktop": "var(--text-button-background-color-primary)",
-                        "backgroundColorMobile": "var(--light-color)",
-                        "textColorMobile": "var(--text-button-background-color-primary)",
-                        "desktopText": "",
-                        "mobileText": "",
-                        "mobileImg": "",
-                        "desktopImg": "",
-                        "url": "/"
-                    }
-                }
-            ],
-            "right": [
-                {
-                    "heading": "Available",
-                    "content": "We are always available, also when your tech-savvy aunt or friend is not",
-                    "image": {
-                        "pathDesktop": "/available.svg",
-                        "pathMobile": "/available2.svg",
-                        "name": "available"
-                    },
-                    "bg": {
-                        "backgroundColorDesktop": "var(--text-button-background-color-primary)",
-                        "backgroundColorMobile": "var(--light-color)",
-                        "backgroundImg": "/qualitybackground-part1.svg",
-                        "backgroundPosition": "right bottom"
-                    },
-                    "textColor": {
-                        "desktop": "var(--light-color)",
-                        "mobile": "var(--dark-color)"
-                    },
-                    "button": {
-                        "backgroundColorDesktop": "var(--text-button-background-color-primary)",
-                        "textColorDesktop": "var(--light-color)",
-                        "backgroundColorMobile": "var(--text-button-background-color-primary)",
-                        "textColorMobile": "var(--light-color)",
-                        "desktopText": "",
-                        "mobileText": "",
-                        "mobileImg": "/arrowrightwhite.svg",
-                        "desktopImg": "",
-                        "url": "/"
-                    }
-                },
-                {
-                    "heading": "Multilingual",
-                    "content": "Currently available in: Dutch, English, Romanian. Request for a new language.",
-                    "image": {
-                        "pathDesktop": "/multilingual.svg",
-                        "pathMobile": "/multilingual2.svg",
-                        "name": "multilingual"
-                    },
-                    "bg": {
-                        "backgroundColorDesktop": "var(--light-color)",
-                        "backgroundColorMobile": "var(--light-color)",
-                        "backgroundImg": "/qualitybackground-part3.svg",
-                        "backgroundPosition": "left bottom"
-                    },
-                    "textColor": {
-                        "desktop": "var(--dark-color)",
-                        "mobile": "var(--dark-color)"
-                    },
-                    "button": {
-                        "backgroundColorDesktop": "var(--text-button-background-color-primary)",
-                        "textColorDesktop": "var(--light-color)",
-                        "backgroundColorMobile": "var(--text-button-background-color-primary)",
-                        "textColorMobile": "var(--light-color)",
-                        "desktopText": "Request",
-                        "mobileText": "Request Now",
-                        "mobileImg": "/arrowrightwhite.svg",
-                        "desktopImg": "/arrowrightwhite.svg",
-                        "url": "/"
-                    }
-                }
-            ]
-        }
-    },
+
     "carouselCurrentSubscription": {
         "title": "What we’re offering in the current subscription",
         "description": "",
@@ -468,177 +255,76 @@
             }
         ]
     },
-    "quiz": [
-        {
-            "1": {
-                "question": "Which of the following is a common method used by cybercriminals to gain unauthorized access to sensitive information?",
-                "answer": "asasa",
-                "options": [
-                    "asasa",
-                    "AZUs",
-                    "sdsd"
-                ],
-                "message": "Avoid the risk of Shoulder Surfing and get yourself the top-notch security and online privacy that you deserve. Avoid the risk of Shoulder Surfing and get yourself the top-notch security and online privacy that you deserve. ",
-                "actionName": "Click on me",
-                "category": "Malware"
-            }
-        },
-        {
-            "2": {
-                "question": "What is Your fav food",
-                "answer": "test1",
-                "options": [
-                    "test1",
-                    "test2",
-                    "test3"
-                ],
-                "message": "This is a demo 2",
-                "actionName": "Click on me 2",
-                "category": "Malware"
-            }
-        },
-        {
-            "3": {
-                "question": "What is Your fav dance",
-                "answer": "test1",
-                "options": [
-                    "test1",
-                    "test2",
-                    "test3"
-                ],
-                "message": "This is a demo 2",
-                "actionName": "Click on me 2",
-                "category": "Threat"
-            }
-        },
-        {
-            "4": {
-                "question": "What is Your fav cat",
-                "answer": "test1",
-                "options": [
-                    "test1",
-                    "test2",
-                    "test3"
-                ],
-                "message": "This is a demo 2",
-                "actionName": "Click on me 2",
-                "category": "Vuneravalty"
-            }
-        },
-        {
-            "5": {
-                "question": "What is Your fav cat",
-                "answer": "test1",
-                "options": [
-                    "test1",
-                    "test2",
-                    "test3"
-                ],
-                "message": "This is a demo 2",
-                "actionName": "Click on me 2",
-                "category": "Vuneravalty"
-            }
-        },
-        {
-            "6": {
-                "question": "What is Your fav cat",
-                "answer": "test1",
-                "options": [
-                    "test1",
-                    "test2",
-                    "test3"
-                ],
-                "message": "This is a demo 2",
-                "actionName": "Click on me 2",
-                "category": "Demo"
-            }
-        }
-    ],
-
-    "quizContent" : {
-        "VulnerabilityTitle": "Vulnerability Percentage",
-        "Threat": "Threat",
-        "Security": "Security Level",
-        "ThreatCalculator" : "Threat Calculator",
-        "YourDeviceIsAtRisk": "Your Device is at risk",
-        "Score": "Score",
-        "TotalThreat": "Total Threat",
-        "DiscountPercent" : "50%",
-        "DiscountText": "Discount",
-        "Message": "Hi, you did great. Want us to help you?",
-        "couponText": "Coupon Code : SEC****4***",
-        "getCouponCodebutton": "Get Coupon Code",
-        "GetCouponInMyInboxButton" : "Get Coupon in My Inbox",
-        "Skip" : "Skip",
-        "Next" : "Next",
-        "CheckYourScore": "Check Your Score"
-    },
-    "newsLetter": {
-        "title": "Stay up to date with the latest in security with the Secdesk security newsletter!",
-        "image": {
-            "path": "/newsletter.svg",
-            "title": "newsletter",
-            "dHeight": "calc((100vw / 1920)*220.85)",
-            "dWidth": "calc((100vw / 1920)*246.48)",
-            "mHeight": "calc((100vw / 393)*132.51)",
-            "mWidth": "calc((100vw / 393)*147.89)"
-        },
-        "background": {
-            "dHeight": "calc((100vw / 1920)*307)",
-            "dWidth": "calc((100vw / 1920)*330)",
-            "mHeight": "calc((100vw / 393)*217)",
-            "mWidth": "calc((100vw / 393)*271.35)"
-        },
-        "image_position": "right",
-        "button_name": "Subscribe",
-        "button_icon": "/arrowrightwhite.svg",
-        "paddingLeftContent": "calc((100vw / 1920) * 0)",
-        "inputBox": "Email*",
+    
+    "imageSlider" : {
+        "whatItIsForHeading" : "Who It is For?",
+        "whatItIsForText" : "Secdesk VIP provides precision-engineered security solutions designed exclusively for industry leaders who cannot avoid the spotlight. Sign up if you are:",
+        "slides": [
+          {
+            "src": "/ImageSlider1.png",
+            "alt": "Image 1 for carousel"
+          },
+          {
+            "src": "/ImageSlider2.png",
+            "alt": "Image 2 for carousel"
+          },
+          {
+            "src": "/ImageSlider3.png",
+            "alt": "Image 3 for carousel"
+          },
+          {
+            "src": "/ImageSlider4.png",
+            "alt": "Image 3 for carousel"
+          },
+          {
+            "src": "/ImageSlider5.png",
+            "alt": "Image 3 for carousel"
+          }
+        ],
         "bulletPointImg": "/tickmark.svg",
         "bulletPoints": [
-            "Stay up-to-date with the trends, so you can focus your security effort",
-            "Increase your security posture"
+            "A Social Influencer, Unaware of the Digital Target",
+            "A Crypto Millionaire, Unsure about Government Recourse",
+            "A C-Suite Executive, with Unprotected Personal Assets",
+            "An Ultra High Net Worth Individual, with Reputations to Uphold",
+            "Living in an Oppressive Regime, and Don't Trust the Government"
         ],
-        "goTo": "#"
+        "imageSliderText": "If you seek freedom from digital anxiety, SecDesk VIP is your ultimate protector.",
+        "buttonlabel": "Secure Your Legacy"
+    },
+    "OurfounderText" : "Our Founders",
+    "founder1": {
+        "badgeText": "CO-Founder, CEO",
+        "badgeColor": "silver", 
+        "title": "Youri Van Der Zwart",
+        "credentials": "CREDENTIALS",
+        "description": "Story- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.",
+        "image": {
+            "path": "/founder1.jpeg",
+            "title": "Founder",
+            "dHeight": "calc((100vw / 1920)*575)",
+            "dWidth": "calc((100vw / 1920)*575)",
+            "mHeight": "calc((100vw / 393)*129)",
+            "mWidth": "calc((100vw / 393)*129)"
+        }
     },
 
-    "CallToAction": {
-    "heading": "Secured Internet Browsing With Our Subscription Plan",
-    "description":["Don’t lose your money to online scammers", "Subscribe now to become more secure.", "All newly added services FREE with the annual subscription."],
-    "cardTitle": "Choose a Plan",
-        "plans": [
-            {
-              "title": "Annual",
-              "price": 75.99,
-              "discountPercentage": 40,
-              "buttonText": " Buy now",
-              "currency": "USD",
-              "currencySymbol": "$",
-              "bulletPoint": "Get the newly added services with this plan",
-              "ribbonText": "MOST POPULAR",
-              "period": "year",
-              "hookStringOne" : "Security that is Value for Money",
-              "hookStringTwo" : ""
-            },
-            {
-              "title": "Monthly",
-              "price": 75,
-              "discountPercentage": 0,
-              "buttonText": "Buy now",
-              "currency": "USD",
-              "currencySymbol": "$",
-              "bulletPoint": "Services you need to keep you safe online",
-              "ribbonText": "",
-              "period": "month",
-              "hookStringOne" : "Security that is Value for Money",
-              "hookStringTwo" : "Say Bye to Threats at"
-            }
-          ],
-        "bulletIcon": "tickBulletPoint.svg"
+    "founder2": {
+        "badgeText": "CO-Founder, CTO",
+        "badgeColor": "silver", 
+        "title": "Mick",
+        "credentials": "CREDENTIALS",
+        "description": "Story- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.",
+        "image": {
+            "path": "/founder2.jpeg",
+            "title": "Founder",
+            "dHeight": "calc((100vw / 1920)*575)",
+            "dWidth": "calc((100vw / 1920)*575)",
+            "mHeight": "calc((100vw / 393)*129)",
+            "mWidth": "calc((100vw / 393)*129)"
+        }
     },
-    "translatableText": {
-        "discountMsg": "Huge discounts are waiting for you on the other side!"
-    },
+
     "digitalBodyGaurdSection":{
         "badgeText": "YOUR DIGITAL SECURITY MATTERS A LOT",
         "badgeColor": "silver", 

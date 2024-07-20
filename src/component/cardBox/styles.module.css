@@ -1,73 +1,95 @@
 @import url("../../global.module.css");
 
-h1, h2, h3, h4, h5, h6, p{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     margin: 0;
     padding: 0;
 }
+
 .cardbox-card {
     display: grid;
     grid-template-columns: auto auto;
     height: max-content;
     justify-content: center;
-    align-items: center;
-    gap: 70px;
-    padding-top: calc((100vw / 1920) * 117);
-    padding-right: calc((100vw / 1920) * 152);
-    padding-bottom: calc((100vw / 1920) * 117);
-    padding-left: var(--padding-cardbox-left);
-    margin-bottom: calc((100vw / 1920) * 60);
+    align-items: start;
+    gap: calc((100vw / 1920) * 40);
+    width: 100%;
+    padding-bottom: calc((100vw / 1920) * 90);
+    background: transparent;
 }
 
 .cardbox-content {
     display: grid;
     grid-template-rows: auto auto auto;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
     gap: calc((100vw/1920)*12);
+    padding-right: calc((100vw/1920)*120);
 }
 
 .cardbox-title {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter';
     font-style: normal;
-    font-weight: 600;
-    font-size: calc((100vw/1920)*40);
-    color: var(--text-secondary-color);
+    font-weight: 500;
+    font-size: calc((100vw/1920)*64);
+    /* color: silver; */
+    background: radial-gradient(80.04% 80.04% at 0% -8.66%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+        , linear-gradient(73.9deg, #4D5455 12.95%, #9EA1A1 35.76%, #848B8A 57.34%, #535D5E 70.24%, #4B5355 75.77%, #757A7B 83.15%, #4D5455 87.23%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-blend-mode: overlay, normal;
+}
+
+.cardbox-credentials {
+    font-family: "Inter";
+    font-size: calc((100vw/1920)* 32);
+    font-weight: 400;
+    line-height: calc((100vw/1920)* 38.73);
+    text-align: left;
+    color: #fff
 }
 
 .cardbox-description {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: calc((100vw/1920)*18);
-    line-height: calc((100vw/1920)*28);
-    color: var(--text-tertiary-color);
+    font-size: calc((100vw/1920)*24);
+    line-height: calc((100vw/1920)*30);
+    color: #f4c9a4;
     word-wrap: break-word;
 }
 
-.bulletPointContainer{
+.bulletPointContainer {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; 
+    align-items: flex-start;
     gap: calc((100vw / 1920)* 10);
 }
 
-.bulletPoints{
+.bulletPoints {
     display: flex;
     align-items: center;
     gap: calc((100vw/1920)*12);
 }
 
-.bulletPointsTxt{
+.bulletPointsTxt {
     font-size: calc((100vw/1920)*18);
     font-family: 'Roboto', sans-serif;
 }
 
-.bulletPointImg{
+.bulletPointImg {
     height: calc((100vw/1920)*28);
     width: calc((100vw/1920)*28);
 }
 
-.inputBox{
+.inputBox {
     background: #D9D9D9;
     border: none;
     padding-left: 25px;
@@ -122,32 +144,32 @@ h1, h2, h3, h4, h5, h6, p{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    padding:0;
+    padding: 0;
     justify-content: center;
     align-items: center;
     transition: background-color 1s linear, border 1s;
     cursor: pointer;
 }
 
-.cardbox-button:hover{
-    background-color:  var(--text-icon-color);
+.cardbox-button:hover {
+    background-color: var(--text-icon-color);
     border: 1px solid black;
 }
 
-.cardbox-button:hover .button-text{
+.cardbox-button:hover .button-text {
     color: black;
 }
 
-.cardbox-button:hover .button-icon{
+.cardbox-button:hover .button-icon {
     filter: invert(1);
 }
 
-.arrowImg{
+.arrowImg {
     width: calc((100vw / 1920)* 40);
     height: calc((100vw / 1920)* 24);
 }
 
-.inputBoxWithButton{
+.inputBoxWithButton {
     display: grid;
     grid-template-columns: 3fr 1fr 1fr;
     grid-column-gap: 10px;
@@ -160,36 +182,36 @@ h1, h2, h3, h4, h5, h6, p{
         align-items: center;
         justify-content: center;
         gap: 0px;
-        background-color: var(--text-icon-color);
+        background-color: black;
     }
 
-    .cardbox-title{
+    .cardbox-title {
         font-size: calc((100vw/393)*21);
     }
 
-    .cardbox-description{
+    .cardbox-description {
         font-size: calc((100vw/393)*14);
         line-height: calc((100vw/393)*18);
     }
 
-    .bulletPointContainer{
+    .bulletPointContainer {
         gap: calc((100vw/393)*12);
     }
 
-    .bulletPoints{
+    .bulletPoints {
         gap: calc((100vw/393)*8);
     }
 
-    .bulletPointsTxt{
+    .bulletPointsTxt {
         font-size: calc((100vw/393)*14);
     }
 
-    .bulletPointImg{
+    .bulletPointImg {
         height: calc((100vw/393)*15);
         width: calc((100vw/393)*15);
     }
 
-    .inputBox{
+    .inputBox {
         font-size: calc((100vw/393)*14);
     }
 
@@ -211,26 +233,26 @@ h1, h2, h3, h4, h5, h6, p{
         gap: calc((100vw/393)*12);
     }
 
-    .cardbox-button{
+    .cardbox-button {
         width: calc((100vw / 393)* 109);
         height: calc((100vw / 393)* 28);
         padding: calc((100vw / 393)* 5) calc((100vw / 393)* 14);
     }
 
-    .button{
+    .button {
         gap: calc((100vw/393)*5);
     }
 
-    .button-text{
+    .button-text {
         font-size: calc((100vw/393)*14);
     }
 
-    .arrowImg{
+    .arrowImg {
         width: calc((100vw / 393)* 18);
         height: calc((100vw / 393)* 18);
     }
 
-    .inputBoxWithButton{
+    .inputBoxWithButton {
         grid-template-columns: 3fr 1fr;
     }
 }
