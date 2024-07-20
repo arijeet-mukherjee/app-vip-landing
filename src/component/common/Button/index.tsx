@@ -30,7 +30,6 @@ const Button: React.FC<ButtonProps> = ( props ) => {
   const [hover, setHover] = useState(false);
   const [font, setFont] = useState(``);
   const [padding, setPadding] = useState(``);
-  const [width, setWidth] = useState(0);
 
   useEffect(() => {
     if(fontSize && (fontSize >=20 && fontSize < 24)){
@@ -55,7 +54,7 @@ const Button: React.FC<ButtonProps> = ( props ) => {
     }
 
 
-  },[[], font, isMobile()]);
+  },[[], font]);
 
   return (
     <>
