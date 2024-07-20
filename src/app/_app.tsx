@@ -129,8 +129,8 @@ export default function Home() {
         <div className={styles.wrapper}>
           <SpotLight color="rgb(255 162 96 / 60%)" bottom={-200} right={-400} width={1000} height={1500} />
           <div className={styles.whatItIsFor}>
-              <div className={styles.whatItIsForHeading}>{data.imageSlider.whatItIsForHeading}</div>
-              <div className={styles.whatItIsForText}>{data.imageSlider.whatItIsForText}</div>
+            <div className={styles.whatItIsForHeading}>{data.imageSlider.whatItIsForHeading}</div>
+            <div className={styles.whatItIsForText}>{data.imageSlider.whatItIsForText}</div>
           </div>
           <SecureYourLegacy
             bulletPointImg={data.imageSlider.bulletPointImg}
@@ -183,16 +183,13 @@ export default function Home() {
           hc={() => { }}
         />
 
-
-
-            <Footer
-              branding={data.footer.branding}
-              logo={data.footer.logo}
-              background={data.footer.background}
-              contents={data.footer.content}
-              socialMedias={data.footer.socialMedia} />
-
-        </div>
+        <Footer
+          branding={data.footer.branding}
+          logo={data.footer.logo}
+          background={data.footer.background}
+          contents={data.footer.content}
+          socialMedias={data.footer.socialMedia} />
+          
         <TawkChatWidget />
       </div>
     </>
