@@ -28,7 +28,6 @@ const SpotLight = dynamic(() => import('@component/common/spotLight'));
 import OurProcessesSection from "@component/ourProcessesSection/OurProgress";
 import SecureYourLegacy from "@component/SecureYourLegacy";
 
-
 export default function Home() {
   const globalLanguage = useAppSelector<any>(state => state.globalLanguage);
   const data = require(`../component/data/${globalLanguage.globalLanguage}.json`);
@@ -96,11 +95,11 @@ export default function Home() {
     }
   }, []);
 
-  const [carouselStyle, setCarouselStyle] = useState<any>({ backgroundSize: "contain", backgroundRepeat: "no-repeat" });
+  const [carouselStyle, setCarouselStyle] = useState<any>({ backgroundImage: "url(/worldmap.svg)", backgroundSize: "contain", backgroundRepeat: "no-repeat" });
 
   React.useEffect(() => {
     if (isMobile()) {
-      setCarouselStyle({ background: "linear-gradient(to bottom, #0A041F 30%, transparent 30%)" });
+      setCarouselStyle({ backgroundImage: "url(/worldmap.svg)", background: "linear-gradient(to bottom, #0A041F 30%, transparent 30%)" });
     }
   }, [])
   return (
@@ -127,7 +126,6 @@ export default function Home() {
           descriptionArray={data.digitalBodyGaurdSection.descriptionArray}
         />
 
-
         <div className={styles.wrapper}>
           <SpotLight color="rgb(255 162 96 / 60%)" bottom={-200} right={-400} width={1000} height={1500} />
           <div className={styles.whatItIsFor}>
@@ -140,6 +138,20 @@ export default function Home() {
             bulletPoints={data.imageSlider.bulletPoints}
             buttonLabel={data.imageSlider.buttonlabel} />
           <TechnologyMeetsOldSchoolSophistication heading={data.technologyMeetsOldSchoolSophistication.heading} limpidBoxes={data.technologyMeetsOldSchoolSophistication.limpidBoxes} />
+        </div>
+
+        <div className={styles["carousel-wrapper"]}>
+          <div className={styles["carousel-container-1"] + " " + styles["cardCarousalRemain"]} style={carouselStyle} ref={refCarouselCurrentSubscription}>
+            {
+              isVisibleCarouselCurrentSubscription && <Carousel {...data.carouselCurrentSubscription} redirectComponent={redirectComponent} />
+            }
+          </div>
+          <SpotLight color="rgb(255 162 96 / 60%)" top={250} right={-300} width={1000} height={1500} />
+          <div className={styles["carousel-container-2"] + " " + styles["cardCarousalRemain"]} ref={refCarouselUpcomingSubscription}>
+            {
+              isVisibleCarouselUpcomingSubscription && <Carousel {...data.carouselUpcomingSubscription} redirectComponent={redirectComponent} />
+            }
+          </div>
         </div>
 
         <div className={styles.wrapper}>
@@ -177,22 +189,6 @@ export default function Home() {
             badgeColor={data.founder1.badgeColor}
             credentials={data.founder1.credentials}
           />
-          <SpotLight color="rgb(255 162 96 / 60%)" bottom={-200} right={-400} width={1000} height={1500} />
-          <TechnologyMeetsOldSchoolSophistication heading={data.technologyMeetsOldSchoolSophistication.heading} limpidBoxes={data.technologyMeetsOldSchoolSophistication.limpidBoxes} />
-        </div>
-
-        <div className={styles["carousel-wrapper"]}>
-          <div className={styles["carousel-container-1"] + " " + styles["cardCarousalRemain"]} style={carouselStyle} ref={refCarouselCurrentSubscription}>
-            {
-              isVisibleCarouselCurrentSubscription && <Carousel {...data.carouselCurrentSubscription} redirectComponent={redirectComponent} />
-            }
-          </div>
-          <SpotLight color="rgb(255 162 96 / 60%)" top={250} right={-300} width={1000} height={1500} />
-          <div className={styles["carousel-container-2"] + " " + styles["cardCarousalRemain"]} ref={refCarouselUpcomingSubscription}>
-            {
-              isVisibleCarouselUpcomingSubscription && <Carousel {...data.carouselUpcomingSubscription} redirectComponent={redirectComponent} />
-            }
-          </div>
         </div>
 
         <ProtectYourself
@@ -218,3 +214,5 @@ export default function Home() {
     </>
   );
 }
+
+
