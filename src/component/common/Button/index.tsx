@@ -52,6 +52,8 @@ const Button: React.FC<ButtonProps> = ( props ) => {
         setPadding('calc((100vw/1920)*20) calc((100vw/1920)*30)');
       }
     }
+
+
   },[[], font]);
 
   return (

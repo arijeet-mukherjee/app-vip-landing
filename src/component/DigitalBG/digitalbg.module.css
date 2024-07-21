@@ -2,15 +2,37 @@
 
 .container{
     display: grid;
-    justify-items: center;
-    text-align: center;
+    justify-items: start;
     gap: calc((100vw/1920)*30);
     font-family: 'inter';
+    text-align: start;
+    
+}
+.hollowBadge{
+    background: white;
+    color: #424242;
+    position: relative;
+    padding: calc((100vw/1920)*10) calc((100vw/1920)*10);
+    border-radius: calc((100vw/1920)*5);
+    font-size: calc((100vw/1920)*18);
+    border-radius: calc((100vw/1920)* 5) solid transparent;
+}
+.hollowBadge::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(203.61deg, #060C0B -8.96%, #F2C84B 30.94%, #F2D785 44.23%, #D9A036 57.53%, #060C0B 97.43%);
+    margin: calc((100vw/1920)* -3);
+    border-radius: calc((100vw/1920)*5);
+    z-index: -1;
     
 }
 
 .detailTitle{
     font-size: calc((100vw/1920)*64);
+    font-weight: 900;
+    text-shadow: black 1px 1px 2px;
+
 }
 
 .detailpoints{
@@ -27,5 +49,15 @@
     }
     .detailpoints{
         font-size: calc((100vw/393)*12);
+    }
+    .hollowBadge{
+        padding: calc((100vw/393)*5) calc((100vw/393)*10);
+        border-radius: calc((100vw/393)*5);
+        font-size: calc((100vw/393)*8);
+        border-radius: calc((100vw/393)* 3);
+    }
+    .hollowBadge::before{
+        margin: calc((100vw/393)* -1);
+        border-radius: calc((100vw/393)*3);
     }
 }
