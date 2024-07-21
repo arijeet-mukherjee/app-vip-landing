@@ -18,7 +18,6 @@ const SecureYourLegacy: React.FC<SecureYourLegacyProps> = ({ bulletPointImg, bul
 
     const handleSlideChange = (index: number) => {
         setCurrentSlide(index);
-        console.log(index)
     };
 
     function handelClick(e: React.MouseEvent<HTMLDivElement>) {
