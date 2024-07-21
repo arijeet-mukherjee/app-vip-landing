@@ -192,18 +192,13 @@ export default function Home() {
           hc={() => { }}
         />
 
-
-        <div ref={refFooter}>
-          {
-            isVisiblefFooter &&
-            <Footer
-              branding={data.footer.branding}
-              logo={data.footer.logo}
-              background={data.footer.background}
-              contents={data.footer.content}
-              socialMedias={data.footer.socialMedia} />
-          }
-        </div>
+        <Footer
+          branding={data.footer.branding}
+          logo={data.footer.logo}
+          background={data.footer.background}
+          contents={data.footer.content}
+          socialMedias={data.footer.socialMedia} />
+          
         <TawkChatWidget />
       </div>
     </>

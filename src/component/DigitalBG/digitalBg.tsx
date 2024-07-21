@@ -24,13 +24,13 @@ export default function DigitalBg({
     badgeText = badgeText || '';
     badgeColor = badgeColor || '';
     Title = Title || '';
-    descriptionArray = descriptionArray || '';
+    descriptionArray = descriptionArray || [];
 
     return (
         <VisualBreakup>
             <div className={styles.container}>
-                <MetalBadge label={badgeText} colorVariant={badgeColor}/>
-                <h1 className={styles.detailTitle}>{Title}</h1>
+                <div className={styles.hollowBadge}>{badgeText}</div>
+                <div className={styles.detailTitle}>{Title}</div>
                 {descriptionArray.map((description, index) => {
                     return <p key={index} className={styles.detailpoints}>{description}</p>
                 })}
