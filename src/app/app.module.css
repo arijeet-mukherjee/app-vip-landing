@@ -130,6 +130,12 @@
     
 }
 
+.benefitAndFeature {
+    background-size: cover; 
+    background-position: center;
+    height: auto;
+}
+
 @media(max-width: 1200px) {
     .carousel-container-1 {
         position: relative;
