@@ -5,12 +5,13 @@
     grid-template-columns: auto;
     grid-template-rows: repeat(3, auto);
     box-sizing: border-box;
-    overflow-x: hidden;
-    justify-content: center;
+    /* overflow-x: hidden; */
+    /* width: 1094px; */
+    justify-content: start;
     align-items: center;
     background-color: transparent;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: calc((100vw / 1920) * 30);
+    padding-bottom: calc((100vw / 1920) * 60);
 }
 
 .carousel-header {
@@ -27,7 +28,7 @@
     height: 100%;
 }
 
-@keyframes movement {
+/* @keyframes movement {
     from {
         transform: translateX(100%);
     }
@@ -45,24 +46,26 @@
     to {
         transform: translateX(-100%);
     }
-}
+} */
 
 
 .carousel-content {
     /* flex-direction: row; */
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-start; */
     /* overflow: hidden; */
     /* position: relative; */
     /* display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     justify-content: center;
-    align-items: center; */
+    align-items: center;
     gap: calc((100vw / 1920) * 110);
-    transform-style: preserve-3d;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d; */
 }
 
 .animation {
@@ -128,7 +131,7 @@
     display: flex;
     padding-top: calc((100vw / 1920) * 25);
     gap: calc((100vw / 1920) * 10);
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 

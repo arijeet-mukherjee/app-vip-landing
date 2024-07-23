@@ -31,7 +31,7 @@ const CarouselCard: React.FC<CardProps> = (props: CardProps) => {
     }, []);
 
     return (
-        <div className={styles["carousel-card"]} key={key}>
+        <div className={styles["carousel-card"]} style={{ marginRight: "calc((100vw / 1920) * 108)" }} key={key}>
             <div style={{ "padding": "0 4px 0 4px" }}>
                 <div className={styles["carousel-card-image"]}>
                     <div className={styles["card-image-outer"]}>
@@ -52,6 +52,4 @@ const CarouselCard: React.FC<CardProps> = (props: CardProps) => {
     )
 }
 
-// styles[`${animate && prevIndex !== index ? "animation" : ""}`] + " " + styles[`${animate ? "" : ""}`] + " " + styles[`${prevIndex === index ? "animation-out" : ""}`]
-// " " + styles[`${animate ? "animation" : prevIndex === index ? "animation-out" : "card-inactive"}`]}
 export default CarouselCard

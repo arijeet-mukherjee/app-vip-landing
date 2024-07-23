@@ -7,7 +7,6 @@
     box-sizing: border-box;
     height: calc((100vw / 1920) * 528);
     width: calc((100vw / 1920) * 422);
-    /* transition-duration: 1000ms; */
 }
 
 .carousel-card-image {
@@ -17,18 +16,9 @@
     box-sizing: border-box;
     border-radius: 5px 5px 0 0;
     height: 100%;
-    /* z-index: 999; */
-    /* border: 4px solid;
-    border-image-source: radial-gradient(80.04% 80.04% at 0% -8.66%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
-    border-bottom: none; */
+    border-top: silver 2px solid;
     position: relative;
     background: black !important;
-    /* background: radial-gradient(80.04% 80.04% at 0% -8.66%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%) linear-gradient(70.9deg, #858C8D 14.42%, #D7DADA 27.24%, #BCC3C2 47.13%, #96A0A1 53.17%, #878F91 76.3%, #A6ABAC 84.69%, #82898A 93.53%); */
-    /* -webkit-text-fill-color: transparent;
-    background-blend-mode: overlay, normal; */
-    /* 
-    filter: drop-shadow(0px 0px 12.5px rgba(0, 0, 0, 0.1)); */
-    /* padding: 4px 4px 0 4px; */
 }
 
 .carousel-card-image::before {
@@ -38,9 +28,6 @@
     left: -1px;
     right: -1px;
     bottom: 0;
-    /* width: calc(100% + 10px);
-    height: calc(100% + 10px); */
-    /* background: linear-gradient(203.61deg, #060C0B -8.96%, #F2C84B 30.94%, #F2D785 44.23%, #D9A036 57.53%, #060C0B 97.43%); */
     margin: -1px;
     margin-bottom: 0;
     border-radius: 5px 5px 0 0;
@@ -48,15 +35,6 @@
     background: radial-gradient(80.04% 80.04% at 0% -8.66%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(70.9deg, #858C8D 14.42%, #D7DADA 27.24%, #BCC3C2 47.13%, #96A0A1 53.17%, #878F91 76.3%, #A6ABAC 84.69%, #82898A 93.53%);
 
 }
-
-/* .card-image-outer {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    height: 100%;
-    width: calc((100vw / 1920) * 422);
-} */
 
 .card-image-inner {
     width: calc((100vw / 1920) * 167);

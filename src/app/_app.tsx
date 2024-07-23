@@ -140,18 +140,10 @@ export default function Home() {
           <TechnologyMeetsOldSchoolSophistication heading={data.technologyMeetsOldSchoolSophistication.heading} limpidBoxes={data.technologyMeetsOldSchoolSophistication.limpidBoxes} />
         </div>
 
-        <div className={styles["carousel-wrapper"]}>
-          <div className={styles["carousel-container-1"] + " " + styles["cardCarousalRemain"]} style={carouselStyle} ref={refCarouselCurrentSubscription}>
-            {
-              isVisibleCarouselCurrentSubscription && <Carousel {...data.carouselCurrentSubscription} redirectComponent={redirectComponent} />
-            }
-          </div>
+        <div className={styles["carousel-wrapper"] + " " + styles["cardCarousalRemain"]}>
+          <Carousel {...data.carouselCurrentSubscription} redirectComponent={redirectComponent} />
           <SpotLight color="rgb(255 162 96 / 60%)" top={250} right={-300} width={1000} height={1500} />
-          <div className={styles["carousel-container-2"] + " " + styles["cardCarousalRemain"]} ref={refCarouselUpcomingSubscription}>
-            {
-              isVisibleCarouselUpcomingSubscription && <Carousel {...data.carouselUpcomingSubscription} redirectComponent={redirectComponent} />
-            }
-          </div>
+          <Carousel {...data.carouselUpcomingSubscription} redirectComponent={redirectComponent} />
         </div>
 
         <div className={styles.wrapper}>
@@ -203,7 +195,7 @@ export default function Home() {
           background={data.footer.background}
           contents={data.footer.content}
           socialMedias={data.footer.socialMedia} />
-          
+
         <TawkChatWidget />
       </div>
     </>
