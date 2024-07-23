@@ -5,8 +5,6 @@
     grid-template-columns: auto;
     grid-template-rows: repeat(3, auto);
     box-sizing: border-box;
-    /* overflow-x: hidden; */
-    /* width: 1094px; */
     justify-content: start;
     align-items: center;
     background-color: transparent;
