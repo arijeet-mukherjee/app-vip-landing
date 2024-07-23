@@ -26,46 +26,6 @@
     height: 100%;
 }
 
-/* @keyframes movement {
-    from {
-        transform: translateX(100%);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes movement-out {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-100%);
-    }
-} */
-
-
-.carousel-content {
-    /* flex-direction: row; */
-    /* display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start; */
-    /* overflow: hidden; */
-    /* position: relative; */
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    justify-content: center;
-    align-items: center;
-    gap: calc((100vw / 1920) * 110);
-    height: 100%;
-    width: 100%;
-    transform-style: preserve-3d; */
-}
-
 .animation {
     animation: movement 1500ms linear forwards;
 }
