@@ -26,15 +26,21 @@ interface OurProcessesSectionProps {
 function CircularIcon({
   image,
   heightOfLink,
-  next
+  next,
+  dimension,
 }: {
   image: string,
   heightOfLink: number,
-  next: boolean
+  next: boolean,
+  dimension: number
 }) {
 
   return (
-    <div className={styles.metalCircleContainer}>
+    <div className={styles.metalCircleContainer}
+    style={{
+      height: `calc((100vw/1920)*${dimension})`,
+      width: `calc((100vw/1920)*${dimension})`
+    }}>
       <div className={styles.circle}></div>
       <Image
         fill
@@ -91,7 +97,8 @@ export default function OurProcessesSection({
                 <CircularIcon
                   image={item.image}
                   next={(itemArray.length - 1) !== index}
-                  heightOfLink={gapBetweenItemsDefault} />
+                  heightOfLink={gapBetweenItemsDefault} 
+                  dimension={textContainerHeightDefault}/>
                 <div className={styles.checkPointDetailContainer}
                   style={{
                     width: `calc((100vw/1920)*${textContainerWidthDefault})`,
