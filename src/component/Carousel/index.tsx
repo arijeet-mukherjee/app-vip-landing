@@ -1,17 +1,14 @@
 "use client"
 
-import React, { act, useRef } from 'react';
-import Link from 'next/link';
+import React, { useRef } from 'react';
 import styles from "./carousel.module.css";
-import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { isMobile } from '@util/index';
 const CarouselCard = dynamic(() => import('@component/common/CarouselCard'));
 import Indicator from '@component/common/Indicator';
 import MetalBadge from '@component/common/MetalBadge/MetalBadge';
-import { current } from '@reduxjs/toolkit';
 
-import ReactSimplyCarousel from 'react-simply-carousel';
+const ReactSimplyCarousel = dynamic(() => import('react-simply-carousel'), { ssr: false });
 
 interface CardProps {
     image: string,
@@ -39,6 +36,8 @@ const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
     const [currentIndex, setCurrentIndex] = React.useState(0);
     const [cardPropsState, setCardPropsState] = React.useState(cardProps);
     const [indicator, setIndicator] = React.useState<Number[]>([]);
+    const [showCarousel, setShowCarousel] = React.useState(false);
+    const [activeSlideIndex, setActiveSlideIndex] = React.useState(0);
 
     const touchStartX = useRef(0);
     const cards: number = cardProps.length;
@@ -90,12 +89,17 @@ const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
         }
     }, [currentIndex]);
 
-    const [activeSlideIndex, setActiveSlideIndex] = React.useState(0);
-
     const dotClick = (index: number) => {
         setCurrentIndex(index);
         setActiveSlideIndex(index)
     }
+
+    React.useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowCarousel(true);
+        }, 1000);
+        return () => clearTimeout(timer);
+    }, [])
 
     return (
         <div className={styles["carousel-wrapper"]}>
@@ -123,49 +127,56 @@ const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
                     </div>
                 )}
             </div>
-            <ReactSimplyCarousel
-                containerProps={
-                    {
-                        className: styles["carousel-content"],
-                        style: {
-                            width: "100%",
-                            justifyContent: "space-between",
-                            userSelect: "none",
+            {
+                showCarousel && (
+
+                    <ReactSimplyCarousel
+                        containerProps={
+                            {
+                                className: styles["carousel-content"],
+                                style: {
+                                    width: "100%",
+                                    justifyContent: "space-between",
+                                    userSelect: "none",
+                                }
+                            }
                         }
-                    }
-                }
-                forwardBtnProps={{
-                    children: "",
-                    style: {
-                        display: "none"
-                    },
-                }}
-                backwardBtnProps={{
-                    children: "",
-                    style: {
-                        display: "none"
-                    },
-                }}
-                activeSlideIndex={activeSlideIndex}
-                onRequestChange={setActiveSlideIndex}
-                itemsToShow={3}
-                itemsToScroll={1}
-                easing='linear'
-                centerMode
-                speed={2000}
-                responsiveProps={[
-                    {
-                        itemsToShow: 3,
-                        itemsToScroll: 1,
-                    },
-                ]}
-            >
-                {cardPropsState && cardPropsState.map((cardProp: CardProps, index: number) => {
-                    return (<div key={index}>
-                        <CarouselCard {...cardProp} key={Math.random()} redirectComponent={redirectComponent} />
-                    </div>)
-                })}
-            </ReactSimplyCarousel>
+                        forwardBtnProps={{
+                            children: "",
+                            style: {
+                                display: "none"
+                            },
+                        }}
+                        backwardBtnProps={{
+                            children: "",
+                            style: {
+                                display: "none"
+                            },
+                        }}
+                        activeSlideIndex={activeSlideIndex}
+                        onRequestChange={setActiveSlideIndex}
+                        itemsToShow={3}
+                        itemsToScroll={1}
+                        easing='linear'
+                        centerMode
+                        speed={2000}
+                        responsiveProps={[
+                            {
+                                itemsToShow: 3,
+                                itemsToScroll: 1,
+                            },
+                        ]}
+                    >
+                        {cardPropsState && cardPropsState.map((cardProp: CardProps, index: number) => {
+                            return (
+                                <div key={index}>
+                                    <CarouselCard {...cardProp} key={Math.random()} redirectComponent={redirectComponent} />
+                                </div>
+                            )
+                        })}
+                    </ReactSimplyCarousel>
+                )
+            }
             <div className={`${styles["carousel-dot-button"]}`}>
                 {indicator && indicator.map((value, key) => {
                     let IndicatorProps = {

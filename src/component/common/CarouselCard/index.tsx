@@ -13,11 +13,10 @@ interface CardProps {
     url: string,
     toggleButton: boolean,
     buttonText: string,
-    key: number
     redirectComponent: Function,
 }
 const CarouselCard: React.FC<CardProps> = (props: CardProps) => {
-    const { image, title, description, url, toggleButton, buttonText, key, redirectComponent } = props;
+    const { image, title, description, url, toggleButton, buttonText, redirectComponent } = props;
     const [starPath, setStarPath] = React.useState("url(/starvector.svg)");
     const [imageHeight, setImageHeight] = React.useState(178.67);
     const [imageWidth, setImageWidth] = React.useState(167);
@@ -31,7 +30,7 @@ const CarouselCard: React.FC<CardProps> = (props: CardProps) => {
     }, []);
 
     return (
-        <div className={styles["carousel-card"]} style={{ marginRight: "calc((100vw / 1920) * 108)" }} key={key}>
+        <div className={styles["carousel-card"]} style={{ marginRight: "calc((100vw / 1920) * 108)" }}>
             <div style={{ "padding": "0 4px 0 4px" }}>
                 <div className={styles["carousel-card-image"]}>
                     <div className={styles["card-image-outer"]}>
