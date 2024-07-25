@@ -142,7 +142,7 @@ export default function Home() {
 
         <div className={styles["carousel-wrapper"] + " " + styles["cardCarousalRemain"]}>
           <Carousel {...data.carouselCurrentSubscription} redirectComponent={redirectComponent} />
-          <SpotLight color="rgb(255 162 96 / 60%)" top={250} right={-300} width={1000} height={1500} />
+          <SpotLight color="rgb(255 162 96 / 60%)" top={250} right={-300} width={1000} height={1050} />
           <Carousel {...data.carouselUpcomingSubscription} redirectComponent={redirectComponent} />
         </div>
 
