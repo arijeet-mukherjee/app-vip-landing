@@ -148,6 +148,12 @@ export default function Home() {
             badgeColor={data.benefitAndFeature.badgeColor}
           />
         </div>
+        
+        <div className={styles["carousel-wrapper"] + " " + styles["cardCarousalRemain"]}>
+          <Carousel {...data.carouselCurrentSubscription} redirectComponent={redirectComponent} />
+          <SpotLight color="rgb(255 162 96 / 60%)" top={250} right={-300} width={1000} height={1050} />
+          <Carousel {...data.carouselUpcomingSubscription} redirectComponent={redirectComponent} />
+        </div>
 
         <div className={styles.wrapper}>
           <SpotLight color="rgb(255 255 255 / 60%)" bottom={-100} left={-200} width={700} height={700} />
@@ -198,9 +204,11 @@ export default function Home() {
           background={data.footer.background}
           contents={data.footer.content}
           socialMedias={data.footer.socialMedia} />
-          
+
         <TawkChatWidget />
       </div>
     </>
   );
 }
+
+

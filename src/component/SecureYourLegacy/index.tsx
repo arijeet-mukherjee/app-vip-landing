@@ -12,7 +12,7 @@ interface SecureYourLegacyProps {
     imageSliderText: string;
 }
 
-const SecureYourLegacy: React.FC<SecureYourLegacyProps> = ({ bulletPointImg, bulletPoints, buttonLabel, imageSliderText}) => {
+const SecureYourLegacy: React.FC<SecureYourLegacyProps> = ({ bulletPointImg, bulletPoints, buttonLabel, imageSliderText }) => {
 
     const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -28,14 +28,14 @@ const SecureYourLegacy: React.FC<SecureYourLegacyProps> = ({ bulletPointImg, bul
     return (
         <div className={styles["container"]}>
             <div className={styles["imageSlider-section"]}>
-                <ImageSlider data={data.imageSlider.slides} onSlideChange={handleSlideChange}/>
+                <ImageSlider data={data.imageSlider.slides} onSlideChange={handleSlideChange} />
             </div>
             <div className={styles["content-section"]}>
                 <div className={styles.bulletPointContainer}>
                     {bulletPoints.map((points, index) => {
                         return (
                             <div key={index} className={styles.bulletPoints}>
-                                { currentSlide === index ? <Image src={bulletPointImg} alt='bullet point' className={styles.bulletPointImg} width={20} height={20} /> : <Image src= "/imageSliderbullet.svg" alt='bullet point' className={styles.bulletPointImg} width={20} height={20} />}
+                                {currentSlide === index ? <Image src={bulletPointImg} alt='bullet point' className={styles.bulletPointImg} width={20} height={20} /> : <Image src="/imageSliderbullet.svg" alt='bullet point' className={styles.bulletPointImg} width={20} height={20} />}
                                 <p className={`${styles.bulletPoints} ${currentSlide === index ? styles.activeBulletPoint : styles.bulletPointsTxt}`}>{points}</p>
                             </div>
                         )
@@ -45,7 +45,7 @@ const SecureYourLegacy: React.FC<SecureYourLegacyProps> = ({ bulletPointImg, bul
                     <div className={styles["text-section-centent"]}>{imageSliderText}</div>
                 </div>
                 <div className={styles["secure-button"]}>
-                <Button label={buttonLabel} hc={handelClick} background='transparent' backgroundOnHover='#F4C9A4' textColor='white' textColorOnHover='black' borderColor='#F4C9A4' fontSize={24}/>
+                    <Button label={buttonLabel} hc={handelClick} background='transparent' backgroundOnHover='#F4C9A4' textColor='white' textColorOnHover='black' borderColor='#F4C9A4' fontSize={24} />
                 </div>
             </div>
         </div>

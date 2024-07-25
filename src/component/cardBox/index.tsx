@@ -40,8 +40,8 @@ interface CardBoxProps {
     fullGradient?: boolean,
     child?: ReactNode,
     redirectComponent?: any,
-    badgeText : string,
-    badgeColor : string,
+    badgeText: string,
+    badgeColor: string,
     credentials: string
 };
 
@@ -77,7 +77,6 @@ const CardBox: React.FC<CardBoxProps> = (props: CardBoxProps) => {
                     subscriptionUrl: typeof window !== 'undefined' ? window.location.host : ''
                 })
                     .then(data => {
-                        console.log(data);
                         alert(email + " created successfully");
                         typeof window !== 'undefined' && window.open(`${props.goTo}`, '_self');
                     })
@@ -105,7 +104,7 @@ const CardBox: React.FC<CardBoxProps> = (props: CardBoxProps) => {
             setBackgroundSize({ height: props.background?.mHeight, width: props.background?.mWidth });
 
             if (props.fullGradient) {
-                
+
             }
 
             if (props.gridArea) {
@@ -128,10 +127,10 @@ const CardBox: React.FC<CardBoxProps> = (props: CardBoxProps) => {
 
         <div className={styles["cardbox-card"]} style={cardGradient} >
             <div className={styles["cardbox-content"]} style={cardContentStyle} >
-                <MetalBadge label={badgeText} colorVariant={badgeColor}/> 
+                <MetalBadge label={badgeText} colorVariant={badgeColor} />
                 <h2 className={styles["cardbox-title"]}>{title}</h2>
                 <h2 className={styles["cardbox-credentials"]}>{credentials}</h2>
-                
+
                 {bulletPoints?.length
                     ?
                     <div className={styles.bulletPointContainer}>
