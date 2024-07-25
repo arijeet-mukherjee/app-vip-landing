@@ -8,7 +8,7 @@
             },
             "button": {
                 "label": "Explore",
-                "id"  : "Explore"
+                "id": "Explore"
             },
             "navbarItems": [
                 {
@@ -52,39 +52,96 @@
                 }
             ]
         },
-        "introduction" : ["Become Part of the", "Digitally Protected Elite"],
-        "content" : [["Premium 24/7 Security Monitoring", "Immidiate Incident Response and Much More", "Personalized Security Strategies"], "Your exclusive access card to a digital bodyguard, protecting your data from online threats"],
+        "introduction": [
+            "Become Part of the",
+            "Digitally Protected Elite"
+        ],
+        "content": [
+            [
+                "Premium 24/7 Security Monitoring",
+                "Immidiate Incident Response and Much More",
+                "Personalized Security Strategies"
+            ],
+            "Your exclusive access card to a digital bodyguard, protecting your data from online threats"
+        ],
         "secdeskLogo": "",
         "rightArrowIcon": "",
         "button-name": "Apply for the Early Access",
-        "front":{
+        "front": {
             "label": "SecDesk",
-            "title":"SECDESK VIP",
+            "title": "SECDESK VIP",
             "cardName": "Exclusive Access Card",
             "cardNumber": 9875462315246801,
             "innerLogo": "/minishield.svg"
         },
-        "back":{
+        "back": {
             "label": "SecDesk",
-            "title":"",
+            "title": "",
             "cardName": "",
             "cardNumber": null,
             "innerLogo": ""
         },
         "outerLogo": "/minilogo.svg"
     },
-    "technologyMeetsOldSchoolSophistication":{
-        "heading" : "Technology Meets Old School Sophistication",
+    "technologyMeetsOldSchoolSophistication": {
+        "heading": "Technology Meets Old School Sophistication",
         "limpidBoxes": [
-           { "image" : "./shieldcall.svg", "text" : "Reclaim Your Peace of Mind, knowing that the SecDesk VIP team of security experts has your back 24/7.", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"auto", "mHeight":"calc((100vw / 393)*100)"},
-           { "image" : "./contact.svg", "text" : "Contact us anytime and the SecDesk VIP team will quickly eliminate your security troubles, ensuring that your assets are safe and secure. ", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"auto", "mHeight":"calc((100vw / 393)*100)"},
-           { "image" : "./steps.svg", "text" : "If we need your input, our team will contact you with comprehensive step by step instructions. ", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"auto", "mHeight":"calc((100vw / 393)*100)"},
-           { "image" : "./filternotification.svg", "text" : "Security concerns can be overwhelming to deal with, we filter out the unnecessary notifications, presenting only the critical ones to you. ", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"auto", "mHeight":"calc((100vw / 393)*100)"},
-           { "image" : "./agreement.svg", "text" : "Our 100% discrete policy ensures that your information is safe with us bound by a one-sided Non-Disclosure Agreement.", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"auto", "mHeight":"calc((100vw / 393)*100)"},
-           { "image" : "./shieldfingerprint.svg", "text" : "We are Fast, Adaptable and Proactive which means that whenever you have a security concern, we are just fingertips away from addressing it.", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"auto", "mHeight":"calc((100vw / 393)*100)"}
+            {
+                "image": "./shieldcall.svg",
+                "text": "Reclaim Your Peace of Mind, knowing that the SecDesk VIP team of security experts has your back 24/7.",
+                "textColor": "rgba(244, 201, 164, 1)",
+                "dHeight": "calc((100vw / 1920)*270)",
+                "dWidth": "calc((100vw / 1920)*723)",
+                "mWidth": "auto",
+                "mHeight": "calc((100vw / 393)*100)"
+            },
+            {
+                "image": "./contact.svg",
+                "text": "Contact us anytime and the SecDesk VIP team will quickly eliminate your security troubles, ensuring that your assets are safe and secure. ",
+                "textColor": "rgba(244, 201, 164, 1)",
+                "dHeight": "calc((100vw / 1920)*270)",
+                "dWidth": "calc((100vw / 1920)*723)",
+                "mWidth": "auto",
+                "mHeight": "calc((100vw / 393)*100)"
+            },
+            {
+                "image": "./steps.svg",
+                "text": "If we need your input, our team will contact you with comprehensive step by step instructions. ",
+                "textColor": "rgba(244, 201, 164, 1)",
+                "dHeight": "calc((100vw / 1920)*270)",
+                "dWidth": "calc((100vw / 1920)*723)",
+                "mWidth": "auto",
+                "mHeight": "calc((100vw / 393)*100)"
+            },
+            {
+                "image": "./filternotification.svg",
+                "text": "Security concerns can be overwhelming to deal with, we filter out the unnecessary notifications, presenting only the critical ones to you. ",
+                "textColor": "rgba(244, 201, 164, 1)",
+                "dHeight": "calc((100vw / 1920)*270)",
+                "dWidth": "calc((100vw / 1920)*723)",
+                "mWidth": "auto",
+                "mHeight": "calc((100vw / 393)*100)"
+            },
+            {
+                "image": "./agreement.svg",
+                "text": "Our 100% discrete policy ensures that your information is safe with us bound by a one-sided Non-Disclosure Agreement.",
+                "textColor": "rgba(244, 201, 164, 1)",
+                "dHeight": "calc((100vw / 1920)*270)",
+                "dWidth": "calc((100vw / 1920)*723)",
+                "mWidth": "auto",
+                "mHeight": "calc((100vw / 393)*100)"
+            },
+            {
+                "image": "./shieldfingerprint.svg",
+                "text": "We are Fast, Adaptable and Proactive which means that whenever you have a security concern, we are just fingertips away from addressing it.",
+                "textColor": "rgba(244, 201, 164, 1)",
+                "dHeight": "calc((100vw / 1920)*270)",
+                "dWidth": "calc((100vw / 1920)*723)",
+                "mWidth": "auto",
+                "mHeight": "calc((100vw / 393)*100)"
+            }
         ]
     },
-   
     "footer": {
         "logo": {
             "logoName": "secDesk logo",
@@ -156,7 +213,6 @@
             }
         ]
     },
-
     "carouselCurrentSubscription": {
         "title": "What we’re offering in the current subscription",
         "description": "",
@@ -255,31 +311,30 @@
             }
         ]
     },
-    
-    "imageSlider" : {
-        "whatItIsForHeading" : "Who It is For?",
-        "whatItIsForText" : "Secdesk VIP provides precision-engineered security solutions designed exclusively for industry leaders who cannot avoid the spotlight. Sign up if you are:",
+    "imageSlider": {
+        "whatItIsForHeading": "Who It is For?",
+        "whatItIsForText": "Secdesk VIP provides precision-engineered security solutions designed exclusively for industry leaders who cannot avoid the spotlight. Sign up if you are:",
         "slides": [
-          {
-            "src": "/ImageSlider1.png",
-            "alt": "Image 1 for carousel"
-          },
-          {
-            "src": "/ImageSlider2.png",
-            "alt": "Image 2 for carousel"
-          },
-          {
-            "src": "/ImageSlider3.png",
-            "alt": "Image 3 for carousel"
-          },
-          {
-            "src": "/ImageSlider4.png",
-            "alt": "Image 3 for carousel"
-          },
-          {
-            "src": "/ImageSlider5.png",
-            "alt": "Image 3 for carousel"
-          }
+            {
+                "src": "/ImageSlider1.png",
+                "alt": "Image 1 for carousel"
+            },
+            {
+                "src": "/ImageSlider2.png",
+                "alt": "Image 2 for carousel"
+            },
+            {
+                "src": "/ImageSlider3.png",
+                "alt": "Image 3 for carousel"
+            },
+            {
+                "src": "/ImageSlider4.png",
+                "alt": "Image 3 for carousel"
+            },
+            {
+                "src": "/ImageSlider5.png",
+                "alt": "Image 3 for carousel"
+            }
         ],
         "bulletPointImg": "/tickmark.svg",
         "bulletPoints": [
@@ -292,10 +347,10 @@
         "imageSliderText": "If you seek freedom from digital anxiety, SecDesk VIP is your ultimate protector.",
         "buttonlabel": "Secure Your Legacy"
     },
-    "OurfounderText" : "Our Founders",
+    "OurfounderText": "Our Founders",
     "founder1": {
         "badgeText": "CO-Founder, CEO",
-        "badgeColor": "silver", 
+        "badgeColor": "silver",
         "title": "Youri Van Der Zwart",
         "credentials": "CREDENTIALS",
         "description": "Story- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.",
@@ -308,10 +363,9 @@
             "mWidth": "calc((100vw / 393)*129)"
         }
     },
-
     "founder2": {
         "badgeText": "CO-Founder, CTO",
-        "badgeColor": "silver", 
+        "badgeColor": "silver",
         "title": "Mick",
         "credentials": "CREDENTIALS",
         "description": "Story- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.",
@@ -324,10 +378,9 @@
             "mWidth": "calc((100vw / 393)*129)"
         }
     },
-
-    "digitalBodyGaurdSection":{
+    "digitalBodyGaurdSection": {
         "badgeText": "YOUR DIGITAL SECURITY MATTERS A LOT",
-        "badgeColor": "silver", 
+        "badgeColor": "silver",
         "Title": "Why Digital Bodyguards?",
         "descriptionArray": [
             "The attacks against the industry leaders and people in the spotlight have become common, and the attackers are always on the lookout for a new target.",
@@ -338,40 +391,93 @@
     "protectYourselfNow": {
         "title": "Ready to Get Access to Your Digital Bodyguard?",
         "buttonLabel": "Protect Yourself Now"
-      },
-    "ourProcessesSection":{
-            "sectionHeading": "Our Processes",
-            "gapBetweenItems": 54,
-            "textContainerHeight": 138,
-            "textContainerWidth": 1249,
-            "itemArray": [
-              {
+    },
+    "ourProcessesSection": {
+        "sectionHeading": "Our Processes",
+        "gapBetweenItems": 54,
+        "textContainerHeight": 138,
+        "textContainerWidth": 1249,
+        "itemArray": [
+            {
                 "image": "/ourProcessLogo1.svg",
                 "text": "NDA: We sign a one-sided NDA, guaranteeing the complete non disclosure of your information. Every interaction, from intake to services, is safe with us and covered by the NDA."
-              },
-              {
+            },
+            {
                 "image": "/ourProcessLogo2.svg",
                 "text": "INTAKE:  We conduct an intake session with you/ your team or your representative to discuss your wants, needs, concerns and situation."
-              },
-              {
+            },
+            {
                 "image": "/ourProcessLogo3.svg",
                 "text": "PROPOSAL: Based on our intake session, we create a personalized proposal tailored to your needs. It is clear, complete, and transparent with no hidden costs down the line. "
-              },
-              {
+            },
+            {
                 "image": "/ourProcessLogo4.svg",
                 "text": "IMPLEMENTATION: Once you accept our proposal, you select a time for implementing the VIP security services and we will execute with precision."
-              },
-              {
+            },
+            {
                 "image": "/ourProcessLogo5.svg",
                 "text": "MONITORING: Our expert security team monitors every potential alerts from our implemented services, notifying you and mitigating any critical security risks. "
-              }
-            ],
-            "limpidBoxes": [
-                { "image" : "./ourProcessLogo1.svg", "text": "NDA: We sign a one-sided NDA, guaranteeing the complete non disclosure of your information. Every interaction, from intake to services, is safe with us and covered by the NDA.", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"auto", "mHeight":"calc((100vw / 393)*150)"},
-                { "image" : "./ourProcessLogo2.svg", "text" : "INTAKE:  We conduct an intake session with you/ your team or your representative to discuss your wants, needs, concerns and situation. ", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"auto", "mHeight":"calc((100vw / 393)*150)"},
-                { "image" : "./ourProcessLogo3.svg", "text" : "PROPOSAL: Based on our intake session, we create a personalized proposal tailored to your needs. It is clear, complete, and transparent with no hidden costs down the line. ", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"auto", "mHeight":"calc((100vw / 393)*150)"},
-                { "image" : "./ourProcessLogo4.svg", "text" : "IMPLEMENTATION: Once you accept our proposal, you select a time for implementing the VIP security services and we will execute with precision.", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"auto", "mHeight":"calc((100vw / 393)*150)"},
-                { "image" : "./ourProcessLogo5.svg", "text" : "MONITORING: Our expert security team monitors every potential alerts from our implemented services, notifying you and mitigating any critical security risks. ", "textColor": "rgba(244, 201, 164, 1)", "dHeight":"calc((100vw / 1920)*270)", "dWidth":"calc((100vw / 1920)*723)", "mWidth":"auto", "mHeight":"calc((100vw / 393)*150)"}
-             ]
-          }
+            }
+        ],
+        "limpidBoxes": [
+            {
+                "image": "./ourProcessLogo1.svg",
+                "text": "NDA: We sign a one-sided NDA, guaranteeing the complete non disclosure of your information. Every interaction, from intake to services, is safe with us and covered by the NDA.",
+                "textColor": "rgba(244, 201, 164, 1)",
+                "dHeight": "calc((100vw / 1920)*270)",
+                "dWidth": "calc((100vw / 1920)*723)",
+                "mWidth": "auto",
+                "mHeight": "calc((100vw / 393)*150)"
+            },
+            {
+                "image": "./ourProcessLogo2.svg",
+                "text": "INTAKE:  We conduct an intake session with you/ your team or your representative to discuss your wants, needs, concerns and situation. ",
+                "textColor": "rgba(244, 201, 164, 1)",
+                "dHeight": "calc((100vw / 1920)*270)",
+                "dWidth": "calc((100vw / 1920)*723)",
+                "mWidth": "auto",
+                "mHeight": "calc((100vw / 393)*150)"
+            },
+            {
+                "image": "./ourProcessLogo3.svg",
+                "text": "PROPOSAL: Based on our intake session, we create a personalized proposal tailored to your needs. It is clear, complete, and transparent with no hidden costs down the line. ",
+                "textColor": "rgba(244, 201, 164, 1)",
+                "dHeight": "calc((100vw / 1920)*270)",
+                "dWidth": "calc((100vw / 1920)*723)",
+                "mWidth": "auto",
+                "mHeight": "calc((100vw / 393)*150)"
+            },
+            {
+                "image": "./ourProcessLogo4.svg",
+                "text": "IMPLEMENTATION: Once you accept our proposal, you select a time for implementing the VIP security services and we will execute with precision.",
+                "textColor": "rgba(244, 201, 164, 1)",
+                "dHeight": "calc((100vw / 1920)*270)",
+                "dWidth": "calc((100vw / 1920)*723)",
+                "mWidth": "auto",
+                "mHeight": "calc((100vw / 393)*150)"
+            },
+            {
+                "image": "./ourProcessLogo5.svg",
+                "text": "MONITORING: Our expert security team monitors every potential alerts from our implemented services, notifying you and mitigating any critical security risks. ",
+                "textColor": "rgba(244, 201, 164, 1)",
+                "dHeight": "calc((100vw / 1920)*270)",
+                "dWidth": "calc((100vw / 1920)*723)",
+                "mWidth": "auto",
+                "mHeight": "calc((100vw / 393)*150)"
+            }
+        ]
+    },
+
+    "benefitAndFeature" : {
+        "heading" : "Benefits and Features that You Get Access to ",
+        "badgeColor" : "gold",
+        "badgeText" : "UNPARALLELED EXPERIENCE",
+        "bulletPointImg": "./sliverTickmark.svg",
+        "bulletPoints": [
+            "Onboarding Process with Full Discretion",
+            "Customizable as Per Your Needs",
+            "24/7 Security Monitoring",
+            "Activate and Deactivate Services At Your Will"
+        ]
+    }
 }

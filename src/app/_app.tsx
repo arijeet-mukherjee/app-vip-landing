@@ -8,9 +8,7 @@ import Shield from "@component/common/Shield";
 import { setShieldState } from '@store/shieldSlice';
 import { useAppDispatch } from '@store/store';
 import { useAppSelector } from '@store/store';
-const CardBox = dynamic(() => import('@component/cardBox'), {
-  loading: () => <></>
-});
+
 const MobileNavModal = dynamic(() => import('@component/MobileNavModal'));
 const CardQuality = dynamic(() => import('@component/cardQuality'), { ssr: false });
 const Carousel = dynamic(() => import('@component/Carousel'), { ssr: false });
@@ -27,6 +25,8 @@ const TechnologyMeetsOldSchoolSophistication = dynamic(() => import('@component/
 const SpotLight = dynamic(() => import('@component/common/spotLight'));
 import OurProcessesSection from "@component/ourProcessesSection/OurProgress";
 import SecureYourLegacy from "@component/SecureYourLegacy";
+import BenefitAndFeature from "@component/BenefitsAndFeature";
+import CardBox from "@component/cardBox";
 
 export default function Home() {
   const globalLanguage = useAppSelector<any>(state => state.globalLanguage);
@@ -114,7 +114,6 @@ export default function Home() {
           modalState={modalOpen}
           headerData={data.header}
           refList={refList}
-
           front={data.header.front}
           back={data.header.back}
           outerLogo={data.header.outerLogo}
@@ -140,6 +139,16 @@ export default function Home() {
           <TechnologyMeetsOldSchoolSophistication heading={data.technologyMeetsOldSchoolSophistication.heading} limpidBoxes={data.technologyMeetsOldSchoolSophistication.limpidBoxes} />
         </div>
 
+        <div className={styles.benefitAndFeature} style={{backgroundImage : 'url(/benifitAndFeature.png)'}}>
+          <BenefitAndFeature
+            bulletPointImg={data.benefitAndFeature.bulletPointImg}
+            bulletPoints={data.benefitAndFeature.bulletPoints}
+            heading={data.benefitAndFeature.heading}
+            badgeText={data.benefitAndFeature.badgeText}
+            badgeColor={data.benefitAndFeature.badgeColor}
+          />
+        </div>
+        
         <div className={styles["carousel-wrapper"] + " " + styles["cardCarousalRemain"]}>
           <Carousel {...data.carouselCurrentSubscription} redirectComponent={redirectComponent} />
           <SpotLight color="rgb(255 162 96 / 60%)" top={250} right={-300} width={1000} height={1050} />
