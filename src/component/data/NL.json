@@ -177,7 +177,7 @@
                 "title": "Helpdesk",
                 "description": "Need assistance navigating the complexities of cybersecurity? Our helpdesk is here to lend a helping hand. Reserve a 30-minute call with our security experts and get answers to all your burning security questions.",
                 "url": "More",
-                "toggleButton": true,
+                "toggleButton": false,
                 "buttonText": "Subscribe"
             },
             {
@@ -193,7 +193,7 @@
                 "title": "Online Training",
                 "description": "Led by industry experts, our courses cover a wide range of security-related subjects, providing you with the knowledge and skills needed to stay safe online. Access our online trainings anytime, anywhere, and learn at your own pace.",
                 "url": "More",
-                "toggleButton": true,
+                "toggleButton": false,
                 "buttonText": "Subscribe"
             },
             {

@@ -7,8 +7,10 @@
     box-shadow: 0px -1px 1.9px 0px #00000066;
     font-weight: 500;
     width: max-content;
-
+    font-family: Inter;
+    color: #000000;
 }
+
 .containerGold {
     background: linear-gradient(160.85deg, #ebc676 -4.08%, #9D8555 17.03%, #f7d48e 53.21%, #58400F 95.13%);
     padding: calc((100vw/1920)*10);
@@ -17,6 +19,8 @@
     font-size: calc((100vw/1920)*20);
     box-shadow: 0px -1px 1.9px 0px #00000066;
     width: max-content;
+    color: #000000;
+    font-family: Inter;
 }
 
 @media screen and (max-width: 1100px) {

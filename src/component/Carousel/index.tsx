@@ -1,13 +1,14 @@
 "use client"
 
 import React, { useRef } from 'react';
-import Link from 'next/link';
 import styles from "./carousel.module.css";
-import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { isMobile } from '@util/index';
 const CarouselCard = dynamic(() => import('@component/common/CarouselCard'));
 import Indicator from '@component/common/Indicator';
+import MetalBadge from '@component/common/MetalBadge/MetalBadge';
+
+const ReactSimplyCarousel = dynamic(() => import('react-simply-carousel'), { ssr: false });
 
 interface CardProps {
     image: string,
@@ -35,18 +36,12 @@ const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
     const [currentIndex, setCurrentIndex] = React.useState(0);
     const [cardPropsState, setCardPropsState] = React.useState(cardProps);
     const [indicator, setIndicator] = React.useState<Number[]>([]);
+    const [showCarousel, setShowCarousel] = React.useState(false);
+    const [activeSlideIndex, setActiveSlideIndex] = React.useState(0);
 
     const touchStartX = useRef(0);
     const cards: number = cardProps.length;
-    const slides: number = Math.ceil(cards / 3);
-
-    const scrollDesktop = () => {
-        if (cards - currentIndex < 3) {
-            setCardPropsState([...cardProps.slice(currentIndex, currentIndex + (cards - currentIndex))]);
-        } else {
-            setCardPropsState(cardProps.slice(currentIndex, currentIndex + 3));
-        }
-    }
+    const slides: number = cards;
 
     const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
         touchStartX.current = event.touches[0].clientX;
@@ -75,20 +70,7 @@ const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
         setCurrentIndex((prevIndex) => (prevIndex === cards - 1 ? 0 : prevIndex + 3));
     };
 
-    const trackerMapDesktop = () => {
-        const buttonTracker: Map<number, number> = new Map();
-
-        buttonTracker.set(0, 0);
-        for (let i = 1; i < slides; i++) {
-            buttonTracker.set(i, i + 2);
-        }
-        if (cards % 3 != 0) {
-            buttonTracker.set(slides - 1, Math.floor(cards / 3) * 3);
-        }
-        setIndicator(Array.from(buttonTracker.values()));
-    }
-
-    const trackerMapMobile = () => {
+    const trackerMap = () => {
         const buttonTracker: Map<number, number> = new Map();
         for (let i = 0; i < cards; i++) {
             buttonTracker.set(i, i);
@@ -96,47 +78,34 @@ const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
         setIndicator(Array.from(buttonTracker.values()));
     }
 
-    const dotClick = (index: number) => {
-        setCurrentIndex(index);
-    }
 
     React.useEffect(() => {
-        if (isMobile()) {
-            trackerMapMobile();
-        } else {
-            trackerMapDesktop();
-        }
+        trackerMap();
     }, [])
 
     React.useEffect(() => {
         if (isMobile()) {
             scrollMobile();
-        } else {
-            scrollDesktop();
         }
-
     }, [currentIndex]);
 
+    const dotClick = (index: number) => {
+        setCurrentIndex(index);
+        setActiveSlideIndex(index)
+    }
+
     React.useEffect(() => {
-        const timer = setInterval(() => {
-            if (isMobile()) {
-                setCurrentIndex((prevIndex) => (prevIndex === cards - 1 ? 0 : prevIndex + 1));
-            } else {
-                setCurrentIndex((prevIndex) => (((cards - prevIndex - 1) < 3) ? 0 : prevIndex + 3));
-            }
-        }, 11000);
-
-        return () => {
-            clearInterval(timer);
-        };
-    }, [cardPropsState]);
-
+        const timer = setTimeout(() => {
+            setShowCarousel(true);
+        }, 1000);
+        return () => clearTimeout(timer);
+    }, [])
 
     return (
         <div className={styles["carousel-wrapper"]}>
             <div className={styles["carousel-header"]} style={{ "color": `${isBackgroundDark ? "#FFFFFF" : "#3E3E3F"}` }}>
                 <div className={styles["carousel-subheader"]}>
-                    <h2 className={styles["carousel-title"]}>{title}</h2>
+                    {title !== '' ? (<MetalBadge label={title} colorVariant="silver" />) : (<></>)}
                     {description && (
                         <p className={styles["carousel-description"]}>
                             {description}
@@ -158,12 +127,56 @@ const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
                     </div>
                 )}
             </div>
-            <div className={`${styles["carousel-content"]} `} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-                {cardPropsState && cardPropsState.map((cardProp: CardProps, index: number) => {
-                    let newCardProp = { ...cardProp, animate: true };
-                    return <CarouselCard {...newCardProp} key={Math.random()} redirectComponent={redirectComponent} />
-                })}
-            </ div>
+            {
+                showCarousel && (
+
+                    <ReactSimplyCarousel
+                        containerProps={
+                            {
+                                className: styles["carousel-content"],
+                                style: {
+                                    width: "100%",
+                                    justifyContent: "space-between",
+                                    userSelect: "none",
+                                }
+                            }
+                        }
+                        forwardBtnProps={{
+                            children: "",
+                            style: {
+                                display: "none"
+                            },
+                        }}
+                        backwardBtnProps={{
+                            children: "",
+                            style: {
+                                display: "none"
+                            },
+                        }}
+                        activeSlideIndex={activeSlideIndex}
+                        onRequestChange={setActiveSlideIndex}
+                        itemsToShow={3}
+                        itemsToScroll={1}
+                        easing='linear'
+                        centerMode
+                        speed={2000}
+                        responsiveProps={[
+                            {
+                                itemsToShow: 3,
+                                itemsToScroll: 1,
+                            },
+                        ]}
+                    >
+                        {cardPropsState && cardPropsState.map((cardProp: CardProps, index: number) => {
+                            return (
+                                <div key={index}>
+                                    <CarouselCard {...cardProp} key={Math.random()} redirectComponent={redirectComponent} />
+                                </div>
+                            )
+                        })}
+                    </ReactSimplyCarousel>
+                )
+            }
             <div className={`${styles["carousel-dot-button"]}`}>
                 {indicator && indicator.map((value, key) => {
                     let IndicatorProps = {
@@ -175,7 +188,7 @@ const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
                     return <Indicator {...IndicatorProps} key={key} />
                 })}
             </div>
-        </div>
+        </div >
     )
 }
 
