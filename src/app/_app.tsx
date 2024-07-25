@@ -139,7 +139,7 @@ export default function Home() {
           <TechnologyMeetsOldSchoolSophistication heading={data.technologyMeetsOldSchoolSophistication.heading} limpidBoxes={data.technologyMeetsOldSchoolSophistication.limpidBoxes} />
         </div>
 
-        <div className={styles.benefitAndFeature} style={{backgroundImage : 'url(/benifitAndFeature.png)'}}>
+        <div className={styles.benefitAndFeature} style={{ backgroundImage: 'url(/benifitAndFeature.png)' }}>
           <BenefitAndFeature
             bulletPointImg={data.benefitAndFeature.bulletPointImg}
             bulletPoints={data.benefitAndFeature.bulletPoints}
@@ -148,15 +148,15 @@ export default function Home() {
             badgeColor={data.benefitAndFeature.badgeColor}
           />
         </div>
-        
+
         <div className={styles["carousel-wrapper"] + " " + styles["cardCarousalRemain"]}>
           <Carousel {...data.carouselCurrentSubscription} redirectComponent={redirectComponent} />
-          <SpotLight color="rgb(255 162 96 / 60%)" top={250} right={-300} width={1000} height={1050} />
+          <SpotLight color="rgb(255 162 96 / 60%)" top={240} right={-300} width={1000} height={950} />
           <Carousel {...data.carouselUpcomingSubscription} redirectComponent={redirectComponent} />
         </div>
 
         <div className={styles.wrapper}>
-          <SpotLight color="rgb(255 255 255 / 60%)" bottom={-100} left={-200} width={700} height={700} />
+          <SpotLight color="rgb(255 255 255 / 60%)" bottom={-100} left={-200} width={800} height={800} />
           <OurProcessesSection
             sectionHeading={data.ourProcessesSection.sectionHeading}
             gapBetweenItems={data.ourProcessesSection.gapBetweenItems}
