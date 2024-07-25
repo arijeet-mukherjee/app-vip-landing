@@ -8,8 +8,6 @@
     justify-content: start;
     align-items: center;
     background-color: transparent;
-    padding-top: calc((100vw / 1920) * 30);
-    padding-bottom: calc((100vw / 1920) * 60);
 }
 
 .carousel-header {

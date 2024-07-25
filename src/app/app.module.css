@@ -3,6 +3,7 @@
 .container {
     width: 100vw;
     overflow-x: hidden;
+    background-color: black;
 }
 
 .wrapper {
@@ -12,6 +13,7 @@
     padding-right: var(--hero-section-right-padding);
     padding-top: var(--hero-section-top-padding);
     padding-bottom: var(--hero-section-top-padding);
+    margin-bottom: calc((100vw / 1920)* 60);
     background-color: black;
 }
 
@@ -34,8 +36,9 @@
 
 .cardCarousalRemain {
     padding-left: calc((100vw / 1920)* 216);
+    margin-top: calc((100vw / 1920) * 85);
+    margin-bottom: calc((100vw / 1920) * 60);
     display: block;
-    gap: calc((100vw / 1920)* 60);
 }
 
 .whiteBackground {
@@ -126,7 +129,7 @@
 }
 
 .benefitAndFeature {
-    background-size: cover; 
+    background-size: cover;
     background-position: center;
     height: auto;
 }
