@@ -214,48 +214,48 @@
         ]
     },
     "carouselCurrentSubscription": {
-        "title": "What we’re offering in the current subscription",
+        "title": "SERVICES THAT WE OFFER",
         "description": "",
         "toggleScrollButtonPosition": true,
         "hideIndicator": true,
         "isBackgroundDark": true,
         "cardProps": [
             {
-                "image": "/utc.svg",
-                "title": "Understanding Terms and Conditions",
-                "description": "Tired of deciphering dense legal jargon? We've got you covered. Our platform provides easily digestible summaries of terms and conditions, so you can understand exactly what you're getting yourself into.",
+                "image": "/vpn.svg",
+                "title": "VPN",
+                "description": "Traveling frequently to unfriendly nations, connected to hostile networks? We can create a secure home/ office network, accessible worldwide.",
                 "url": "More",
                 "toggleButton": false,
                 "buttonText": "Learn More"
+            },
+            {
+                "image": "/securityalerts.svg",
+                "title": "Security Alerts",
+                "description": "We monitor global security developments and alert you to any potential risks, whether it's a major hack or a cyber attack conspiracy.",
+                "url": "More",
+                "toggleButton": false,
+                "buttonText": "Subscribe"
             },
             {
                 "image": "/helpdesk.svg",
                 "title": "Helpdesk",
-                "description": "Need assistance navigating the complexities of cybersecurity? Our helpdesk is here to lend a helping hand. Reserve a 30-minute call with our security experts and get answers to all your burning security questions.",
-                "url": "More",
-                "toggleButton": false,
-                "buttonText": "Subscribe"
-            },
-            {
-                "image": "/leakcred.svg",
-                "title": "Leaked Credentials",
-                "description": "Safeguard your online accounts and check whether your credentials have leaked on the internet. Whether it's a password leak or a data breach, our system keeps a watchful eye on the web, ensuring that you're always one step ahead of cyber threats.",
+                "description": "Our expert team is available 24/7 to help you find the answers to your security related concerns and questions. We are fast, discrete, and respond promptly.",
                 "url": "More",
                 "toggleButton": false,
                 "buttonText": "Learn More"
             },
             {
-                "image": "/onlinetraining.svg",
-                "title": "Online Training",
-                "description": "Led by industry experts, our courses cover a wide range of security-related subjects, providing you with the knowledge and skills needed to stay safe online. Access our online trainings anytime, anywhere, and learn at your own pace.",
+                "image": "/dataleakalerts.svg",
+                "title": "Data Leak Alerts",
+                "description": "We monitor your email addresses and usernames, notifying you and suggesting the right countermeasures if we find your personal information in a data leak.",
                 "url": "More",
                 "toggleButton": false,
                 "buttonText": "Subscribe"
             },
             {
-                "image": "/legit.svg",
-                "title": "Is this Legit?",
-                "description": "Worried about falling victim to online scams? Put your doubts to rest with our legitimacy verification service. Simply submit the website or service in question to our system, and our experts will conduct a thorough assessment to determine its authenticity.",
+                "image": "/securenetworking.svg",
+                "title": "Secure Networking",
+                "description": "We understand your concern about possible network break-ins and adversaries gaining access. We set up and monitor secure home networks 24/7, keeping your data and devices safe.",
                 "url": "More",
                 "toggleButton": false,
                 "buttonText": ""
@@ -263,50 +263,50 @@
         ]
     },
     "carouselUpcomingSubscription": {
-        "title": "That’s not all folks!",
-        "description": "We are still building hard to get you ever more secure, we can’t tell you everything yet, we can tell you however: during your subscription you get access to all newly added services for free and even get an early sneak peek if you like!",
+        "title": "",
+        "description": "",
         "toggleScrollButtonPosition": true,
         "hideIndicator": true,
         "isBackgroundDark": false,
         "cardProps": [
             {
-                "image": "/closemonitor.svg",
-                "title": "Closely Monitor Image Sharing",
-                "description": "Keep a vigilant eye on who shares your private images with our cutting-edge monitoring system. Protect your personal and sensitive photos from unauthorized sharing by logging every instance of image sharing.",
+                "image": "/customizedservices.svg",
+                "title": "Customized Services",
+                "description": "Need something custom that is not listed here? Book an intake, sign an NDA, and let's discuss how we can address your security needs.",
                 "url": "More",
                 "toggleButton": false,
                 "buttonText": ""
             },
             {
-                "image": "/gdpr.svg",
-                "title": "DMCA/GDPR Requests",
-                "description": "Take control of your private data with our streamlined DMCA and GDPR request management system. Whether you need to file a takedown request or respond to one, we've got you covered. Safeguard your personal information now!",
+                "image": "/infoleakinvestigation.svg",
+                "title": "Info Leak Investigation",
+                "description": "In case of an information leak, our expert team conducts thorough investigations to find recurring patterns, potential sources, and plan defenses to avoid them in the future.",
                 "url": "More",
-                "toggleButton": true,
+                "toggleButton": false,
                 "buttonText": "Subscribe"
             },
             {
-                "image": "/gcot.svg",
-                "title": "Growing Collection of Training",
-                "description": "Stay ahead of emerging threats and enhance your cybersecurity knowledge with our ever-expanding collection of security-related trainings. From basic privacy practices to advanced threat detection techniques, we offer comprehensive resources to help you protect yourself online.",
+                "image": "/incidentresponse.svg",
+                "title": "Incident Response",
+                "description": "Incident Response: In case of hacking and data compromise, we dig deeper, contact the authorities, and create separate reports for you and law enforcement, all with your consent.",
                 "url": "More",
                 "toggleButton": false,
                 "buttonText": ""
             },
             {
-                "image": "/privacyshop.svg",
-                "title": "Privacy Shop",
-                "description": "Explore our exclusive Privacy Shop and find the perfect gadgets and gifts to safeguard your digital privacy. From NFC protectors to webcam covers, USB data blockers, and more, we offer a curated selection of high-quality products made for your security.",
+                "image": "/training.svg",
+                "title": "Training",
+                "description": "Enhance your digital security related knowledge base with the help of our extensive training database, containing videos, ranging from Phishing Attacks to Multi-factor Authentication and Passkeys.",
                 "url": "More",
-                "toggleButton": true,
+                "toggleButton": false,
                 "buttonText": "Subscribe"
             },
             {
-                "image": "/subscribeupdate.svg",
-                "title": "Subscribe for Updates",
-                "description": "Don't miss out on the latest developments in privacy and security – subscribe to our updates today! By subscribing, you'll gain access to exclusive content, product announcements, and valuable insights delivered straight to your inbox.",
+                "image": "/endpointprotection.svg",
+                "title": "Endpoint Protection",
+                "description": "Endpoint Protection: Make sure that your personal assets match the same level of security as your company assets without sifting through endless reports. We only notify you about the reports that need your attention.",
                 "url": "More",
-                "toggleButton": true,
+                "toggleButton": false,
                 "buttonText": "Subscribe"
             }
         ]
@@ -383,8 +383,7 @@
         "badgeColor": "silver",
         "Title": "Why Digital Bodyguards?",
         "descriptionArray": [
-            "The attacks against the industry leaders and people in the spotlight have become common, and the attackers are always on the lookout for a new target.",
-            "Despite the dangers of the digital world at an all time high, it is exceptionally rare to find a team of digital bodyguards to safeguard your online security. ",
+            "The attacks against the industry leaders and people in the spotlight have become common, and the attackers are always on the lookout for a new target. Despite the dangers of the digital world at an all time high, it is exceptionally rare to find a team of digital bodyguards to safeguard your online security. ",
             "SecDesk VIP is a world class team of online security experts specialized in their fields, ready to become your digital bodyguards. Join the community of digitally secured elites protected by our VIP security expert team."
         ]
     },

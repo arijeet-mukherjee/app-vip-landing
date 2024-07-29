@@ -4,11 +4,8 @@ import dynamic from 'next/dynamic';
 import styles from './app.module.css';
 import useOnScreen from "@util/useOnScreen";
 import Hero from "@component/Hero";
-import Shield from "@component/common/Shield";
-import { setShieldState } from '@store/shieldSlice';
 import { useAppDispatch } from '@store/store';
 import { useAppSelector } from '@store/store';
-// import MobileNavModal from "@component/MobileNavModal";
 
 const MobileNavModal = dynamic(() => import('@component/MobileNavModal'));
 const CardQuality = dynamic(() => import('@component/cardQuality'), { ssr: false });
@@ -35,8 +32,8 @@ export default function Home() {
 
   const refIntroduction = useRef<HTMLDivElement>(null);
 
-  const refCardQuality = useRef<HTMLDivElement>(null);
-  const isVisibleCardQuality = useOnScreen(refCardQuality, '0px');
+  const refUSP = useRef<HTMLDivElement>(null);
+  const isVisibleCardQuality = useOnScreen(refUSP, '0px');
 
   const refCarouselCurrentSubscription = useRef<HTMLDivElement>(null);
   const isVisibleCarouselCurrentSubscription = useOnScreen(refCarouselCurrentSubscription, '50px');
@@ -60,35 +57,34 @@ export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
 
   let ListIndex = data.header.navigation_bar.navbarItems
-  let refListValues = [refIntroduction, refCardQuality, refCTABox, refNewsLetter, refQuizWindow]
-  const [refList, setRefList] = React.useState<{ [key: string]: any }>({
-    [ListIndex[0].label]: refIntroduction,
-    [ListIndex[1].label]: refCardQuality,
-    [ListIndex[2].label]: refCTABox,
-    [ListIndex[3].label]: refNewsLetter,
-    [ListIndex[4].label]: refQuizWindow,
-  } as { [key: string]: React.RefObject<HTMLDivElement> });
-  React.useEffect(() => {
-    let ListIndex = data.header.navigation_bar.navbarItems
-    setRefList({
-      [ListIndex[0].label]: refIntroduction,
-      [ListIndex[1].label]: refCardQuality,
-      [ListIndex[2].label]: refCTABox,
-      [ListIndex[3].label]: refNewsLetter,
-      [ListIndex[4].label]: refQuizWindow,
-    })
-  }, [globalLanguage.globalLanguage, modalOpen])
+
+  let refList: any = {}
+  // const [refList, setRefList] = React.useState<{ [key: string]: any }>({
+  //   [ListIndex[0].label]: refIntroduction,
+  //   [ListIndex[1].label]: refUSP,
+  //   [ListIndex[2].label]: refCTABox,
+  //   [ListIndex[3].label]: refNewsLetter,
+  //   [ListIndex[4].label]: refQuizWindow,
+  // } as { [key: string]: React.RefObject<HTMLDivElement> });
+  // React.useEffect(() => {
+  //   let ListIndex = data.header.navigation_bar.navbarItems
+  //   setRefList({
+  //     [ListIndex[0].label]: refIntroduction,
+  //     [ListIndex[1].label]: refUSP,
+  //     [ListIndex[2].label]: refCTABox,
+  //     [ListIndex[3].label]: refNewsLetter,
+  //     [ListIndex[4].label]: refQuizWindow,
+  //   })
+  // }, [globalLanguage.globalLanguage, modalOpen])
 
   const redirectComponent = useCallback((item: string) => {
     goTo(refList[item])
   }, []);
 
   const dispatch = useAppDispatch();
-  const shield = useAppSelector(state => state.shield);
 
   const openModal = useCallback((gotocaller: boolean, refList: any, item: string) => {
     setModalOpen(prevModalOpen => !prevModalOpen);
-    dispatch(setShieldState({ ...shield, top: 80, visible: true }));
     if (gotocaller) {
       setTimeout(() => {
         goTo(refList[item])
@@ -112,14 +108,17 @@ export default function Home() {
           back={data.header.back}
           outerLogo={data.header.outerLogo}
         />
-        <DigitalBg
-          badgeText={data.digitalBodyGaurdSection.badgeText}
-          badgeColor={data.digitalBodyGaurdSection.badgeColor}
-          Title={data.digitalBodyGaurdSection.Title}
-          descriptionArray={data.digitalBodyGaurdSection.descriptionArray}
-        />
 
-        <div className={styles.wrapper}>
+        <div ref={refIntroduction}>
+          <DigitalBg
+            badgeText={data.digitalBodyGaurdSection.badgeText}
+            badgeColor={data.digitalBodyGaurdSection.badgeColor}
+            Title={data.digitalBodyGaurdSection.Title}
+            descriptionArray={data.digitalBodyGaurdSection.descriptionArray}
+          />
+        </div>
+
+        <div className={styles.wrapper} ref={refUSP}>
           <SpotLight color="rgb(255 162 96 / 60%)" bottom={-200} right={-400} width={1000} height={1500} />
           <div className={styles.whatItIsFor}>
             <div className={styles.whatItIsForHeading}>{data.imageSlider.whatItIsForHeading}</div>

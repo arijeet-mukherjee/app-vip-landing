@@ -97,7 +97,7 @@ const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
     React.useEffect(() => {
         const timer = setTimeout(() => {
             setShowCarousel(true);
-        }, 1000);
+        }, 3000);
         return () => clearTimeout(timer);
     }, [])
 
