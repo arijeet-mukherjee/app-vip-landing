@@ -8,6 +8,7 @@ import Shield from "@component/common/Shield";
 import { setShieldState } from '@store/shieldSlice';
 import { useAppDispatch } from '@store/store';
 import { useAppSelector } from '@store/store';
+// import MobileNavModal from "@component/MobileNavModal";
 
 const MobileNavModal = dynamic(() => import('@component/MobileNavModal'));
 const CardQuality = dynamic(() => import('@component/cardQuality'), { ssr: false });
@@ -95,13 +96,6 @@ export default function Home() {
     }
   }, []);
 
-  const [carouselStyle, setCarouselStyle] = useState<any>({ backgroundImage: "url(/worldmap.svg)", backgroundSize: "contain", backgroundRepeat: "no-repeat" });
-
-  React.useEffect(() => {
-    if (isMobile()) {
-      setCarouselStyle({ backgroundImage: "url(/worldmap.svg)", background: "linear-gradient(to bottom, #0A041F 30%, transparent 30%)" });
-    }
-  }, [])
   return (
     <>
       {isMobile() ? <MobileNavModal modalState={modalOpen} closeModal={openModal} list={data.header.navigation_bar.navbarItems} headerData={data.header} navbarData={data.header.navigation_bar} refList={refList} /> : <></>}
@@ -149,11 +143,11 @@ export default function Home() {
           />
         </div>
 
-        <div className={styles["carousel-wrapper"] + " " + styles["cardCarousalRemain"]}>
+        {!modalOpen ? <div className={styles["carousel-wrapper"] + " " + styles["cardCarousalRemain"]}>
           <Carousel {...data.carouselCurrentSubscription} redirectComponent={redirectComponent} />
           <SpotLight color="rgb(255 162 96 / 60%)" top={240} right={-300} width={1000} height={950} />
           <Carousel {...data.carouselUpcomingSubscription} redirectComponent={redirectComponent} />
-        </div>
+        </div> : <></>}
 
         <div className={styles.wrapper}>
           <SpotLight color="rgb(255 255 255 / 60%)" bottom={-100} left={-200} width={800} height={800} />

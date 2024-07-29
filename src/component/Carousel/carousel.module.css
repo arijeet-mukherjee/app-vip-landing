@@ -100,19 +100,19 @@
         font-size: calc((100vw / 393) * 14);
     }
 
-    .carousel-content {
+    /* .carousel-content {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
-    }
+    } */
 
     .carousel-dot-button {
         padding-top: calc((100vw / 393) * 21);
-        gap: calc((100vw / 393) * 10);
+        gap: calc((100vw / 393) * 6);
         margin-bottom: 10px;
     }
 
     .carousel-wrapper {
-        padding-top: 15px;
-        padding-bottom: 5px;
+        padding-top: calc((100vw / 393) * 15);
+        padding-bottom: calc((100vw / 393) * 5);
     }
 }

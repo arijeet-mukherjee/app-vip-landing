@@ -84,10 +84,7 @@
     font-weight: 500;
     font-size: calc((100vw/1920)* 64);
     line-height: calc((100vw/1920)* 77);
-    /* RADIAL2 */
-    background: radial-gradient(80.04% 80.04% at 0% -8.66%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)
-        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-        , linear-gradient(73.9deg, #4D5455 12.95%, #9EA1A1 35.76%, #848B8A 57.34%, #535D5E 70.24%, #4B5355 75.77%, #757A7B 83.15%, #4D5455 87.23%);
+    background: radial-gradient(80.04% 80.04% at 0% -8.66%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(73.9deg, #4D5455 12.95%, #9EA1A1 35.76%, #848B8A 57.34%, #535D5E 70.24%, #4B5355 75.77%, #757A7B 83.15%, #4D5455 87.23%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -169,22 +166,11 @@
 
     .cardCarousalRemain {
         padding: 0px;
+        margin-left: calc((100vw/343)*28);
     }
-
-
-    /* .carousel-container-1::before {
-        position: absolute;
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../public/worldmap.svg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        top: 0;
-        left: 0;
-        height: 40%;
-    } */
 
     .carousel-container-2 {
         width: 100vw;
-        /* padding: calc((100vw / 393) * 1); */
     }
 
     .quizCard {

@@ -135,9 +135,9 @@ const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
                             {
                                 className: styles["carousel-content"],
                                 style: {
-                                    width: "100%",
-                                    justifyContent: "space-between",
-                                    userSelect: "none",
+                                    // width: "100%",
+                                    // justifyContent: "space-between",
+                                    // userSelect: "none",
                                 }
                             }
                         }
@@ -162,7 +162,8 @@ const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
                         speed={2000}
                         responsiveProps={[
                             {
-                                itemsToShow: 3,
+                                maxWidth: 1100,
+                                itemsToShow: 1,
                                 itemsToScroll: 1,
                             },
                         ]}
