@@ -14,10 +14,12 @@
 
 
 @media screen and (max-width: 1100px) {
-    .container{
+    .container {
         gap: calc((100vw/393)*20);
     }
-    .title{
-        font-size: calc((100vw/393)*30);
+
+    .title {
+        font-size: calc((100vw/393)*25);
+        width: calc((100vw/393)*310)
     }
 }

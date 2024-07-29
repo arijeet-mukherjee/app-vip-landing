@@ -169,6 +169,7 @@
 
     .cardCarousalRemain {
         padding: 0px;
+        margin-left: calc((100vw/343)*28);
     }
 
 

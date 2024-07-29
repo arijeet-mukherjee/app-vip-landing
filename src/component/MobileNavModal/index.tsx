@@ -34,15 +34,19 @@ const MobileNavModal: FC<MobileNavModalProps> = ({ list, closeModal, modalState,
         dispatch(setGlobalLanguage({ globalLanguage: lang }))
     }
 
-    function handelClick(e : MouseEvent) {
+    function handelClick(e: MouseEvent) {
         e.preventDefault();
     }
 
     return (
         <div className={styles.mobileNavModal} style={modalState ? {
-            height: '100vh'
+            height: '100vh',
+            zIndex: 10000,
+            overflow: 'hidden',
         } : {
             height: '0vh',
+            zIndex: 10000,
+            overflow: 'hidden',
         }}>
             <div className={styles.headerContainer}>
                 <Header refList={refList} openModal={closeModal} modalState={modalState} headerData={headerData} />
@@ -58,15 +62,15 @@ const MobileNavModal: FC<MobileNavModalProps> = ({ list, closeModal, modalState,
                 )}
             </div>
             <div className={styles.btnContainer}>
-            <Button label={headerData.navigation_bar.button.label} hc={handelClick} background='transparent' backgroundOnHover='#F4C9A4' textColor='white' textColorOnHover='black' borderColor='#F4C9A4' fontSize={20}/>
+                <Button label={headerData.navigation_bar.button.label} hc={handelClick} background='transparent' backgroundOnHover='#F4C9A4' textColor='white' textColorOnHover='black' borderColor='#F4C9A4' fontSize={20} />
             </div>
-            <div className={styles.navModalBackground}>
+            {/* <div className={styles.navModalBackground}>
                 <Image src='/navModalBackground.svg'
                     alt="nav modal background"
                     objectFit='cover'
                     fill={true}
                 />
-            </div>
+            </div> */}
         </div>
     );
 };
