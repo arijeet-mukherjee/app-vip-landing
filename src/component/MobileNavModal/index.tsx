@@ -64,13 +64,6 @@ const MobileNavModal: FC<MobileNavModalProps> = ({ list, closeModal, modalState,
             <div className={styles.btnContainer}>
                 <Button label={headerData.navigation_bar.button.label} hc={handelClick} background='transparent' backgroundOnHover='#F4C9A4' textColor='white' textColorOnHover='black' borderColor='#F4C9A4' fontSize={20} />
             </div>
-            {/* <div className={styles.navModalBackground}>
-                <Image src='/navModalBackground.svg'
-                    alt="nav modal background"
-                    objectFit='cover'
-                    fill={true}
-                />
-            </div> */}
         </div>
     );
 };
