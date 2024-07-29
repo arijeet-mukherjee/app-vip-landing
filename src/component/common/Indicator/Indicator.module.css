@@ -42,19 +42,16 @@
     }
 
     .dot-button-active {
-        /* width: calc((100vw / 393) * 18) !important; */
         border: 1px;
         border-radius: 50%;
         height: calc((100vw / 393) * 30);
         width: calc((100vw / 393) * 30);
-        /* width: calc((100vw / 393) * 30); */
         font-size: calc((100vw / 393) * 11.5);
     }
 
     .dot-button {
         height: calc((100vw / 393) * 30);
         width: calc((100vw / 393) * 30);
-        /* width: calc((100vw / 393) * 30); */
         font-size: calc((100vw / 393) * 11.5);
         border: 1px;
         border-radius: 50%;

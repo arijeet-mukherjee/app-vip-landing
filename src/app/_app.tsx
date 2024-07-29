@@ -96,8 +96,6 @@ export default function Home() {
     }
   }, []);
 
-  console.log(openModal)
-
   return (
     <>
       {isMobile() ? <MobileNavModal modalState={modalOpen} closeModal={openModal} list={data.header.navigation_bar.navbarItems} headerData={data.header} navbarData={data.header.navigation_bar} refList={refList} /> : <></>}
