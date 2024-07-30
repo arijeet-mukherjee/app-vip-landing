@@ -127,6 +127,25 @@ p {
     transform-style: preserve-3d;
     border-radius: 0 calc((100vw/1920)*45) calc((100vw/1920)*45) 0;
     box-shadow: calc((100vw/1920)*-1) 0px 0px 0px #ffffff inset;
+    overflow: hidden;
+}
+
+.transparentFirefox{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    border-radius: 0 calc((100vw/1920)*45) calc((100vw/1920)*45) 0;
+    box-shadow: calc((100vw/1920)*-1) 0px 0px 0px #ffffff inset;
+}
+
+.transparentFirefox::before{
+    content:'';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(0deg, rgba(0,0,0,0.9) 15%, rgba(255, 255, 255, 0.5) 100%);
 }
 
 .outerLogo {
@@ -150,4 +169,13 @@ p {
     >.solid {
         transform: rotateY(180deg);
     }
+
+    .backFirefox{
+        visibility: hidden;
+    }
+}
+
+.backFirefox{
+    transition: visibility 0ms ease;
+    transition-delay: 250ms;
 }
