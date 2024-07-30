@@ -79,6 +79,7 @@
 
 .founderText {
     display: grid;
+    margin-top: calc((100vw/1920)* 100);;
     margin-bottom: calc((100vw/1920)* 45);
     font-family: 'Inter';
     font-style: normal;

@@ -19,13 +19,14 @@ const NewsLetter = dynamic(() => import('@component/NewsLetter'), { ssr: false }
 const Footer = dynamic(() => import('@component/Footer'), { ssr: false });
 const TawkChatWidget = dynamic(() => import('@component/common/TawkChat'), { ssr: false });
 const QuizWindow = dynamic(() => import('@component/common/QuizWindow'), { ssr: false });
+const OurProcessesSection =  dynamic(() => import('@component/ourProcessesSection/OurProgress'), {ssr: false});
 import { isMobile, goTo } from "@util/index";
 import VisualBreakup from "@component/common/VisualBreakup/VisualBreakup";
 import DigitalBg from "@component/DigitalBG/digitalBg";
 import ProtectYourself from "@component/ProtectYourself/ProtectYourself";
 const TechnologyMeetsOldSchoolSophistication = dynamic(() => import('@component/TechnologyMeetsOldSchoolSophistication'), { ssr: false });
 const SpotLight = dynamic(() => import('@component/common/spotLight'));
-import OurProcessesSection from "@component/ourProcessesSection/OurProgress";
+
 import SecureYourLegacy from "@component/SecureYourLegacy";
 
 export default function Home() {
@@ -55,6 +56,9 @@ export default function Home() {
 
   const refFooter = useRef<HTMLDivElement>(null);
   const isVisiblefFooter = useOnScreen(refFooter, '200px');
+
+  const refOurProcesses = useRef<HTMLDivElement>(null);
+  const isVisibleOurProcesses = useOnScreen(refOurProcesses, '500px');
 
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -140,18 +144,16 @@ export default function Home() {
           <TechnologyMeetsOldSchoolSophistication heading={data.technologyMeetsOldSchoolSophistication.heading} limpidBoxes={data.technologyMeetsOldSchoolSophistication.limpidBoxes} />
         </div>
 
-        <div className={styles.wrapper}>
-          <SpotLight color="rgb(255 255 255 / 60%)" bottom={-100} left={-200} width={700} height={700} />
+        <div className={styles.wrapper} ref= {refOurProcesses}>
+          <SpotLight color="rgb(255 255 255 / 60%)" top={250} left={-200} width={700} height={700} />
+          { isVisibleOurProcesses &&
           <OurProcessesSection
             sectionHeading={data.ourProcessesSection.sectionHeading}
             gapBetweenItems={data.ourProcessesSection.gapBetweenItems}
             textContainerHeight={data.ourProcessesSection.textContainerHeight}
             textContainerWidth={data.ourProcessesSection.textContainerWidth}
             itemArray={data.ourProcessesSection.itemArray}
-          />
-        </div>
-
-        <div className={styles.founderWrapper}>
+          />}
           <SpotLight color="rgb(242 215 133 / 80%)" bottom={400} right={-200} width={630} height={630} />
           <div className={styles.founderText}>{data.OurfounderText}</div>
           <CardBox
@@ -175,7 +177,7 @@ export default function Home() {
             badgeColor={data.founder1.badgeColor}
             credentials={data.founder1.credentials}
           />
-        </div>
+        </div> 
 
         <ProtectYourself
           title={data.protectYourselfNow.title}

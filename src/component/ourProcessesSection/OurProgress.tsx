@@ -4,6 +4,7 @@ import Image from 'next/image';
 import TechnologyMeetsOldSchoolSophistication from '@component/TechnologyMeetsOldSchoolSophistication';
 import { ImageError } from 'next/dist/server/image-optimizer';
 import data from '@component/data/EN.json'
+import { configDotenv } from 'dotenv';
 
 
 interface OurProcessesSectionProps {
@@ -28,35 +29,67 @@ function CircularIcon({
   heightOfLink,
   next,
   dimension,
+  cid
 }: {
   image: string,
   heightOfLink: number,
   next: boolean,
-  dimension: number
+  dimension: number,
+  cid: number,
 }) {
 
   return (
-    <div className={styles.metalCircleContainer}
-    style={{
-      height: `calc((100vw/1920)*${dimension})`,
-      width: `calc((100vw/1920)*${dimension})`
-    }}>
-      <div className={styles.circle}></div>
-      <Image
-        fill
-        src={image}
-        alt="Image"
-        className={styles.imageInCirlce}
-        style={{ borderRadius: '100%' }} />
-      {next &&
-        <div
-          className={styles.linkage}
-          style={{
-            height: `calc((100vw/1920)*${heightOfLink})`,
-            bottom: `calc((100vw/1920)* -${heightOfLink})`
-          }}></div>}
-    </div>
+    <>
+      <style>
+        {
+          `
+.linkage${cid} {
+    width: calc((100vw/1920)*4);
+    background: linear-gradient(#caad74 17.03%, #D8C08F 53.21%) border-box;
+    position: absolute;
+    justify-self: center;
+    animation: slide 2s ease ${cid*2000}ms forwards;
 
+}
+
+@keyframes slide {
+    from {
+        height: 0px;
+        bottom: 0px;
+
+    }
+
+    to {
+        height: calc((100vw/1920)*${
+                heightOfLink
+            });
+
+        bottom: calc((100vw/1920)* -${
+                heightOfLink
+            });
+    }
+
+}
+        `
+        }
+      </style>
+      <div className={styles.metalCircleContainer}
+        style={{
+          height: `calc((100vw/1920)*${dimension})`,
+          width: `calc((100vw/1920)*${dimension})`
+        }}>
+        <div className={styles.circle}></div>
+        <Image
+          fill
+          src={image}
+          alt="Image"
+          className={styles.imageInCirlce}
+          style={{ borderRadius: '100%' }} />
+        {next &&
+          <div
+            className={`linkage${cid}`}></div>}
+      </div>
+    </>
   )
 }
 
@@ -97,8 +130,9 @@ export default function OurProcessesSection({
                 <CircularIcon
                   image={item.image}
                   next={(itemArray.length - 1) !== index}
-                  heightOfLink={gapBetweenItemsDefault} 
-                  dimension={textContainerHeightDefault}/>
+                  heightOfLink={gapBetweenItemsDefault}
+                  dimension={textContainerHeightDefault} 
+                  cid={index}/>
                 <div className={styles.checkPointDetailContainer}
                   style={{
                     width: `calc((100vw/1920)*${textContainerWidthDefault})`,
