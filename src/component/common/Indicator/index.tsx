@@ -31,12 +31,10 @@ const Indicator: React.FC<IndicatorProps> = (props: IndicatorProps) => {
         setActive(isActive);
     }, [isActive]);
 
-    // isBackgroundDark ? styles["dot-button-active"] = 
-
     return (
         <>
             <button className={`${styles["dot-button"]} ${active ? styles["dot-button-active"] : ""}`} style={{ "backgroundColor": `${active && !dark ? "#402ea1" : ""}` }} onClick={handleClick}>
-                <svg width="11" height="17" viewBox="0 0 11 17" fill="none" xmlns="https://commons.wikimedia.org/wiki/File:No_image.svg"></svg>
+                {currentIndex + 1}
             </button>
         </>
     )

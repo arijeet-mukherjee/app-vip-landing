@@ -5,12 +5,9 @@
     grid-template-columns: auto;
     grid-template-rows: repeat(3, auto);
     box-sizing: border-box;
-    overflow-x: hidden;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     background-color: transparent;
-    padding-top: 60px;
-    padding-bottom: 60px;
 }
 
 .carousel-header {
@@ -18,7 +15,7 @@
     grid-template-columns: repeat(2, auto);
     justify-content: space-between;
     gap: calc((100vw / 1920) * 12);
-    margin: 0 0 calc((100vw / 1920) * 10) 0;
+    margin: 0 0 calc((100vw / 1920) * 70) 0;
 }
 
 .carousel-subheader {
@@ -26,17 +23,6 @@
     flex-direction: column;
     height: 100%;
 }
-
-.carousel-content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    justify-content: center;
-    gap: calc((100vw / 1920) * 110);
-    align-items: center;
-    transform-style: preserve-3d;
-}
-
 
 .carousel-description {
     padding-top: calc((100vw / 1920) * 12);
@@ -85,7 +71,7 @@
     display: flex;
     padding-top: calc((100vw / 1920) * 25);
     gap: calc((100vw / 1920) * 10);
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -114,19 +100,19 @@
         font-size: calc((100vw / 393) * 14);
     }
 
-    .carousel-content {
+    /* .carousel-content {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
-    }
+    } */
 
     .carousel-dot-button {
         padding-top: calc((100vw / 393) * 21);
-        gap: calc((100vw / 393) * 10);
+        gap: calc((100vw / 393) * 6);
         margin-bottom: 10px;
     }
 
     .carousel-wrapper {
-        padding-top: 15px;
-        padding-bottom: 5px;
+        padding-top: calc((100vw / 393) * 15);
+        padding-bottom: calc((100vw / 393) * 5);
     }
 }

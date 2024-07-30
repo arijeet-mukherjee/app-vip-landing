@@ -8,9 +8,8 @@ import Shield from "@component/common/Shield";
 import { setShieldState } from '@store/shieldSlice';
 import { useAppDispatch } from '@store/store';
 import { useAppSelector } from '@store/store';
-const CardBox = dynamic(() => import('@component/cardBox'), {
-  loading: () => <></>
-});
+// import MobileNavModal from "@component/MobileNavModal";
+
 const MobileNavModal = dynamic(() => import('@component/MobileNavModal'));
 const CardQuality = dynamic(() => import('@component/cardQuality'), { ssr: false });
 const Carousel = dynamic(() => import('@component/Carousel'), { ssr: false });
@@ -27,6 +26,8 @@ const TechnologyMeetsOldSchoolSophistication = dynamic(() => import('@component/
 const SpotLight = dynamic(() => import('@component/common/spotLight'));
 import OurProcessesSection from "@component/ourProcessesSection/OurProgress";
 import SecureYourLegacy from "@component/SecureYourLegacy";
+import BenefitAndFeature from "@component/BenefitsAndFeature";
+import CardBox from "@component/cardBox";
 
 export default function Home() {
   const globalLanguage = useAppSelector<any>(state => state.globalLanguage);
@@ -95,13 +96,6 @@ export default function Home() {
     }
   }, []);
 
-  const [carouselStyle, setCarouselStyle] = useState<any>({ backgroundImage: "url(/worldmap.svg)", backgroundSize: "contain", backgroundRepeat: "no-repeat" });
-
-  React.useEffect(() => {
-    if (isMobile()) {
-      setCarouselStyle({ backgroundImage: "url(/worldmap.svg)", background: "linear-gradient(to bottom, #0A041F 30%, transparent 30%)" });
-    }
-  }, [])
   return (
     <>
       {isMobile() ? <MobileNavModal modalState={modalOpen} closeModal={openModal} list={data.header.navigation_bar.navbarItems} headerData={data.header} navbarData={data.header.navigation_bar} refList={refList} /> : <></>}
@@ -114,7 +108,6 @@ export default function Home() {
           modalState={modalOpen}
           headerData={data.header}
           refList={refList}
-
           front={data.header.front}
           back={data.header.back}
           outerLogo={data.header.outerLogo}
@@ -140,8 +133,24 @@ export default function Home() {
           <TechnologyMeetsOldSchoolSophistication heading={data.technologyMeetsOldSchoolSophistication.heading} limpidBoxes={data.technologyMeetsOldSchoolSophistication.limpidBoxes} />
         </div>
 
+        <div className={styles.benefitAndFeature} style={{ backgroundImage: 'url(/benifitAndFeature.png)' }}>
+          <BenefitAndFeature
+            bulletPointImg={data.benefitAndFeature.bulletPointImg}
+            bulletPoints={data.benefitAndFeature.bulletPoints}
+            heading={data.benefitAndFeature.heading}
+            badgeText={data.benefitAndFeature.badgeText}
+            badgeColor={data.benefitAndFeature.badgeColor}
+          />
+        </div>
+
+        {!modalOpen ? <div className={styles["carousel-wrapper"] + " " + styles["cardCarousalRemain"]}>
+          <Carousel {...data.carouselCurrentSubscription} redirectComponent={redirectComponent} />
+          <SpotLight color="rgb(255 162 96 / 60%)" top={240} right={-300} width={1000} height={950} />
+          <Carousel {...data.carouselUpcomingSubscription} redirectComponent={redirectComponent} />
+        </div> : <></>}
+
         <div className={styles.wrapper}>
-          <SpotLight color="rgb(255 255 255 / 60%)" bottom={-100} left={-200} width={700} height={700} />
+          <SpotLight color="rgb(255 255 255 / 60%)" bottom={-100} left={-200} width={800} height={800} />
           <OurProcessesSection
             sectionHeading={data.ourProcessesSection.sectionHeading}
             gapBetweenItems={data.ourProcessesSection.gapBetweenItems}
@@ -189,9 +198,11 @@ export default function Home() {
           background={data.footer.background}
           contents={data.footer.content}
           socialMedias={data.footer.socialMedia} />
-          
+
         <TawkChatWidget />
       </div>
     </>
   );
 }
+
+

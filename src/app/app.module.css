@@ -3,6 +3,7 @@
 .container {
     width: 100vw;
     overflow-x: hidden;
+    background-color: black;
 }
 
 .wrapper {
@@ -12,17 +13,14 @@
     padding-right: var(--hero-section-right-padding);
     padding-top: var(--hero-section-top-padding);
     padding-bottom: var(--hero-section-top-padding);
+    margin-bottom: calc((100vw / 1920)* 60);
     background-color: black;
 }
 
-.carousel-container-1 {
-    background-color: var(--background-color-dark);
-    background-position: center;
-}
-
-.carousel-container-2 {
-    background: var(--input-field-secondary-color);
-    background-position: center;
+.carousel-wrapper {
+    position: relative;
+    z-index: 5;
+    background-color: black;
 }
 
 .cardBoxFirst {
@@ -37,9 +35,10 @@
 }
 
 .cardCarousalRemain {
-    padding: 0 calc((100vw / 1920)* 160);
+    padding-left: calc((100vw / 1920)* 216);
+    margin-top: calc((100vw / 1920) * 85);
+    margin-bottom: calc((100vw / 1920) * 60);
     display: block;
-    gap: calc((100vw / 1920)* 60);
 }
 
 .whiteBackground {
@@ -85,10 +84,7 @@
     font-weight: 500;
     font-size: calc((100vw/1920)* 64);
     line-height: calc((100vw/1920)* 77);
-    /* RADIAL2 */
-    background: radial-gradient(80.04% 80.04% at 0% -8.66%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)
-        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-        , linear-gradient(73.9deg, #4D5455 12.95%, #9EA1A1 35.76%, #848B8A 57.34%, #535D5E 70.24%, #4B5355 75.77%, #757A7B 83.15%, #4D5455 87.23%);
+    background: radial-gradient(80.04% 80.04% at 0% -8.66%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(73.9deg, #4D5455 12.95%, #9EA1A1 35.76%, #848B8A 57.34%, #535D5E 70.24%, #4B5355 75.77%, #757A7B 83.15%, #4D5455 87.23%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -99,8 +95,9 @@
     display: grid;
     grid-template-rows: auto auto;
     width: calc((100vw/1920)* 1156);
-    padding-top: calc((100vw/1920)*  90);
-    padding-bottom: calc((100vw/1920)*  90);;
+    padding-top: calc((100vw/1920)* 90);
+    padding-bottom: calc((100vw/1920)* 90);
+    ;
     gap: calc((100vw/1920)* 20);
 }
 
@@ -111,9 +108,7 @@
     font-size: calc((100vw/1920)* 64);
     line-height: calc((100vw/1920)* 77);
 
-    background: radial-gradient(80.04% 80.04% at 0% -8.66%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)
-         , radial-gradient(199.52% 215.58% at -14.86% 157.14%, #4D5455 6.77%, #9EA1A1 35.4%, #848B8A 62.48%, #535D5E 78.68%, #4B5355 85.61%, #757A7B 94.87%, #4D5455 100%)
-    ;
+    background: radial-gradient(80.04% 80.04% at 0% -8.66%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(199.52% 215.58% at -14.86% 157.14%, #4D5455 6.77%, #9EA1A1 35.4%, #848B8A 62.48%, #535D5E 78.68%, #4B5355 85.61%, #757A7B 94.87%, #4D5455 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -124,10 +119,16 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: calc((100vw/1920)*  32);
-    line-height: calc((100vw/1920)*  39);
+    font-size: calc((100vw/1920)* 32);
+    line-height: calc((100vw/1920)* 39);
     color: #F4C9A4;
-    
+
+}
+
+.benefitAndFeature {
+    background-size: cover;
+    background-position: center;
+    height: auto;
 }
 
 @media(max-width: 1200px) {
@@ -140,6 +141,7 @@
         padding: calc((100vw / 393) * 1);
         margin-bottom: 25px;
     }
+
     .cardBoxFirst {
         padding: 0px;
         margin-top: -5%;
@@ -164,22 +166,11 @@
 
     .cardCarousalRemain {
         padding: 0px;
+        margin-left: calc((100vw/343)*28);
     }
-
-
-    /* .carousel-container-1::before {
-        position: absolute;
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../public/worldmap.svg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        top: 0;
-        left: 0;
-        height: 40%;
-    } */
 
     .carousel-container-2 {
         width: 100vw;
-        /* padding: calc((100vw / 393) * 1); */
     }
 
     .quizCard {
