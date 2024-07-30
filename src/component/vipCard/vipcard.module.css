@@ -25,6 +25,12 @@ p {
     font-size: calc((100vw/1920)*22);
     font-weight: 400;
     font-family: 'Inter', sans-serif;
+    
+}
+@supports(-moz-appearance:none) {
+   .vipCard{
+    backdrop-filter: blur(20px);
+   }
 }
 
 .branding {
