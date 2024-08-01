@@ -76,6 +76,11 @@ export function getLetter(str: string){
 
 }
 
+export function isFirefox(){
+    const isFirefox = typeof navigator !== 'undefined' && navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+    return isFirefox;
+}
+
 export function makeWebServiceCall(url: string, method: string, data: any): Promise<any> {
     // Implement your web service call logic here
     // You can use libraries like axios or fetch to make the actual HTTP request
