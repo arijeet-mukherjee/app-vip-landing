@@ -7,7 +7,7 @@ import { store, persistor } from "@store/store";
 import Loader from '@component/common/Loader';
 
 const HomeComponents = dynamic(() => import('./_app'), {
-  // loading: () => <Loader />
+  loading: () => <Loader />
 });
 
 export default function Home() {

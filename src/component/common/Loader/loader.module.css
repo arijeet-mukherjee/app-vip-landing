@@ -6,6 +6,7 @@
     width: 100vw;
     text-align: center;
     position: relative;
+    background-color: black;
 }
 
 .loader {
@@ -22,7 +23,8 @@
     width: calc((100vw / 1920) * 100);
     height: calc((100vw / 1920) * 100);
     margin-left: calc((100vw / 1920) * 40);
-    fill: #08031b;;
+    fill: #08031b;
+    ;
 }
 
 .loadingText {
@@ -30,6 +32,6 @@
     font-size: calc((100vw / 1920) * 16);
     font-weight: 500;
     font-style: bold;
-    color: #08031b;
+    color: #9EA1A1;
     margin-top: 20px;
 }

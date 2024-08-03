@@ -5,9 +5,9 @@ import styles from "./hero.module.css";
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { isMobile } from '@util/index';
-const SpotLight = dynamic(()=>import('@component/common/spotLight'));
-const Button = dynamic(()=> import('@component/common/Button'));
-const VipCard = dynamic(()=> import('@component/vipCard'));
+const SpotLight = dynamic(() => import('@component/common/spotLight'));
+const Button = dynamic(() => import('@component/common/Button'));
+const VipCard = dynamic(() => import('@component/vipCard'));
 const Header = dynamic(() => import('@component/Header'));
 
 interface HeroProps {
@@ -17,13 +17,12 @@ interface HeroProps {
     openModal: Function;
     modalState: boolean;
     headerData: any;
-    refList: any;
     front: any;           //Front side content of vip card
     back: any;           //Back side content of vip card
     outerLogo: string;  //Transparent side Logo of vip card
 };
 
-const Hero: React.FC<HeroProps> = React.memo(({ introduction, content, openModal, modalState, headerData, refList, front, back, outerLogo }) => {
+const Hero: React.FC<HeroProps> = React.memo(({ introduction, content, openModal, modalState, headerData, front, back, outerLogo }) => {
     //If either introduction or content length is not eqaul to 2, throw an error
 
     const [checkMobile, setCheckMobile] = useState<boolean>(false);
@@ -58,12 +57,11 @@ const Hero: React.FC<HeroProps> = React.memo(({ introduction, content, openModal
 
     return (
         <div className={styles["hero"]}>
-            <SpotLight color='#FFA260' top={-100} right={-200}/>
-            <SpotLight bottom={-50} left={-400}/>
-            {/* Your component content goes here */}
+            <SpotLight color='#FFA260' top={-100} right={-200} />
+            <SpotLight bottom={-50} left={-400} />
             <div className={styles["header"]}>
-                <Header openModal={openModal} modalState={modalState} headerData={headerData} refList={refList} />
-            <div className={styles.horizontalLine}></div>
+                <Header openModal={openModal} modalState={modalState} headerData={headerData} />
+                <div className={styles.horizontalLine}></div>
             </div>
             <div className={styles['heroBlock']}>
                 <div className={styles['heroContent']}>
@@ -101,12 +99,11 @@ const Hero: React.FC<HeroProps> = React.memo(({ introduction, content, openModal
                         </div>
 
                     </div>
-                    {/** import button from common */}
                     <Button label={headerData["button-name"]} />
                 </div>
                 <div className={styles.vipSection}>
                     <Image src='vipshield.svg' alt='vip shield' height={100} width={100} className={styles.vipShield} />
-                    <VipCard front={front} back={back} outerLogo={outerLogo}/>
+                    <VipCard front={front} back={back} outerLogo={outerLogo} />
                 </div>
             </div>
         </div>

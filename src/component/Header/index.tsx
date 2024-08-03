@@ -12,10 +12,9 @@ interface HeaderProps {
     openModal: Function;
     modalState: boolean;
     headerData: any;
-    refList: any,
 };
 
-const Header: React.FC<HeaderProps> = ({ openModal, modalState, headerData, refList }) => {
+const Header: React.FC<HeaderProps> = ({ openModal, modalState, headerData }) => {
     const [logoSize, setLogoSize] = useState({
         height: 48,
         width: 176
@@ -115,7 +114,7 @@ const Header: React.FC<HeaderProps> = ({ openModal, modalState, headerData, refL
                     className={styles.burgerSize}
                     onClick={(e) => {
                         e.preventDefault();
-                        openModal(false, refList, "");
+                        openModal();
                     }}
                 />
             </div> : <></>}

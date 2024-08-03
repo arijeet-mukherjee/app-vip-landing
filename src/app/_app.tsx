@@ -30,35 +30,7 @@ export default function Home() {
   const globalLanguage = useAppSelector<any>(state => state.globalLanguage);
   const data = require(`../component/data/${globalLanguage.globalLanguage}.json`);
 
-  const refIntroduction = useRef<HTMLDivElement>(null);
-
-  const refUSP = useRef<HTMLDivElement>(null);
-  const isVisibleCardQuality = useOnScreen(refUSP, '0px');
-
-  const refCarouselCurrentSubscription = useRef<HTMLDivElement>(null);
-  const isVisibleCarouselCurrentSubscription = useOnScreen(refCarouselCurrentSubscription, '50px');
-
-  const refCarouselUpcomingSubscription = useRef<HTMLDivElement>(null);
-  const isVisibleCarouselUpcomingSubscription = useOnScreen(refCarouselUpcomingSubscription, '70px');
-
-  const refCTABox = useRef<HTMLDivElement>(null);
-  const isVisibleCTABox = useOnScreen(refCTABox, '120px');
-
-  const refQuizWindow = useRef<HTMLDivElement>(null);
-  const isVisibleQuizWindow = useOnScreen(refQuizWindow, '100px');
-
-
-  const refNewsLetter = useRef<HTMLDivElement>(null);
-  const isVisibleNewsLetter = useOnScreen(refNewsLetter, '150px');
-
-  const refFooter = useRef<HTMLDivElement>(null);
-  const isVisiblefFooter = useOnScreen(refFooter, '200px');
-
   const [modalOpen, setModalOpen] = useState(false);
-
-  let ListIndex = data.header.navigation_bar.navbarItems
-
-  let refList: any = {}
 
   const redirectComponent = useCallback((item: string) => {
   }, []);
@@ -83,7 +55,7 @@ export default function Home() {
 
   return (
     <>
-      {isMobile() ? <MobileNavModal modalState={modalOpen} closeModal={openModal} list={data.header.navigation_bar.navbarItems} headerData={data.header} navbarData={data.header.navigation_bar} refList={refList} /> : <></>}
+      {isMobile() ? <MobileNavModal modalState={modalOpen} closeModal={openModal} list={data.header.navigation_bar.navbarItems} headerData={data.header} navbarData={data.header.navigation_bar} /> : <></>}
       <div className={styles["container"]} style={modalOpen ? { height: '100vh', overflow: 'hidden' } : {}}>
 
         <Hero
@@ -92,13 +64,12 @@ export default function Home() {
           openModal={openModal}
           modalState={modalOpen}
           headerData={data.header}
-          refList={refList}
           front={data.header.front}
           back={data.header.back}
           outerLogo={data.header.outerLogo}
         />
 
-        <div ref={refIntroduction} id='introduction'>
+        <div id='introduction'>
           <DigitalBg
             badgeText={data.digitalBodyGaurdSection.badgeText}
             badgeColor={data.digitalBodyGaurdSection.badgeColor}

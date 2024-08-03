@@ -7,7 +7,6 @@ import Header from '@component/Header';
 import Button from '@component/common/Button';
 import { useAppSelector, useAppDispatch } from '@store/store';
 import { setGlobalLanguage } from '@store/globalLanguageSlice';
-import { goTo } from '@util/index';
 
 
 interface dd {
@@ -26,9 +25,8 @@ interface MobileNavModalProps {
     modalState: boolean;
     headerData: any;
     navbarData: any;
-    refList: {};
 }
-const MobileNavModal: FC<MobileNavModalProps> = ({ list, closeModal, modalState, headerData, navbarData, refList }) => {
+const MobileNavModal: FC<MobileNavModalProps> = ({ list, closeModal, modalState, headerData, navbarData }) => {
     const globalLanguage = useAppSelector<any>(state => state.globalLanguage);
     const dispatch = useAppDispatch();
     const handleLanguage = (lang: string) => {
@@ -52,7 +50,7 @@ const MobileNavModal: FC<MobileNavModalProps> = ({ list, closeModal, modalState,
             overflow: 'hidden',
         }}>
             <div className={styles.headerContainer}>
-                <Header refList={refList} openModal={closeModal} modalState={modalState} headerData={headerData} />
+                <Header openModal={closeModal} modalState={modalState} headerData={headerData} />
             </div>
             <div className={styles.navBar}>
                 {list?.map((item, index) => {
