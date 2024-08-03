@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './vipcard.module.css';
 import Image from 'next/image';
-import {vipNumber, getLetter} from '@util/index';
+import {vipNumber, getLetter, isFirefox} from '@util/index';
 interface VipCard {
     // Your props goes here
     front: {
@@ -23,8 +23,13 @@ interface VipCard {
 
 const Vipcard: React.FC<VipCard> = React.memo(({ front, back, outerLogo }) => {
 
+    // const frontRef = useRef<HTMLDivElement>(null);
+    // const backRef = useRef<HTMLDivElement>(null);
+
+    const [hover, setHover] = useState(false);
+
     return (
-        <div className={styles.vipCard}>
+        <div className={styles.vipCard} onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)}>
             <div className={styles.solid}>
                 <div className={styles.front}>
                     <Image src='/cardtexture.svg' alt='card texture' fill={true} className={styles.texture} />
@@ -60,7 +65,7 @@ const Vipcard: React.FC<VipCard> = React.memo(({ front, back, outerLogo }) => {
                     }
                 </div>
 
-                <div className={styles.back}>
+                <div className={`${styles.back} ${isFirefox() && styles.backFirefox}`}>
                     <Image src='/cardtexture.svg' alt='back' fill={true} className={styles.texture} />
                     <div className={styles.branding}>
                         {
@@ -97,7 +102,7 @@ const Vipcard: React.FC<VipCard> = React.memo(({ front, back, outerLogo }) => {
                     }
                 </div>
             </div>
-            <div className={styles.transparent}>
+            <div className={`${styles.transparent} ${isFirefox() && styles.transparentFirefox}`}>
                 <Image src={outerLogo} alt='secdesk logo' height={52.77} width={52.77} className={styles.outerLogo} />
             </div>
         </div>
