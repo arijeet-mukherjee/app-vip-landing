@@ -9,6 +9,7 @@ import { useAppSelector, useAppDispatch } from '@store/store';
 import { setGlobalLanguage } from '@store/globalLanguageSlice';
 import { goTo } from '@util/index';
 
+
 interface dd {
     label: string;
     url: string;
@@ -34,6 +35,8 @@ const MobileNavModal: FC<MobileNavModalProps> = ({ list, closeModal, modalState,
         dispatch(setGlobalLanguage({ globalLanguage: lang }))
     }
 
+
+
     function handelClick(e: MouseEvent) {
         e.preventDefault();
     }
@@ -55,7 +58,9 @@ const MobileNavModal: FC<MobileNavModalProps> = ({ list, closeModal, modalState,
                 {list?.map((item, index) => {
                     if (item.dditem?.length === 0) {
                         return (
-                            <div className={styles.navItem} onClick={() => closeModal(true, refList, item.label)} key={index} >{item.label}</div>
+                            <div className={styles.navItem} key={index} onClick={() => {
+                                closeModal(item.url)
+                            }} >{item.label}</div>
                         )
                     }
                 }
@@ -68,3 +73,4 @@ const MobileNavModal: FC<MobileNavModalProps> = ({ list, closeModal, modalState,
     );
 };
 export default MobileNavModal;
+//

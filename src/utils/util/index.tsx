@@ -1,5 +1,6 @@
 
 import axios from 'axios';
+import { useRouter } from 'next/router';
 const OAuth = require('oauth').OAuth2;
 
 export function capitalizeString(str: string): string {
@@ -23,20 +24,6 @@ export function goToTop() {
     });
 }
 
-export async function goTo(ref: any) {
-    if (isMobile()) {
-        if (ref.current) {
-            ref.current.scrollIntoView({ behavior: 'smooth' });
-        }
-    } else {
-        setTimeout(() => {
-            if (ref.current) {
-                ref.current.scrollIntoView({ behavior: 'smooth' });
-            }
-        }, 300);
-    }
-}
-
 export function emailVerified(email: string): boolean {
     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!emailRegex.test(email)) {
@@ -47,36 +34,36 @@ export function emailVerified(email: string): boolean {
     }
 }
 
-export function vipNumber(largeNumber : number){
+export function vipNumber(largeNumber: number) {
 
     // Convert the number to a string
     const numberString = largeNumber.toString();
-    
+
     // Group the number into 4-digit segments
     const groups = [];
     for (let i = 0; i < numberString.length; i += 4) {
-      groups.push(numberString.slice(i, i + 4));
-    }
-    
-    // Join the groups with a space separator
-    const formattedNumber = groups.join(" ");
-    
-    return formattedNumber;
-    
+        groups.push(numberString.slice(i, i + 4));
     }
 
-export function getLetter(str: string){
+    // Join the groups with a space separator
+    const formattedNumber = groups.join(" ");
+
+    return formattedNumber;
+
+}
+
+export function getLetter(str: string) {
     const array = [];
-    for(let i=0; i<str.length; i++){
+    for (let i = 0; i < str.length; i++) {
         let letter = str.charAt(i);
         array.push(letter);
     }
-    
+
     return array;
 
 }
 
-export function isFirefox(){
+export function isFirefox() {
     const isFirefox = typeof navigator !== 'undefined' && navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
     return isFirefox;
 }

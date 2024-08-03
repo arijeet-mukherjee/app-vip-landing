@@ -13,27 +13,27 @@
             "navbarItems": [
                 {
                     "label": "Introduction",
-                    "url": "/",
+                    "url": "introduction",
                     "dditem": []
                 },
                 {
                     "label": "USP",
-                    "url": "/",
+                    "url": "usp",
                     "dditem": []
                 },
                 {
                     "label": "Process",
-                    "url": "/",
+                    "url": "process",
                     "dditem": []
                 },
                 {
                     "label": "Benefits",
-                    "url": "/",
+                    "url": "benefits",
                     "dditem": []
                 },
                 {
                     "label": "Services",
-                    "url": "/",
+                    "url": "services",
                     "dditem": []
                 },
                 {

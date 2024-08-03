@@ -6,8 +6,7 @@ import Button from '../common/Button';
 import Link from 'next/link';
 import { useAppSelector } from '@store/store';
 import DDMenu from '@component/common/DropdownMenu';
-import { isMobile, goTo } from '@util/index';
-
+import { isMobile } from '@util/index';
 
 interface HeaderProps {
     openModal: Function;
@@ -43,6 +42,7 @@ const Header: React.FC<HeaderProps> = ({ openModal, modalState, headerData, refL
     const headerStyle = {
         gridTemplateColumns: '3fr 1fr'
     }
+
     return (
         <nav className={styles.header}>
             <div >
@@ -61,7 +61,7 @@ const Header: React.FC<HeaderProps> = ({ openModal, modalState, headerData, refL
                     if (item.dditem?.length === 0) {
                         return (
                             <div aria-label={item.label} key={index}>
-                                <Link className={styles.navItem} href={item.url} onClick={async () => await goTo(refList[item.label])}>{item.label}</Link>
+                                <Link className={styles.navItem} href={`#${item.url}`} >{item.label}</Link>
                             </div>
                         )
                     }
@@ -84,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({ openModal, modalState, headerData, refL
                 })
                 }
 
-                <Button label={headerData.navigation_bar.button.label} hc={handelClick} fontSize={20}/>
+                <Button label={headerData.navigation_bar.button.label} hc={handelClick} fontSize={20} />
             </div>
             {modalState && <div className={styles.mobileLang}>
                 {headerData.navigation_bar.navbarItems?.map((item: any, index: any) => {

@@ -15,7 +15,7 @@ const NewsLetter = dynamic(() => import('@component/NewsLetter'), { ssr: false }
 const Footer = dynamic(() => import('@component/Footer'), { ssr: false });
 const TawkChatWidget = dynamic(() => import('@component/common/TawkChat'), { ssr: false });
 const QuizWindow = dynamic(() => import('@component/common/QuizWindow'), { ssr: false });
-import { isMobile, goTo } from "@util/index";
+import { isMobile } from "@util/index";
 import VisualBreakup from "@component/common/VisualBreakup/VisualBreakup";
 import DigitalBg from "@component/DigitalBG/digitalBg";
 import ProtectYourself from "@component/ProtectYourself/ProtectYourself";
@@ -59,36 +59,25 @@ export default function Home() {
   let ListIndex = data.header.navigation_bar.navbarItems
 
   let refList: any = {}
-  // const [refList, setRefList] = React.useState<{ [key: string]: any }>({
-  //   [ListIndex[0].label]: refIntroduction,
-  //   [ListIndex[1].label]: refUSP,
-  //   [ListIndex[2].label]: refCTABox,
-  //   [ListIndex[3].label]: refNewsLetter,
-  //   [ListIndex[4].label]: refQuizWindow,
-  // } as { [key: string]: React.RefObject<HTMLDivElement> });
-  // React.useEffect(() => {
-  //   let ListIndex = data.header.navigation_bar.navbarItems
-  //   setRefList({
-  //     [ListIndex[0].label]: refIntroduction,
-  //     [ListIndex[1].label]: refUSP,
-  //     [ListIndex[2].label]: refCTABox,
-  //     [ListIndex[3].label]: refNewsLetter,
-  //     [ListIndex[4].label]: refQuizWindow,
-  //   })
-  // }, [globalLanguage.globalLanguage, modalOpen])
 
   const redirectComponent = useCallback((item: string) => {
-    goTo(refList[item])
   }, []);
 
   const dispatch = useAppDispatch();
 
-  const openModal = useCallback((gotocaller: boolean, refList: any, item: string) => {
+  function handleNavigation(id: any) {
+    const element = document && document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
+  const openModal = useCallback((id: any) => {
     setModalOpen(prevModalOpen => !prevModalOpen);
-    if (gotocaller) {
+    if (id) {
       setTimeout(() => {
-        goTo(refList[item])
-      }, 400);
+        handleNavigation(id)
+      }, 400)
     }
   }, []);
 
@@ -109,7 +98,7 @@ export default function Home() {
           outerLogo={data.header.outerLogo}
         />
 
-        <div ref={refIntroduction}>
+        <div ref={refIntroduction} id='introduction'>
           <DigitalBg
             badgeText={data.digitalBodyGaurdSection.badgeText}
             badgeColor={data.digitalBodyGaurdSection.badgeColor}
@@ -118,7 +107,7 @@ export default function Home() {
           />
         </div>
 
-        <div className={styles.wrapper} ref={refUSP}>
+        <div className={styles.wrapper} id='usp'>
           <SpotLight color="rgb(255 162 96 / 60%)" bottom={-200} right={-400} width={1000} height={1500} />
           <div className={styles.whatItIsFor}>
             <div className={styles.whatItIsForHeading}>{data.imageSlider.whatItIsForHeading}</div>
@@ -132,7 +121,7 @@ export default function Home() {
           <TechnologyMeetsOldSchoolSophistication heading={data.technologyMeetsOldSchoolSophistication.heading} limpidBoxes={data.technologyMeetsOldSchoolSophistication.limpidBoxes} />
         </div>
 
-        <div className={styles.benefitAndFeature} style={{ backgroundImage: 'url(/benifitAndFeature.png)' }}>
+        <div className={styles.benefitAndFeature} id='benefits' style={{ backgroundImage: 'url(/benifitAndFeature.png)' }}>
           <BenefitAndFeature
             bulletPointImg={data.benefitAndFeature.bulletPointImg}
             bulletPoints={data.benefitAndFeature.bulletPoints}
@@ -142,13 +131,13 @@ export default function Home() {
           />
         </div>
 
-        {!modalOpen ? <div className={styles["carousel-wrapper"] + " " + styles["cardCarousalRemain"]}>
+        {!modalOpen ? <div className={styles["carousel-wrapper"] + " " + styles["cardCarousalRemain"]} id='services'>
           <Carousel {...data.carouselCurrentSubscription} redirectComponent={redirectComponent} />
           <SpotLight color="rgb(255 162 96 / 60%)" top={240} right={-300} width={1000} height={950} />
           <Carousel {...data.carouselUpcomingSubscription} redirectComponent={redirectComponent} />
         </div> : <></>}
 
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} id='process'>
           <SpotLight color="rgb(255 255 255 / 60%)" bottom={-100} left={-200} width={800} height={800} />
           <OurProcessesSection
             sectionHeading={data.ourProcessesSection.sectionHeading}

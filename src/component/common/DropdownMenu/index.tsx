@@ -17,6 +17,7 @@ const DDMenu: React.FC<DDMenuProps> = ({ list, offsetX = 0, offsetY = 0 }) => {
     const dispatch = useAppDispatch();
     const handleLanguage = (lang: string) => {
         dispatch(setGlobalLanguage({ globalLanguage: lang }))
+        window && typeof window !== undefined && window.location.reload()
     }
     return (
         <div className={styles.dropdown} style={{
