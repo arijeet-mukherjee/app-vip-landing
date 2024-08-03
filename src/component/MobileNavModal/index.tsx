@@ -7,7 +7,7 @@ import Header from '@component/Header';
 import Button from '@component/common/Button';
 import { useAppSelector, useAppDispatch } from '@store/store';
 import { setGlobalLanguage } from '@store/globalLanguageSlice';
-import { goTo } from '@util/index';
+
 
 interface dd {
     label: string;
@@ -25,14 +25,15 @@ interface MobileNavModalProps {
     modalState: boolean;
     headerData: any;
     navbarData: any;
-    refList: {};
 }
-const MobileNavModal: FC<MobileNavModalProps> = ({ list, closeModal, modalState, headerData, navbarData, refList }) => {
+const MobileNavModal: FC<MobileNavModalProps> = ({ list, closeModal, modalState, headerData, navbarData }) => {
     const globalLanguage = useAppSelector<any>(state => state.globalLanguage);
     const dispatch = useAppDispatch();
     const handleLanguage = (lang: string) => {
         dispatch(setGlobalLanguage({ globalLanguage: lang }))
     }
+
+
 
     function handelClick(e: MouseEvent) {
         e.preventDefault();
@@ -49,13 +50,15 @@ const MobileNavModal: FC<MobileNavModalProps> = ({ list, closeModal, modalState,
             overflow: 'hidden',
         }}>
             <div className={styles.headerContainer}>
-                <Header refList={refList} openModal={closeModal} modalState={modalState} headerData={headerData} />
+                <Header openModal={closeModal} modalState={modalState} headerData={headerData} />
             </div>
             <div className={styles.navBar}>
                 {list?.map((item, index) => {
                     if (item.dditem?.length === 0) {
                         return (
-                            <div className={styles.navItem} onClick={() => closeModal(true, refList, item.label)} key={index} >{item.label}</div>
+                            <div className={styles.navItem} key={index} onClick={() => {
+                                closeModal(item.url)
+                            }} >{item.label}</div>
                         )
                     }
                 }
@@ -68,3 +71,4 @@ const MobileNavModal: FC<MobileNavModalProps> = ({ list, closeModal, modalState,
     );
 };
 export default MobileNavModal;
+//

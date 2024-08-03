@@ -4,11 +4,8 @@ import dynamic from 'next/dynamic';
 import styles from './app.module.css';
 import useOnScreen from "@util/useOnScreen";
 import Hero from "@component/Hero";
-import Shield from "@component/common/Shield";
-import { setShieldState } from '@store/shieldSlice';
 import { useAppDispatch } from '@store/store';
 import { useAppSelector } from '@store/store';
-// import MobileNavModal from "@component/MobileNavModal";
 
 const MobileNavModal = dynamic(() => import('@component/MobileNavModal'));
 const CardQuality = dynamic(() => import('@component/cardQuality'), { ssr: false });
@@ -18,7 +15,7 @@ const NewsLetter = dynamic(() => import('@component/NewsLetter'), { ssr: false }
 const Footer = dynamic(() => import('@component/Footer'), { ssr: false });
 const TawkChatWidget = dynamic(() => import('@component/common/TawkChat'), { ssr: false });
 const QuizWindow = dynamic(() => import('@component/common/QuizWindow'), { ssr: false });
-import { isMobile, goTo } from "@util/index";
+import { isMobile } from "@util/index";
 import VisualBreakup from "@component/common/VisualBreakup/VisualBreakup";
 import DigitalBg from "@component/DigitalBG/digitalBg";
 import ProtectYourself from "@component/ProtectYourself/ProtectYourself";
@@ -33,72 +30,32 @@ export default function Home() {
   const globalLanguage = useAppSelector<any>(state => state.globalLanguage);
   const data = require(`../component/data/${globalLanguage.globalLanguage}.json`);
 
-  const refIntroduction = useRef<HTMLDivElement>(null);
-
-  const refCardQuality = useRef<HTMLDivElement>(null);
-  const isVisibleCardQuality = useOnScreen(refCardQuality, '0px');
-
-  const refCarouselCurrentSubscription = useRef<HTMLDivElement>(null);
-  const isVisibleCarouselCurrentSubscription = useOnScreen(refCarouselCurrentSubscription, '50px');
-
-  const refCarouselUpcomingSubscription = useRef<HTMLDivElement>(null);
-  const isVisibleCarouselUpcomingSubscription = useOnScreen(refCarouselUpcomingSubscription, '70px');
-
-  const refCTABox = useRef<HTMLDivElement>(null);
-  const isVisibleCTABox = useOnScreen(refCTABox, '120px');
-
-  const refQuizWindow = useRef<HTMLDivElement>(null);
-  const isVisibleQuizWindow = useOnScreen(refQuizWindow, '100px');
-
-
-  const refNewsLetter = useRef<HTMLDivElement>(null);
-  const isVisibleNewsLetter = useOnScreen(refNewsLetter, '150px');
-
-  const refFooter = useRef<HTMLDivElement>(null);
-  const isVisiblefFooter = useOnScreen(refFooter, '200px');
-
   const [modalOpen, setModalOpen] = useState(false);
 
-  let ListIndex = data.header.navigation_bar.navbarItems
-  let refListValues = [refIntroduction, refCardQuality, refCTABox, refNewsLetter, refQuizWindow]
-  const [refList, setRefList] = React.useState<{ [key: string]: any }>({
-    [ListIndex[0].label]: refIntroduction,
-    [ListIndex[1].label]: refCardQuality,
-    [ListIndex[2].label]: refCTABox,
-    [ListIndex[3].label]: refNewsLetter,
-    [ListIndex[4].label]: refQuizWindow,
-  } as { [key: string]: React.RefObject<HTMLDivElement> });
-  React.useEffect(() => {
-    let ListIndex = data.header.navigation_bar.navbarItems
-    setRefList({
-      [ListIndex[0].label]: refIntroduction,
-      [ListIndex[1].label]: refCardQuality,
-      [ListIndex[2].label]: refCTABox,
-      [ListIndex[3].label]: refNewsLetter,
-      [ListIndex[4].label]: refQuizWindow,
-    })
-  }, [globalLanguage.globalLanguage, modalOpen])
-
   const redirectComponent = useCallback((item: string) => {
-    goTo(refList[item])
   }, []);
 
   const dispatch = useAppDispatch();
-  const shield = useAppSelector(state => state.shield);
 
-  const openModal = useCallback((gotocaller: boolean, refList: any, item: string) => {
+  function handleNavigation(id: any) {
+    const element = document && document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
+  const openModal = useCallback((id: any) => {
     setModalOpen(prevModalOpen => !prevModalOpen);
-    dispatch(setShieldState({ ...shield, top: 80, visible: true }));
-    if (gotocaller) {
+    if (id) {
       setTimeout(() => {
-        goTo(refList[item])
-      }, 400);
+        handleNavigation(id)
+      }, 400)
     }
   }, []);
 
   return (
     <>
-      {isMobile() ? <MobileNavModal modalState={modalOpen} closeModal={openModal} list={data.header.navigation_bar.navbarItems} headerData={data.header} navbarData={data.header.navigation_bar} refList={refList} /> : <></>}
+      {isMobile() ? <MobileNavModal modalState={modalOpen} closeModal={openModal} list={data.header.navigation_bar.navbarItems} headerData={data.header} navbarData={data.header.navigation_bar} /> : <></>}
       <div className={styles["container"]} style={modalOpen ? { height: '100vh', overflow: 'hidden' } : {}}>
 
         <Hero
@@ -107,19 +64,21 @@ export default function Home() {
           openModal={openModal}
           modalState={modalOpen}
           headerData={data.header}
-          refList={refList}
           front={data.header.front}
           back={data.header.back}
           outerLogo={data.header.outerLogo}
         />
-        <DigitalBg
-          badgeText={data.digitalBodyGaurdSection.badgeText}
-          badgeColor={data.digitalBodyGaurdSection.badgeColor}
-          Title={data.digitalBodyGaurdSection.Title}
-          descriptionArray={data.digitalBodyGaurdSection.descriptionArray}
-        />
 
-        <div className={styles.wrapper}>
+        <div id='introduction'>
+          <DigitalBg
+            badgeText={data.digitalBodyGaurdSection.badgeText}
+            badgeColor={data.digitalBodyGaurdSection.badgeColor}
+            Title={data.digitalBodyGaurdSection.Title}
+            descriptionArray={data.digitalBodyGaurdSection.descriptionArray}
+          />
+        </div>
+
+        <div className={styles.wrapper} id='usp'>
           <SpotLight color="rgb(255 162 96 / 60%)" bottom={-200} right={-400} width={1000} height={1500} />
           <div className={styles.whatItIsFor}>
             <div className={styles.whatItIsForHeading}>{data.imageSlider.whatItIsForHeading}</div>
@@ -133,7 +92,7 @@ export default function Home() {
           <TechnologyMeetsOldSchoolSophistication heading={data.technologyMeetsOldSchoolSophistication.heading} limpidBoxes={data.technologyMeetsOldSchoolSophistication.limpidBoxes} />
         </div>
 
-        <div className={styles.benefitAndFeature} style={{ backgroundImage: 'url(/benifitAndFeature.png)' }}>
+        <div className={styles.benefitAndFeature} id='benefits' style={{ backgroundImage: 'url(/benifitAndFeature.png)' }}>
           <BenefitAndFeature
             bulletPointImg={data.benefitAndFeature.bulletPointImg}
             bulletPoints={data.benefitAndFeature.bulletPoints}
@@ -143,13 +102,13 @@ export default function Home() {
           />
         </div>
 
-        {!modalOpen ? <div className={styles["carousel-wrapper"] + " " + styles["cardCarousalRemain"]}>
+        {!modalOpen ? <div className={styles["carousel-wrapper"] + " " + styles["cardCarousalRemain"]} id='services'>
           <Carousel {...data.carouselCurrentSubscription} redirectComponent={redirectComponent} />
           <SpotLight color="rgb(255 162 96 / 60%)" top={240} right={-300} width={1000} height={950} />
           <Carousel {...data.carouselUpcomingSubscription} redirectComponent={redirectComponent} />
         </div> : <></>}
 
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} id='process'>
           <SpotLight color="rgb(255 255 255 / 60%)" bottom={-100} left={-200} width={800} height={800} />
           <OurProcessesSection
             sectionHeading={data.ourProcessesSection.sectionHeading}
