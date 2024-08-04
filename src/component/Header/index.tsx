@@ -25,8 +25,9 @@ const Header: React.FC<HeaderProps> = ({ openModal, modalState, headerData }) =>
         setOpen(!open)
     }
 
-    function handelClick(e: MouseEvent) {
+    function handelClick(e: React.MouseEvent<HTMLDivElement>) {
         e.preventDefault();
+        typeof window !== 'undefined' && window.Tawk_API?.maximize && window.Tawk_API?.maximize();
     };
 
     useEffect(() => {
@@ -37,10 +38,6 @@ const Header: React.FC<HeaderProps> = ({ openModal, modalState, headerData }) =>
             })
         }
     }, []);
-
-    const headerStyle = {
-        gridTemplateColumns: '3fr 1fr'
-    }
 
     return (
         <nav className={styles.header}>
