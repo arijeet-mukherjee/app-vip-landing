@@ -42,10 +42,20 @@
 
 .indicator {
     width: calc((100vw/1920)* 100);
-    border: calc((100vw/1920)* 5) 0 0 0;
+    border: calc((100vw/1920)* 10);
     cursor: pointer;
+    
 }
 
 .indicatorActive {
     background: linear-gradient(90deg, #060C0B -8.96%, #F2C84B 30.94%, #D9A036 57.53%, #060C0B 97.43%);
+}
+
+@media (max-width: 1200px) { 
+    .indicator {
+        width: calc((100vw/393)* 20);
+        border: calc((100vw/393)* 2) 0 0 0;
+        cursor: pointer;
+
+    }    
 }

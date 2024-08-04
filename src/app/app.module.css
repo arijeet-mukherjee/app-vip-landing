@@ -129,7 +129,22 @@
     background-size: cover;
     background-position: center;
     height: auto;
+    position: relative;
 }
+
+.benefitAndFeature::after {
+    background: linear-gradient(269.8deg, rgba(0, 0, 0, 0.1) 47.74%, rgba(0, 0, 0, 0.5) 76.55%), #363232;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.25;
+    width: 100%;
+    z-index: 1;
+}
+
 
 @media(max-width: 1200px) {
     .carousel-container-1 {
@@ -148,6 +163,11 @@
         margin-left: 5px;
         margin-right: 5px;
         margin-bottom: 5px;
+    }
+
+    .wrapper {
+       
+        padding: calc((100vw/393)*0) calc((100vw/393)*25)
     }
 
     .quizName {
@@ -177,4 +197,32 @@
         gap: 0 !important;
         padding: 20px;
     }
+
+    .whatItIsForHeading {
+        font-size: calc((100vw/393)*25);
+        line-height: calc((100vw/393)*32);
+        /* font-size: calc((100vw/393)*62); */
+        font-weight: 500;
+        /* line-height: calc((100vw/393)*40); */
+        text-align: left;
+    }
+
+    .whatItIsForText {
+        font-size: calc((100vw/393)*12);
+        line-height: calc((100vw/393)*12);
+    }
+
+    .benefitAndFeature {
+        padding: calc((100vw/393)*25) calc((100vw/393)*25)
+    }
+
+    .founderText {
+        font-size: calc((100vw/343)* 25);
+        line-height: calc((100vw/343)*32);
+    }
+
+    .founderWrapper {
+        padding: calc((100vw/393)*25) calc((100vw/393)*25)
+    }
+
 }

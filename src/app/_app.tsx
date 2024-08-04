@@ -90,6 +90,7 @@ export default function Home() {
             heading={data.benefitAndFeature.heading}
             badgeText={data.benefitAndFeature.badgeText}
             badgeColor={data.benefitAndFeature.badgeColor}
+            buttonLabel={data.benefitAndFeature.buttonLabel}
           />
         </div>
 

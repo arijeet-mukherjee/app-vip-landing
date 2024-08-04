@@ -5,6 +5,7 @@ import ImageSlider from "@component/common/ImageSlider";
 import data from '@component/data/EN.json'
 import Image from "next/image";
 import Button from "@component/common/Button";
+import { isMobile } from "@util/index";
 interface SecureYourLegacyProps {
     bulletPointImg: string,
     bulletPoints: Array<string>,
@@ -22,6 +23,7 @@ const SecureYourLegacy: React.FC<SecureYourLegacyProps> = ({ bulletPointImg, bul
 
     function handelClick(e: React.MouseEvent<HTMLDivElement>) {
         e.preventDefault();
+        typeof window !== 'undefined' && window.Tawk_API?.maximize && window.Tawk_API?.maximize();
     }
 
 
@@ -41,13 +43,25 @@ const SecureYourLegacy: React.FC<SecureYourLegacyProps> = ({ bulletPointImg, bul
                         )
                     })}
                 </div>
-                <div className={styles["text-section"]}>
-                    <div className={styles["text-section-centent"]}>{imageSliderText}</div>
-                </div>
-                <div className={styles["secure-button"]}>
-                    <Button label={buttonLabel} hc={handelClick} background='transparent' backgroundOnHover='#F4C9A4' textColor='white' textColorOnHover='black' borderColor='#F4C9A4' fontSize={24} />
-                </div>
+                {!isMobile() ? <>
+                    <div className={styles["text-section"]}>
+                        <div className={styles["text-section-centent"]}>{imageSliderText}</div>
+                    </div>
+                    <div className={styles["secure-button"]}>
+                        <Button label={buttonLabel} hc={handelClick} />
+                    </div>
+                </> : <div style={{height:"0", width:"0", display:"none"}}></div>}
             </div>
+            {
+                isMobile() ? <>
+                    <div className={styles["text-section"]}>
+                        <div className={styles["text-section-centent"]}>{imageSliderText}</div>
+                    </div>
+                    <div className={styles["secure-button"]}>
+                        <Button label={buttonLabel} hc={handelClick} />
+                    </div>
+                </> : <div style={{height:"0", width:"0", display:"none"}}></div>
+            }
         </div>
     );
 };
