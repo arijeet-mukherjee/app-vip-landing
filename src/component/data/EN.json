@@ -472,6 +472,7 @@
         "badgeColor" : "gold",
         "badgeText" : "UNPARALLELED EXPERIENCE",
         "bulletPointImg": "./sliverTickmark.svg",
+        "buttonLabel": "Secure Yourself",
         "bulletPoints": [
             "Onboarding Process with Full Discretion",
             "Customizable as Per Your Needs",

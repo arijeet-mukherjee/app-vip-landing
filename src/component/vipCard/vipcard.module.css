@@ -25,12 +25,13 @@ p {
     font-size: calc((100vw/1920)*22);
     font-weight: 400;
     font-family: 'Inter', sans-serif;
-    
+
 }
+
 @supports(-moz-appearance:none) {
-   .vipCard{
-    backdrop-filter: blur(20px);
-   }
+    .vipCard {
+        backdrop-filter: blur(20px);
+    }
 }
 
 .branding {
@@ -136,7 +137,7 @@ p {
     overflow: hidden;
 }
 
-.transparentFirefox{
+.transparentFirefox {
     position: relative;
     display: flex;
     justify-content: center;
@@ -146,12 +147,12 @@ p {
     box-shadow: calc((100vw/1920)*-1) 0px 0px 0px #ffffff inset;
 }
 
-.transparentFirefox::before{
-    content:'';
+.transparentFirefox::before {
+    content: '';
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(0deg, rgba(0,0,0,0.9) 15%, rgba(255, 255, 255, 0.5) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 15%, rgba(255, 255, 255, 0.5) 100%);
 }
 
 .outerLogo {
@@ -176,12 +177,20 @@ p {
         transform: rotateY(180deg);
     }
 
-    .backFirefox{
+    .backFirefox {
         visibility: hidden;
     }
 }
 
-.backFirefox{
+.backFirefox {
     transition: visibility 0ms ease;
     transition-delay: 250ms;
+}
+
+
+@media (max-width: 1200px) {
+    .vipCard {
+        height: calc((100vw / 393)* 111);
+        width: calc((100vw / 393)* 190);
+    }
 }

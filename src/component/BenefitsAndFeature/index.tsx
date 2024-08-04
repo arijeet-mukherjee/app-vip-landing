@@ -9,10 +9,16 @@ interface BenefitAndFeatureProps {
     bulletPoints: Array<string>,
     heading: string,
     badgeColor: string,
-    badgeText: string;
+    badgeText: string,
+    buttonLabel: string,
 }
 
-const BenefitAndFeature: React.FC<BenefitAndFeatureProps> = ({ bulletPointImg, bulletPoints, heading, badgeColor, badgeText }) => {
+const BenefitAndFeature: React.FC<BenefitAndFeatureProps> = ({ bulletPointImg, bulletPoints, heading, badgeColor, badgeText, buttonLabel }) => {
+
+    function handelClick(e: React.MouseEvent<HTMLDivElement>) {
+        e.preventDefault();
+        typeof window !== 'undefined' && window.Tawk_API?.maximize && window.Tawk_API?.maximize();
+    }
 
     return (
         <div className={styles["container"]}>
@@ -32,7 +38,9 @@ const BenefitAndFeature: React.FC<BenefitAndFeatureProps> = ({ bulletPointImg, b
                     )
                 })}
             </div>
-
+            <div className={styles["secure-button"]}>
+                <Button label={buttonLabel} hc={handelClick} />
+            </div>
         </div>
     );
 };

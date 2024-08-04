@@ -157,6 +157,11 @@
 }
 
 @media (max-width: 1200px) {
+    .vipShield{
+        height: calc((100vw / 393)* 200);
+        width: calc((100vw / 393)* 200);
+    }
+
     .hero {
         grid-template-rows: auto;
         height: auto;
