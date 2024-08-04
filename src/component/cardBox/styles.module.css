@@ -215,16 +215,17 @@ p {
     }
 
     .cardbox-image {
-        justify-content: center;
-        align-items: center;
+        justify-content: left;
+        align-items: left;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
-        padding: calc((100vw/393)*20);
+       
     }
 
     .cardbox-content {
+        padding-top: calc((100vw/393)*20);
+        padding-bottom: calc((100vw/393)*20);
         display: grid;
-        padding: 15px;
         grid-template-rows: auto auto auto;
         margin: 0px;
         justify-content: center;
@@ -253,5 +254,10 @@ p {
 
     .inputBoxWithButton {
         grid-template-columns: 3fr 1fr;
+    }
+    
+    .cardbox-credentials {
+        font-size: calc((100vw / 393)* 10);
+        line-height: calc((100vw / 393)* 10);
     }
 }

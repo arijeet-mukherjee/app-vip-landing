@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from "react-redux";
 import { store, persistor } from "@store/store";
-import Loader  from '@component/common/Loader';
+import Loader from '@component/common/Loader';
 
 const HomeComponents = dynamic(() => import('./_app'), {
   loading: () => <Loader />

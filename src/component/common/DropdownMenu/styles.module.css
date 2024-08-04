@@ -12,7 +12,7 @@
 }
 
 .tile {
-    background-color: #938EF0;
+    background-color: #F2D785;
     padding-left: calc((100vw / 1920)*19);
     padding-right: calc((100vw / 1920)*19);
     padding-bottom: calc((100vw / 1920)*5);
@@ -23,12 +23,12 @@
 }
 
 .ddItem {   
-    color: var(--background-color-dark);
+    color: black;
     font-weight: 200;
 }
 
 .tile:hover {
-    background-color: var(--text-button-background-color-secondary);
+    background-color: black;
     > .ddItem{
         color: white;
     }

@@ -13,14 +13,10 @@ interface CardProps {
     url: string,
     toggleButton: boolean,
     buttonText: string,
-    key: number
-    // currentIndex: number,
-    animate: boolean,
-    redirectComponent: Function
+    redirectComponent: Function,
 }
 const CarouselCard: React.FC<CardProps> = (props: CardProps) => {
-    const { image, title, description, url, toggleButton, buttonText, animate, key, redirectComponent } = props;
-    const [animater, setAnimater] = React.useState("");
+    const { image, title, description, url, toggleButton, buttonText, redirectComponent } = props;
     const [starPath, setStarPath] = React.useState("url(/starvector.svg)");
     const [imageHeight, setImageHeight] = React.useState(178.67);
     const [imageWidth, setImageWidth] = React.useState(167);
@@ -32,17 +28,15 @@ const CarouselCard: React.FC<CardProps> = (props: CardProps) => {
             setImageHeight(128.99);
         }
     }, []);
-    // console.log(currentIndex, "card");
-    React.useEffect(() => {
-        setAnimater(animate ? "animation" : "");
-    }, []);
 
     return (
-        <div className={styles["carousel-card"] + " " + styles[`${animate ? "animation" : ""}`]} key={key}>
-            <div className={styles["carousel-card-image"]}>
-                <div className={styles["card-image-outer"]} style={{ backgroundImage: starPath, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat" }}>
-                    <div>
-                        <Image src={image} alt={title} height={imageHeight} width={imageWidth} className={styles["card-image-inner"]} />
+        <div className={styles["carousel-card"]} style={{ marginRight: "calc((100vw / 1920) * 108)" }}>
+            <div style={{ "padding": "0 4px 0 4px" }}>
+                <div className={styles["carousel-card-image"]}>
+                    <div className={styles["card-image-outer"]}>
+                        <div>
+                            <Image src={image} alt={title} height={imageHeight} width={imageWidth} className={styles["card-image-inner"]} />
+                        </div>
                     </div>
                 </div>
             </div>
