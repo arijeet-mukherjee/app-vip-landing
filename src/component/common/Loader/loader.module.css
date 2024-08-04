@@ -35,3 +35,8 @@
     color: #9EA1A1;
     margin-top: 20px;
 }
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
