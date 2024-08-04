@@ -3,7 +3,6 @@ import React, { useState, useRef, useCallback } from "react";
 import dynamic from 'next/dynamic';
 import styles from './app.module.css';
 import Hero from "@component/Hero";
-import { useAppDispatch } from '@store/store';
 import { useAppSelector } from '@store/store';
 
 const MobileNavModal = dynamic(() => import('@component/MobileNavModal'));
