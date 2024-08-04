@@ -2,21 +2,15 @@
 import React, { useState, useRef, useCallback } from "react";
 import dynamic from 'next/dynamic';
 import styles from './app.module.css';
-import useOnScreen from "@util/useOnScreen";
 import Hero from "@component/Hero";
 import { useAppDispatch } from '@store/store';
 import { useAppSelector } from '@store/store';
 
 const MobileNavModal = dynamic(() => import('@component/MobileNavModal'));
-const CardQuality = dynamic(() => import('@component/cardQuality'), { ssr: false });
 const Carousel = dynamic(() => import('@component/Carousel'), { ssr: false });
-const CTABox = dynamic(() => import('@component/CTASection'), { ssr: false });
-const NewsLetter = dynamic(() => import('@component/NewsLetter'), { ssr: false });
 const Footer = dynamic(() => import('@component/Footer'), { ssr: false });
 const TawkChatWidget = dynamic(() => import('@component/common/TawkChat'), { ssr: false });
-const QuizWindow = dynamic(() => import('@component/common/QuizWindow'), { ssr: false });
 import { isMobile } from "@util/index";
-import VisualBreakup from "@component/common/VisualBreakup/VisualBreakup";
 import DigitalBg from "@component/DigitalBG/digitalBg";
 import ProtectYourself from "@component/ProtectYourself/ProtectYourself";
 const TechnologyMeetsOldSchoolSophistication = dynamic(() => import('@component/TechnologyMeetsOldSchoolSophistication'), { ssr: false });
@@ -34,8 +28,6 @@ export default function Home() {
 
   const redirectComponent = useCallback((item: string) => {
   }, []);
-
-  const dispatch = useAppDispatch();
 
   function handleNavigation(id: any) {
     const element = document && document.getElementById(id)
@@ -148,7 +140,10 @@ export default function Home() {
         <ProtectYourself
           title={data.protectYourselfNow.title}
           buttonLabel={data.protectYourselfNow.buttonLabel}
-          hc={() => { }}
+          hc={(e: React.MouseEvent<HTMLDivElement>) => {
+            e.preventDefault();
+            typeof window !== 'undefined' && window.Tawk_API?.maximize && window.Tawk_API?.maximize();
+          }}
         />
 
         <Footer
@@ -163,5 +158,3 @@ export default function Home() {
     </>
   );
 }
-
-
