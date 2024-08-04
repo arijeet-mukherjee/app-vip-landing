@@ -52,7 +52,7 @@ const Hero: React.FC<HeroProps> = React.memo(({ introduction, content, openModal
 
     function handelClick(e: React.MouseEvent<HTMLDivElement>) {
         e.preventDefault();
-        typeof window !== 'undefined' && window.Tawk_API?.maximize();
+        typeof window !== 'undefined' && window.Tawk_API?.maximize && window.Tawk_API?.maximize();
     }
 
     return (
@@ -99,7 +99,7 @@ const Hero: React.FC<HeroProps> = React.memo(({ introduction, content, openModal
                         </div>
 
                     </div>
-                    <Button label={headerData["button-name"]} />
+                    <Button label={headerData["button-name"]} hc={handelClick} />
                 </div>
                 <div className={styles.vipSection}>
                     <Image src='vipshield.svg' alt='vip shield' height={100} width={100} className={styles.vipShield} />
