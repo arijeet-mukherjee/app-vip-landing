@@ -28,12 +28,6 @@ p {
 
 }
 
-@supports(-moz-appearance:none) {
-    .vipCard {
-        backdrop-filter: blur(20px);
-    }
-}
-
 .branding {
     display: flex;
     justify-content: space-between;
@@ -135,6 +129,7 @@ p {
     border-radius: 0 calc((100vw/1920)*45) calc((100vw/1920)*45) 0;
     box-shadow: calc((100vw/1920)*-1) 0px 0px 0px #ffffff inset;
     overflow: hidden;
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .transparentFirefox {
@@ -152,7 +147,7 @@ p {
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 15%, rgba(255, 255, 255, 0.5) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 15%, rgba(255, 255, 255, 0.1) 100%);
 }
 
 .outerLogo {
@@ -187,6 +182,11 @@ p {
     transition-delay: 250ms;
 }
 
+@supports(-moz-appearance:none) {
+    .vipCard {
+        backdrop-filter: blur(15px);
+    }
+}
 
 @media (max-width: 1200px) {
     .vipCard {

@@ -4,6 +4,9 @@ import Image from 'next/image';
 import TechnologyMeetsOldSchoolSophistication from '@component/TechnologyMeetsOldSchoolSophistication';
 import { ImageError } from 'next/dist/server/image-optimizer';
 import data from '@component/data/EN.json'
+import { configDotenv } from 'dotenv';
+import useOnScreen from '@util/useOnScreen'
+
 
 
 interface OurProcessesSectionProps {
@@ -24,39 +27,75 @@ interface OurProcessesSectionProps {
  * @param {boolean} next - A boolean indicating whether this is the next item in the sequence.
  */
 function CircularIcon({
+  isVisible,
   image,
   heightOfLink,
   next,
   dimension,
+  cid
 }: {
+  isVisible: boolean;
   image: string,
   heightOfLink: number,
   next: boolean,
-  dimension: number
+  dimension: number,
+  cid: number,
 }) {
 
   return (
-    <div className={styles.metalCircleContainer}
-    style={{
-      height: `calc((100vw/1920)*${dimension})`,
-      width: `calc((100vw/1920)*${dimension})`
-    }}>
-      <div className={styles.circle}></div>
-      <Image
-        fill
-        src={image}
-        alt="Image"
-        className={styles.imageInCirlce}
-        style={{ borderRadius: '100%' }} />
-      {next &&
-        <div
-          className={styles.linkage}
-          style={{
-            height: `calc((100vw/1920)*${heightOfLink})`,
-            bottom: `calc((100vw/1920)* -${heightOfLink})`
-          }}></div>}
-    </div>
+    <>
+      <style>
+        {
+          `
+.linkage${cid} {
+    width: calc((100vw/1920)*4);
+    background: linear-gradient(#caad74 17.03%, #D8C08F 53.21%) border-box;
+    position: absolute;
+    justify-self: center;
+    animation: slide 2s ease ${cid * 2000}ms forwards;
 
+}
+
+@keyframes slide {
+    from {
+        height: 0px;
+        bottom: 0px;
+
+    }
+
+    to {
+        height: calc((100vw/1920)*${heightOfLink
+          });
+
+        bottom: calc((100vw/1920)* -${heightOfLink
+          });
+    }
+
+}
+        `
+        }
+      </style>
+      <div className={styles.metalCircleContainer}
+        style={{
+          height: `calc((100vw/1920)*${dimension})`,
+          width: `calc((100vw/1920)*${dimension})`
+        }}>
+        <div className={styles.circle}
+        ></div>
+        <Image
+          fill
+          src={image}
+          alt="Image"
+          className={styles.imageInCirlce}
+          style={{ borderRadius: '100%' }} />
+        {next &&
+          <>
+            {isVisible &&
+              <div className={`linkage${cid}`}></div>
+            }
+          </>}
+      </div>
+    </>
   )
 }
 
@@ -82,12 +121,17 @@ export default function OurProcessesSection({
   const textContainerWidthDefault = textContainerWidth || 1249;
   const itemArrayDefault = itemArray || [];
 
+  const refOurProcesses = useRef<HTMLDivElement>(null);
+  const isVisibleOurProcesses = useOnScreen(refOurProcesses, '100px');
+  console.log(isVisibleOurProcesses)
+
   return (
     <>
       <div style={{
         gap: `calc((100vw/1920)*${gapBetweenItemsDefault})`
       }}
-        className={styles.ourProgressContainer} >
+        className={styles.ourProgressContainer}
+        ref={refOurProcesses}>
         <div className={styles.titleContainer}><h1>{sectionHeadingDefault}</h1></div>
         {itemArrayDefault.map(async (item, index) => {
 
@@ -95,10 +139,13 @@ export default function OurProcessesSection({
             <>
               <div className={styles.checkPointContainer} key={index} aria-label={`Checkpoint ${index + 1}`}>
                 <CircularIcon
+                  isVisible={isVisibleOurProcesses}
                   image={item.image}
                   next={(itemArray.length - 1) !== index}
-                  heightOfLink={gapBetweenItemsDefault} 
-                  dimension={textContainerHeightDefault}/>
+                  heightOfLink={gapBetweenItemsDefault}
+                  dimension={textContainerHeightDefault}
+                  cid={index}
+                />
                 <div className={styles.checkPointDetailContainer}
                   style={{
                     width: `calc((100vw/1920)*${textContainerWidthDefault})`,
@@ -115,6 +162,7 @@ export default function OurProcessesSection({
       <div className={styles.opsMobile}>
         <TechnologyMeetsOldSchoolSophistication heading={sectionHeading} limpidBoxes={data.ourProcessesSection.limpidBoxes} />
       </div>
+
     </>
   )
 }
