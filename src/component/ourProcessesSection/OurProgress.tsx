@@ -5,6 +5,8 @@ import TechnologyMeetsOldSchoolSophistication from '@component/TechnologyMeetsOl
 import { ImageError } from 'next/dist/server/image-optimizer';
 import data from '@component/data/EN.json'
 import { configDotenv } from 'dotenv';
+import useOnScreen from '@util/useOnScreen'
+
 
 
 interface OurProcessesSectionProps {
@@ -25,12 +27,14 @@ interface OurProcessesSectionProps {
  * @param {boolean} next - A boolean indicating whether this is the next item in the sequence.
  */
 function CircularIcon({
+  isVisible,
   image,
   heightOfLink,
   next,
   dimension,
   cid
 }: {
+  isVisible: boolean;
   image: string,
   heightOfLink: number,
   next: boolean,
@@ -48,7 +52,7 @@ function CircularIcon({
     background: linear-gradient(#caad74 17.03%, #D8C08F 53.21%) border-box;
     position: absolute;
     justify-self: center;
-    animation: slide 2s ease ${cid*2000}ms forwards;
+    animation: slide 2s ease ${cid * 2000}ms forwards;
 
 }
 
@@ -60,13 +64,11 @@ function CircularIcon({
     }
 
     to {
-        height: calc((100vw/1920)*${
-                heightOfLink
-            });
+        height: calc((100vw/1920)*${heightOfLink
+          });
 
-        bottom: calc((100vw/1920)* -${
-                heightOfLink
-            });
+        bottom: calc((100vw/1920)* -${heightOfLink
+          });
     }
 
 }
@@ -78,7 +80,8 @@ function CircularIcon({
           height: `calc((100vw/1920)*${dimension})`,
           width: `calc((100vw/1920)*${dimension})`
         }}>
-        <div className={styles.circle}></div>
+        <div className={styles.circle}
+        ></div>
         <Image
           fill
           src={image}
@@ -86,8 +89,11 @@ function CircularIcon({
           className={styles.imageInCirlce}
           style={{ borderRadius: '100%' }} />
         {next &&
-          <div
-            className={`linkage${cid}`}></div>}
+          <>
+            {isVisible &&
+              <div className={`linkage${cid}`}></div>
+            }
+          </>}
       </div>
     </>
   )
@@ -115,12 +121,17 @@ export default function OurProcessesSection({
   const textContainerWidthDefault = textContainerWidth || 1249;
   const itemArrayDefault = itemArray || [];
 
+  const refOurProcesses = useRef<HTMLDivElement>(null);
+  const isVisibleOurProcesses = useOnScreen(refOurProcesses, '100px');
+  console.log(isVisibleOurProcesses)
+
   return (
     <>
       <div style={{
         gap: `calc((100vw/1920)*${gapBetweenItemsDefault})`
       }}
-        className={styles.ourProgressContainer} >
+        className={styles.ourProgressContainer}
+        ref={refOurProcesses}>
         <div className={styles.titleContainer}><h1>{sectionHeadingDefault}</h1></div>
         {itemArrayDefault.map(async (item, index) => {
 
@@ -128,11 +139,13 @@ export default function OurProcessesSection({
             <>
               <div className={styles.checkPointContainer} key={index} aria-label={`Checkpoint ${index + 1}`}>
                 <CircularIcon
+                  isVisible={isVisibleOurProcesses}
                   image={item.image}
                   next={(itemArray.length - 1) !== index}
                   heightOfLink={gapBetweenItemsDefault}
-                  dimension={textContainerHeightDefault} 
-                  cid={index}/>
+                  dimension={textContainerHeightDefault}
+                  cid={index}
+                />
                 <div className={styles.checkPointDetailContainer}
                   style={{
                     width: `calc((100vw/1920)*${textContainerWidthDefault})`,
@@ -149,6 +162,7 @@ export default function OurProcessesSection({
       <div className={styles.opsMobile}>
         <TechnologyMeetsOldSchoolSophistication heading={sectionHeading} limpidBoxes={data.ourProcessesSection.limpidBoxes} />
       </div>
+
     </>
   )
 }

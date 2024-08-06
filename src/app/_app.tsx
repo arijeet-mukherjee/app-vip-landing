@@ -102,14 +102,14 @@ export default function Home() {
         </div> : <></>}
 
         <div className={styles.wrapper} id='process'>
-          <SpotLight color="rgb(255 255 255 / 60%)" bottom={-100} left={-200} width={800} height={800} />
+          <SpotLight color="rgb(255 255 255 / 60%)" top={200} left={-200} width={800} height={800} />
           <OurProcessesSection
             sectionHeading={data.ourProcessesSection.sectionHeading}
             gapBetweenItems={data.ourProcessesSection.gapBetweenItems}
             textContainerHeight={data.ourProcessesSection.textContainerHeight}
             textContainerWidth={data.ourProcessesSection.textContainerWidth}
             itemArray={data.ourProcessesSection.itemArray}
-          />}
+          />
           <SpotLight color="rgb(242 215 133 / 80%)" bottom={400} right={-200} width={630} height={630} />
           <div className={styles.founderText}>{data.OurfounderText}</div>
           <CardBox
